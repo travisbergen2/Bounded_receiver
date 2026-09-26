@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Bounded Receiver — Room X · Fractal Youniverse</title>
+<meta name="description" content="A receiver built from the arithmetic of this collection: conjugate-pair nodes, a hidden world that turns, and three coupled blocks — estimate, detect, commit — whose prior starts blank and accumulates a narrative. Everything is recomputed in the browser and checked against a Python twin.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#0b0e14; --panel:#111725; --panel2:#0e1420; --line:#1e293b; --text:#e7ebf2; --dim:#8b95a7; --faint:#5b6577;
+          --blue:#7dd3fc; --gold:#e8c47a; --green:#6fdc9a; --red:#ff7a7a; --violet:#c084fc; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--bg); color:var(--text); font-family:'Inter',system-ui,sans-serif; line-height:1.6; }
+  .wrap { max-width:1060px; margin:0 auto; padding:0 6%; }
+  header { text-align:center; padding:64px 0 18px; }
+  .plate { display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:.72rem; letter-spacing:.22em; text-transform:uppercase;
+           color:var(--gold); border:1px solid #3a3423; border-radius:3px; padding:6px 14px; margin-bottom:22px; background:#14120b; }
+  h1 { font-family:'Fraunces',serif; font-weight:600; font-size:clamp(2rem,6vw,3.2rem); letter-spacing:.01em; }
+  .lede { max-width:680px; margin:16px auto 0; color:var(--dim); font-size:clamp(.98rem,2.3vw,1.06rem); }
+  .creed { font-family:'IBM Plex Mono',monospace; font-size:.78rem; color:var(--faint); margin-top:22px; letter-spacing:.04em; }
+  .creed b { color:var(--dim); font-weight:500; }
+  .pill { display:inline-block; margin-top:14px; font-family:'IBM Plex Mono',monospace; font-size:.74rem; padding:5px 12px; border-radius:999px;
+          border:1px solid var(--line); color:var(--dim); }
+  .pill.ok { border-color:#2b5a3f; color:var(--green); } .pill.bad { border-color:#6b2a2a; color:var(--red); }
+  section { margin:44px 0; }
+  h2 { font-family:'Fraunces',serif; font-weight:600; font-size:1.5rem; margin-bottom:8px; }
+  h2 .no { color:var(--faint); font-family:'IBM Plex Mono',monospace; font-size:.8rem; letter-spacing:.18em; text-transform:uppercase; display:block; margin-bottom:6px; }
+  p { color:var(--dim); font-size:.95rem; margin:10px 0; }
+  p b, li b { color:var(--text); font-weight:500; }
+  .panel { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:18px 20px; margin-top:14px; }
+  table { width:100%; border-collapse:collapse; font-family:'IBM Plex Mono',monospace; font-size:.8rem; margin:10px 0; }
+  th, td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--line); color:var(--dim); }
+  th { color:var(--faint); font-weight:500; letter-spacing:.04em; text-transform:uppercase; font-size:.7rem; }
+  td.v { color:var(--text); }
+  td.pos { color:var(--green); } td.neg { color:var(--red); } td.zero { color:var(--faint); } td.sup { color:var(--violet); }
+  .controls { display:flex; flex-wrap:wrap; gap:14px 22px; align-items:flex-end; margin:8px 0 14px; }
+  .ctl { display:flex; flex-direction:column; gap:4px; font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--faint); letter-spacing:.04em; }
+  .ctl span.val { color:var(--text); }
+  input[type=range] { width:150px; accent-color:var(--blue); }
+  input[type=number] { width:90px; background:var(--panel2); color:var(--text); border:1px solid var(--line); border-radius:4px; padding:4px 6px; font-family:'IBM Plex Mono',monospace; }
+  select, button { background:var(--panel2); color:var(--text); border:1px solid var(--line); border-radius:4px; padding:6px 10px; font-family:'IBM Plex Mono',monospace; font-size:.78rem; cursor:pointer; }
+  button:hover { border-color:var(--blue); color:var(--blue); }
+  label.tog { display:flex; gap:8px; align-items:center; color:var(--dim); font-family:'IBM Plex Mono',monospace; font-size:.74rem; cursor:pointer; }
+  canvas { width:100%; height:auto; display:block; background:var(--panel2); border:1px solid var(--line); border-radius:6px; margin-top:10px; }
+  .cap { font-family:'IBM Plex Mono',monospace; font-size:.7rem; color:var(--faint); margin-top:6px; }
+  .grid2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:14px; }
+  .kv { display:grid; grid-template-columns:1fr auto; gap:2px 14px; font-family:'IBM Plex Mono',monospace; font-size:.78rem; }
+  .kv div:nth-child(odd) { color:var(--faint); } .kv div:nth-child(even) { color:var(--text); text-align:right; }
+  .fence { border:1px dashed #3a3423; background:#14120b; border-radius:8px; padding:16px 18px; color:var(--dim); font-size:.92rem; }
+  .fence b { color:var(--gold); }
+  .legend { font-family:'IBM Plex Mono',monospace; font-size:.7rem; color:var(--faint); display:flex; gap:16px; flex-wrap:wrap; margin-top:6px; }
+  .legend i { display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:6px; vertical-align:middle; }
+  footer { text-align:center; padding:40px 6% 56px; color:var(--faint); font-size:.85rem; }
+  footer a, .dim a { color:var(--dim); text-decoration:none; border-bottom:1px solid var(--line); }
+  footer a:hover, .dim a:hover { color:var(--blue); }
+  .foot-links { margin-top:10px; display:flex; gap:18px; justify-content:center; flex-wrap:wrap; }
+  code { font-family:'IBM Plex Mono',monospace; font-size:.85em; color:var(--text); }
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="plate">Room X · Estimate, Detect, Commit</div>
+  <h1>The Bounded Receiver</h1>
+  <p class="lede">A receiver built from the arithmetic of this collection: nodes that are conjugate pairs of Gaussian integers, a hidden world that turns, and three coupled blocks — <b>estimate</b>, <b>detect</b>, <b>commit</b> — whose prior starts blank and accumulates a narrative. Seven slow witnesses and one sharp one decide who gets believed.</p>
+  <p class="creed"><b>Instruments, not proofs.</b> Every number here is recomputed in your browser and checked against the Python twin.</p>
+  <div id="selfcheck" class="pill">self-check running…</div>
+</header>
+
+<main class="wrap">
+
+<section id="nodes">
+  <h2><span class="no">1 · Three configurations, two operations</span>Nodes are conjugate pairs</h2>
+  <p>A node holds a pair of Gaussian integers (α, ᾱ). Two things can be done to the pair: <b>add</b> it — α + ᾱ, the trace — or <b>multiply</b> it — α·ᾱ, the norm. For the pair (+i, −i) that is literally <i>cancelled to 0</i> or <i>combined into 1</i>. The three configurations a two-input node can see, computed exactly:</p>
+  <div class="panel">
+    <table id="cfgTable"><thead><tr><th>pair</th><th>+ gives</th><th>class</th><th>× gives</th><th>class</th></tr></thead><tbody></tbody></table>
+    <p><b>+</b> keeps the direction and cancels the conjugate pair; <b>×</b> keeps agreement (same → −1, different → +1) and is sign-blind, because i·i = (−i)(−i). Read the two operations as two channels — <i>direction</i> and <i>presence</i> — and a held contradiction is the state with presence but no direction: <span style="color:var(--violet)">S</span>.</p>
+    <div class="grid2">
+      <div>
+        <div class="controls">
+          <div class="ctl">a <input type="number" id="pa" value="0" step="1"></div>
+          <div class="ctl">b <input type="number" id="pb" value="1" step="1"></div>
+          <div class="ctl">&nbsp;<button id="pairGo">read the pair α = a + b i</button></div>
+        </div>
+        <div class="kv" id="pairOut"></div>
+      </div>
+      <div>
+        <canvas id="circle" width="520" height="300"></canvas>
+        <div class="cap">The circle |z − 1| = 1 (Room VII's circle, the reciprocal image of the critical line). A pair is <b>blind</b> — the two operations agree, trace = norm — exactly when α lies on it: |α − 1|² = norm − trace + 1. Lattice points: <span id="blindPts"></span>. The gap |trace − norm| = ||α − 1|² − 1| measures how far from blindness a node is.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="lens">
+  <h2><span class="no">2 · What a lens can carry</span>Two layers of nodes, four inputs, exact enumeration</h2>
+  <p>Feed four signs (±i) into a two-layer tree of nodes and enumerate all sixteen input patterns. The all-<b>+</b> tree is the count lens: the value i·(k − (4 − k)) gives the count exactly, hence the direction. One <b>×</b> layer anywhere makes the output sign-blind: under the global flip x → −x a <b>+</b> of two flipping parents flips, a <b>×</b> of two flipping parents does not, and everything downstream of two blind values stays blind. The parity lens still sees a <i>tie</i> — an even number of −i — so it knows when the world is split without knowing which way it leans.</p>
+  <div class="panel">
+    <table id="lensTable"><thead><tr><th>tree</th><th>patterns → 0</th><th>distinct values</th><th>H(value) bits</th><th>MI(sign)</th><th>MI(parity)</th><th>sign-blind</th></tr></thead><tbody></tbody></table>
+    <p class="cap">MI(sign) is computed over the non-tie patterns. One half-turn node alone cannot see the arrow at all: forward it emits 1100…, backward 1001… — cyclic shifts of one another. Two nodes in quadrature emit a Gray code and decode the phase exactly.</p>
+  </div>
+</section>
+
+<section id="blocks">
+  <h2><span class="no">3 · Three blocks, one currency</span>The uniform receiver against the heterogeneous one — same world, same seed</h2>
+  <p>Eight channels each report the sign of a hidden regime that flips at a small rate; each channel is wrong with probability ε. The <b>uniform</b> receiver runs one architecture for all three jobs — a moving average to estimate, a cumulative-sum detector to notice change, a fixed margin to commit. The <b>heterogeneous</b> receiver gives each job its optimal algorithm: the exact posterior (a Bayes filter), the posterior changing sides (the accumulated form of contradiction), and Wald's sequential band to commit. They stay compatible because all three are functionals of one number — the log-likelihood increment, (n₊ − n₋)·log((1−ε)/ε): the direction channel weighted by the noise. Inside the band, the <b>commit</b> block's prior decides: it starts blank and accumulates a narrative from what it records — honestly (κ = 0) or through a self-serving filter (κ → 1) that records right decisions and forgets wrong ones.</p>
+  <div class="panel">
+    <div class="controls">
+      <div class="ctl">seed <input type="number" id="seed" value="1" step="1" min="0"></div>
+      <div class="ctl">steps <span class="val" id="stepsV">6000</span><input type="range" id="steps" min="1000" max="20000" step="1000" value="6000"></div>
+      <div class="ctl">noise ε <span class="val" id="epsV">0.15</span><input type="range" id="eps" min="0.02" max="0.35" step="0.01" value="0.15"></div>
+      <div class="ctl">switch rate <span class="val" id="pswV">0.005</span><input type="range" id="psw" min="0.001" max="0.03" step="0.001" value="0.005"></div>
+      <div class="ctl">ego κ <span class="val" id="kapV">0</span><input type="range" id="kap" min="0" max="1" step="0.05" value="0"></div>
+      <div class="ctl">prior start AR₀ <span class="val" id="ar0V">0</span><input type="range" id="ar0" min="-0.5" max="0.5" step="0.1" value="0"></div>
+      <label class="tog"><input type="checkbox" id="liar"> one channel lies in bursts</label>
+      <div class="ctl">&nbsp;<button id="runGo">run both receivers</button></div>
+    </div>
+    <canvas id="strip" width="1000" height="150"></canvas>
+    <div class="cap">The last 300 steps of the eight channels (<i style="color:var(--green)">■</i> says +, <i style="color:var(--red)">■</i> says −); the gold line is the hidden regime; a violet bar under a row marks the liar while it lies.</div>
+    <canvas id="est" width="1000" height="220"></canvas>
+    <div class="legend"><span><i style="background:var(--blue)"></i>uniform estimate E (margin ±0.3 dashed)</span><span><i style="background:var(--gold)"></i>heterogeneous log-odds L (Wald band ±log 19 dashed)</span><span><i style="background:var(--red)"></i>regime switch</span><span>ticks above: alarms (blue uniform, gold heterogeneous)</span></div>
+    <canvas id="prior" width="1000" height="160"></canvas>
+    <div class="legend"><span><i style="background:var(--blue)"></i>uniform prior AR</span><span><i style="background:var(--gold)"></i>heterogeneous prior AR</span><span>the narrative accumulates from what the commit block records under ambiguity</span></div>
+    <div class="grid2" style="margin-top:12px">
+      <div><table id="resTable"><thead><tr><th></th><th>uniform</th><th>heterogeneous</th></tr></thead><tbody></tbody></table></div>
+      <div>
+        <p><b>What to try.</b> Run it clean, then turn the liar on: the sharper receiver wins both worlds but <i>loses more</i> to a structured liar, because it weights every source by its full likelihood. Sharpness is exploitability; the remedy is a trust layer (below), not blunting. Raise κ and watch the narrative rate leave the true rate while the score does not move: the ego inflates the ledger for free. Raise ε and watch the honest prior become an optimist — ambiguity has become noise instead of change.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tribe">
+  <h2><span class="no">4 · The tribe</span>Seven slow witnesses, one sharp, and the rule that decides who is believed</h2>
+  <p>Eight witnesses read the <b>same honest channels</b>. Seven estimate with the moving average; one with the exact posterior. Each states what it believes. A judge trusts the consensus and applies one of three rules to whoever contradicts it: <b>one strike</b> and you are out; a threshold of 4 accumulated contradictions; or a threshold of 8. When the world changes, the sharp witness re-locks in one step and the seven slow ones take about six — so for six steps the most accurate witness in the room contradicts the consensus.</p>
+  <div class="panel">
+    <div class="controls">
+      <div class="ctl">seed <input type="number" id="tseed" value="4" step="1" min="0"></div>
+      <div class="ctl">steps <span class="val" id="tstepsV">6000</span><input type="range" id="tsteps" min="1000" max="20000" step="1000" value="6000"></div>
+      <div class="ctl">rule <select id="trule"><option value="strike">one strike</option><option value="4">threshold 4</option><option value="8">threshold 8</option></select></div>
+      <div class="ctl">&nbsp;<button id="tribeGo">run the tribe</button></div>
+    </div>
+    <canvas id="tl" width="1000" height="200"></canvas>
+    <div class="legend"><span>rows: witnesses 1–7 slow, 8 sharp</span><span><i style="background:var(--red)"></i>regime switches</span><span><i style="background:var(--violet)"></i>burned from here on</span><span>accuracy printed at right</span></div>
+    <div class="grid2" style="margin-top:12px">
+      <div class="kv" id="tribeOut"></div>
+      <div><p>The tolerance a group needs to keep its fastest honest member is <b>its own re-lock lag</b>: 6 × 0.75 = 4.5 contradictions clears a threshold of 4 and not of 8. And the group loses nothing measurable by burning it — one vote in eight — which is exactly why the rule can persist. No liar, no malice, no dislike of honesty appears anywhere in this room; the statistics of consensus-relative trust do it alone.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="fence">
+  <div class="fence">
+    <b>What this room does not claim.</b> These are eight-bit toys: channels are not people, a "witness" is a moving average, and "neurotypical" appears nowhere in the mathematics. Nothing here bears on the Riemann Hypothesis, on any market, or on any brain; nothing is an edge; nothing is registered as evidence for any claim in the papers. Every statement about the toy is exact where it says exact (the node tables, the lens enumeration, the burn times) and descriptive elsewhere (seeded runs at stated parameters). The full design record — six model versions, 84 unit tests, every pre-stated expectation with its verdict including the refuted ones — is the <span class="dim"><a href="https://github.com/travisbergen2/Bounded_receiver" target="_blank" rel="noopener noreferrer">source repository</a></span>. Room X's first version was withdrawn by the author on 26 September 2026; this is its replacement.
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div>Built by Travis Bergen with the Riemann agent, 2026-09-26. Grounded in <a href="https://doi.org/10.5281/zenodo.19697792" target="_blank" rel="noopener noreferrer">IMM Paper 18 (Observer Requirements)</a> and <a href="https://doi.org/10.5281/zenodo.19697792" target="_blank" rel="noopener noreferrer">Paper 11 (Collective Receiver Dynamics)</a>.</div>
+  <div class="foot-links">
+    <a href="https://fractalyouniverse.org/">Back to the gallery</a>
+    <a href="https://github.com/travisbergen2/Bounded_receiver" target="_blank" rel="noopener noreferrer">Source, twin and tests</a>
+    <a href="https://fractalyouniverse.org/Angle_atlas/">Room VII · the circle</a>
+  </div>
+</footer>
+
+<script>/*__CORE__*/</script>
+<script>
+const TWIN = /*__TWIN__*/;
+(function () {
+  "use strict";
+  const R = Room, $ = id => document.getElementById(id);
+  const C = { blue:"#7dd3fc", gold:"#e8c47a", green:"#6fdc9a", red:"#ff7a7a", violet:"#c084fc", line:"#1e293b", dim:"#8b95a7", faint:"#5b6577", text:"#e7ebf2" };
+  const fmt = (x, d) => x === null || x === undefined ? "—" : (typeof x === "number" ? (Number.isInteger(x) ? String(x) : x.toFixed(d === undefined ? 3 : d)) : String(x));
+
+  // ---------------- self-check against the twin
+  function selfCheck() {
+    let pass = 0, fail = 0;
+    const eq = (a, b, tol) => { let ok; if (typeof a === "number" && typeof b === "number") ok = Math.abs(a - b) <= (tol || 0) * Math.max(1, Math.abs(b)); else ok = JSON.stringify(a) === JSON.stringify(b); if (ok) pass++; else fail++; };
+    const g = R.mulberry32(1); for (let k = 0; k < 5; k++) eq(g(), TWIN.prng_first5[k], 0);
+    R.configTable().forEach((row, i) => { for (const k of ["plus", "times", "plus_class", "times_class"]) eq(row[k], TWIN.config_table[i][k]); });
+    eq(R.blindLattice(3), TWIN.blind_lattice);
+    [["+", "+"], ["*", "*"], ["*", "+"], ["+", "*"]].forEach(([a, b], i) => { const got = R.lensTree4(a, b), w = TWIN.lenses[i];
+      eq(got.zero, w.zero); eq(got.distinct, w.distinct); eq(got.H_value, w.H_value, 1e-9); eq(got.MI_sign, w.MI_sign, 1e-9); eq(got.MI_parity, w.MI_parity, 1e-9); eq(got.sign_blind, w.sign_blind); });
+    const INT = ["score","hits","misses","voids","bets","ambiguous","alarms","recorded","resolved","seam_abstain","attributed","spurious"], FLT = ["hit_rate","ambiguous_bet_rate","regime_accuracy","AR_final","narrative_rate","true_rate"];
+    for (const rr of TWIN.runs) { const p = rr.params, got = R.run(p.seed, p.steps, p.wp, p.up, p.hp, false), w = rr.result; eq(got.switches, w.switches);
+      for (const side of ["uniform", "hetero"]) { for (const k of INT) eq(got[side][k], w[side][k]); for (const k of FLT) { if (w[side][k] === null) eq(got[side][k], null); else eq(got[side][k], w[side][k], 1e-9); } eq(got[side].median_delay, w[side].median_delay); } }
+    for (const tt of TWIN.tribes) { const p = tt.params, got = R.tribe(p.seed, p.steps, null, p.rule, p.FT), w = tt.result;
+      eq(got.switches, w.switches); eq(got.burned, w.burned); eq(got.burn_time, w.burn_time); got.accuracy.forEach((a, j) => eq(a, w.accuracy[j], 1e-9)); eq(got.group_with, w.group_with, 1e-9); eq(got.group_without, w.group_without, 1e-9); }
+    const el = $("selfcheck"); el.textContent = `self-check ${pass}/${pass + fail} against receipts/twin.json`; el.className = "pill " + (fail ? "bad" : "ok");
+  }
+
+  // ---------------- section 1
+  function renderNodes() {
+    const tb = $("cfgTable").querySelector("tbody"); tb.innerHTML = "";
+    const cls = c => c > 0 ? "pos" : c < 0 ? "neg" : "zero";
+    for (const r of R.configTable()) tb.innerHTML += `<tr><td class="v">${r.config}</td><td class="v">${r.plus}</td><td class="${cls(r.plus_class)}">${r.plus_class > 0 ? "+" : r.plus_class < 0 ? "−" : "0"}</td><td class="v">${r.times}</td><td class="${cls(r.times_class)}">${r.times_class > 0 ? "+" : r.times_class < 0 ? "−" : "0"}</td></tr>`;
+    $("blindPts").textContent = R.blindLattice(3).map(([a, b]) => R.gStr([a, b])).join(", ");
+    readPair();
+  }
+  function readPair() {
+    const a = parseInt($("pa").value, 10) || 0, b = parseInt($("pb").value, 10) || 0, p = R.pairInfo(a, b);
+    $("pairOut").innerHTML = `<div>α</div><div>${R.gStr([a, b])}</div><div>trace α + ᾱ</div><div>${p.trace}</div><div>norm α·ᾱ</div><div>${p.norm}</div><div>gap |trace − norm|</div><div>${p.gap}</div><div>|α − 1|²</div><div>${p.dist2}</div><div>blind</div><div>${p.blind ? "yes — on the circle" : "no"}</div>`;
+    drawCircle(a, b);
+  }
+  function drawCircle(a, b) {
+    const cv = $("circle"), x = cv.getContext("2d"), W = cv.width, H = cv.height; x.clearRect(0, 0, W, H);
+    const cx = W / 2 - 30, cy = H / 2, u = 44;
+    x.strokeStyle = C.line; x.lineWidth = 1;
+    for (let k = -5; k <= 6; k++) { x.beginPath(); x.moveTo(cx + k * u, 0); x.lineTo(cx + k * u, H); x.stroke(); }
+    for (let k = -3; k <= 3; k++) { x.beginPath(); x.moveTo(0, cy + k * u); x.lineTo(W, cy + k * u); x.stroke(); }
+    x.strokeStyle = C.faint; x.beginPath(); x.moveTo(0, cy); x.lineTo(W, cy); x.stroke(); x.beginPath(); x.moveTo(cx, 0); x.lineTo(cx, H); x.stroke();
+    x.strokeStyle = C.red; x.lineWidth = 1.6; x.beginPath(); x.arc(cx + u, cy, u, 0, Math.PI * 2); x.stroke();
+    x.fillStyle = C.gold; for (const [p, q] of R.blindLattice(3)) { x.beginPath(); x.arc(cx + p * u, cy - q * u, 4, 0, Math.PI * 2); x.fill(); }
+    x.fillStyle = C.blue; x.beginPath(); x.arc(cx + a * u, cy - b * u, 5.5, 0, Math.PI * 2); x.fill();
+    x.beginPath(); x.arc(cx + a * u, cy + b * u, 5.5, 0, Math.PI * 2); x.fill();
+    x.fillStyle = C.faint; x.font = "11px 'IBM Plex Mono', monospace"; x.fillText("1", cx + u + 4, cy - 6); x.fillText("i", cx + 4, cy - u - 4); x.fillText("|z−1| = 1", cx + 2 * u + 6, cy - u - 10);
+  }
+
+  // ---------------- section 2
+  function renderLenses() {
+    const tb = $("lensTable").querySelector("tbody"); tb.innerHTML = "";
+    const names = { "++": "count (+ then +)", "**": "parity (× then ×)", "*+": "agreement count (× then +)", "+*": "all-agree (+ then ×)" };
+    for (const [a, b] of [["+", "+"], ["*", "*"], ["*", "+"], ["+", "*"]]) { const r = R.lensTree4(a, b);
+      tb.innerHTML += `<tr><td class="v">${names[a + b]}</td><td>${r.zero} / 16</td><td>${r.distinct}</td><td>${r.H_value.toFixed(3)}</td><td class="${r.MI_sign > 1e-9 ? "pos" : "zero"}">${r.MI_sign.toFixed(3)}</td><td>${r.MI_parity.toFixed(3)}</td><td class="${r.sign_blind ? "neg" : "pos"}">${r.sign_blind ? "yes" : "no"}</td></tr>`; }
+  }
+
+  // ---------------- section 3
+  function bind(id, vid, f) { const el = $(id); const v = $(vid); const upd = () => { v.textContent = f ? f(el.value) : el.value; }; el.addEventListener("input", upd); upd(); }
+  bind("steps", "stepsV"); bind("eps", "epsV"); bind("psw", "pswV"); bind("kap", "kapV"); bind("ar0", "ar0V"); bind("tsteps", "tstepsV");
+  function runObservers() {
+    const seed = parseInt($("seed").value, 10) || 0, steps = parseInt($("steps").value, 10), eps = parseFloat($("eps").value), psw = parseFloat($("psw").value),
+      kappa = parseFloat($("kap").value), ar0 = parseFloat($("ar0").value), liar = $("liar").checked;
+    const res = R.run(seed, steps, { eps, pSwitch: psw, liar }, { kappa, AR0: ar0 }, { kappa, AR0: ar0 }, true);
+    drawStrip(res); drawEst(res, steps); drawPrior(res, steps);
+    const tb = $("resTable").querySelector("tbody"); tb.innerHTML = "";
+    const row = (k, u, h, d) => { tb.innerHTML += `<tr><td>${k}</td><td class="v">${fmt(u, d)}</td><td class="v">${fmt(h, d)}</td></tr>`; };
+    const U = res.uniform, Hh = res.hetero;
+    row("score per 1,000 steps", 1000 * U.score / steps, 1000 * Hh.score / steps, 1);
+    row("hit rate", U.hit_rate, Hh.hit_rate, 4); row("regime accuracy (vs the hidden truth)", U.regime_accuracy, Hh.regime_accuracy, 4);
+    row("held (ambiguous) fraction", U.ambiguous / steps, Hh.ambiguous / steps, 4); row("switches in the world", res.switches, res.switches);
+    row("alarms · attributed · spurious", `${U.alarms} · ${U.attributed} · ${U.spurious}`, `${Hh.alarms} · ${Hh.attributed} · ${Hh.spurious}`);
+    row("median detection delay", U.median_delay, Hh.median_delay); row("prior AR at the end", U.AR_final, Hh.AR_final, 3);
+    row("narrative rate (what the block records)", U.narrative_rate, Hh.narrative_rate, 3); row("true rate (what actually happened)", U.true_rate, Hh.true_rate, 3);
+    row("ego gap", (U.narrative_rate !== null && U.true_rate !== null) ? U.narrative_rate - U.true_rate : null, (Hh.narrative_rate !== null && Hh.true_rate !== null) ? Hh.narrative_rate - Hh.true_rate : null, 3);
+  }
+  function drawStrip(res) {
+    const cv = $("strip"), x = cv.getContext("2d"), W = cv.width, H = cv.height; x.clearRect(0, 0, W, H);
+    const tr = res.traces, n = tr.signs.length, show = Math.min(300, n), start = n - show, cw = (W - 60) / show, rh = (H - 30) / 8;
+    for (let k = 0; k < show; k++) { const s = tr.signs[start + k]; for (let j = 0; j < 8; j++) { x.fillStyle = s[j] > 0 ? "rgba(111,220,154,.75)" : "rgba(255,122,122,.75)"; x.fillRect(30 + k * cw, 6 + j * rh, Math.max(1, cw - 0.5), rh - 2); }
+      if (tr.lying[start + k]) { x.fillStyle = C.violet; x.fillRect(30 + k * cw, 6 + 3 * rh + rh - 3, Math.max(1, cw), 2); } }
+    x.strokeStyle = C.gold; x.lineWidth = 1.5; x.beginPath();
+    for (let k = 0; k < show; k++) { const y = H - 14 - (tr.regime[start + k] > 0 ? 6 : 0); if (k === 0) x.moveTo(30 + k * cw, y); else x.lineTo(30 + k * cw, y); } x.stroke();
+    x.fillStyle = C.faint; x.font = "10px 'IBM Plex Mono', monospace"; x.fillText("ch", 6, 14); x.fillText("regime", W - 44, H - 4);
+  }
+  function drawEst(res, steps) {
+    const cv = $("est"), x = cv.getContext("2d"), W = cv.width, H = cv.height; x.clearRect(0, 0, W, H);
+    const tr = res.traces, n = tr.E.length, L = 30, Rr = W - 10, mid = H / 2, sc = (H / 2 - 24);
+    const px = t => L + (t / (n - 1)) * (Rr - L);
+    const A = Math.log(19);
+    x.strokeStyle = C.line; x.beginPath(); x.moveTo(L, mid); x.lineTo(Rr, mid); x.stroke();
+    x.setLineDash([3, 4]); x.strokeStyle = "rgba(125,211,252,.5)"; for (const s of [0.3, -0.3]) { x.beginPath(); x.moveTo(L, mid - s * sc); x.lineTo(Rr, mid - s * sc); x.stroke(); }
+    x.strokeStyle = "rgba(232,196,122,.5)"; for (const s of [1, -1]) { x.beginPath(); x.moveTo(L, mid - s * sc); x.lineTo(Rr, mid - s * sc); x.stroke(); } x.setLineDash([]);
+    for (const s of res.switchTimes) { x.strokeStyle = "rgba(255,122,122,.55)"; x.beginPath(); x.moveTo(px(s), 12); x.lineTo(px(s), H - 4); x.stroke(); }
+    x.strokeStyle = C.blue; x.lineWidth = 1.2; x.beginPath(); for (let t = 0; t < n; t++) { const y = mid - Math.max(-1, Math.min(1, tr.E[t])) * sc; if (t === 0) x.moveTo(px(t), y); else x.lineTo(px(t), y); } x.stroke();
+    x.strokeStyle = C.gold; x.beginPath(); for (let t = 0; t < n; t++) { const y = mid - Math.max(-1, Math.min(1, tr.L[t] / A)) * sc; if (t === 0) x.moveTo(px(t), y); else x.lineTo(px(t), y); } x.stroke();
+    x.fillStyle = C.blue; for (const a of res.alarmsU) x.fillRect(px(a), 2, 1.5, 6); x.fillStyle = C.gold; for (const a of res.alarmsH) x.fillRect(px(a), 9, 1.5, 6);
+    x.fillStyle = C.faint; x.font = "10px 'IBM Plex Mono', monospace"; x.fillText("+", 8, mid - sc + 4); x.fillText("−", 8, mid + sc + 4); x.fillText(`${steps} steps`, Rr - 70, H - 4);
+  }
+  function drawPrior(res, steps) {
+    const cv = $("prior"), x = cv.getContext("2d"), W = cv.width, H = cv.height; x.clearRect(0, 0, W, H);
+    const tr = res.traces, n = tr.ARu.length, L = 30, Rr = W - 10, mid = H / 2, sc = H / 2 - 16, px = t => L + (t / (n - 1)) * (Rr - L);
+    x.strokeStyle = C.line; x.beginPath(); x.moveTo(L, mid); x.lineTo(Rr, mid); x.stroke();
+    x.strokeStyle = C.blue; x.lineWidth = 1.2; x.beginPath(); for (let t = 0; t < n; t++) { const y = mid - Math.max(-1, Math.min(1, tr.ARu[t])) * sc; if (t === 0) x.moveTo(px(t), y); else x.lineTo(px(t), y); } x.stroke();
+    x.strokeStyle = C.gold; x.beginPath(); for (let t = 0; t < n; t++) { const y = mid - Math.max(-1, Math.min(1, tr.ARh[t])) * sc; if (t === 0) x.moveTo(px(t), y); else x.lineTo(px(t), y); } x.stroke();
+    x.fillStyle = C.faint; x.font = "10px 'IBM Plex Mono', monospace"; x.fillText("+1", 6, mid - sc + 4); x.fillText("−1", 6, mid + sc + 4); x.fillText("prior AR (edge of betting under ambiguity, as the block believes it)", L + 4, 12);
+  }
+
+  // ---------------- section 4
+  function runTribe() {
+    const seed = parseInt($("tseed").value, 10) || 0, steps = parseInt($("tsteps").value, 10), rv = $("trule").value;
+    const rule = rv === "strike" ? "strike" : "cusum", FT = rv === "strike" ? 0 : parseFloat(rv);
+    const r = R.tribe(seed, steps, null, rule, FT);
+    const cv = $("tl"), x = cv.getContext("2d"), W = cv.width, H = cv.height; x.clearRect(0, 0, W, H);
+    const L = 30, Rr = W - 70, rh = (H - 20) / 8, px = t => L + (t / steps) * (Rr - L);
+    for (const s of r.switchTimes) { x.strokeStyle = "rgba(255,122,122,.5)"; x.beginPath(); x.moveTo(px(s), 6); x.lineTo(px(s), H - 6); x.stroke(); }
+    for (let j = 0; j < 8; j++) { const y = 10 + j * rh;
+      x.fillStyle = j === 7 ? "rgba(232,196,122,.35)" : "rgba(125,211,252,.25)"; x.fillRect(L, y, Rr - L, rh - 4);
+      if (r.burned[j]) { x.fillStyle = "rgba(192,132,252,.7)"; x.fillRect(px(r.burn_time[j]), y, Rr - px(r.burn_time[j]), rh - 4); }
+      x.fillStyle = j === 7 ? C.gold : C.dim; x.font = "10px 'IBM Plex Mono', monospace"; x.fillText(j === 7 ? "sharp" : String(j + 1), 4, y + rh / 2 + 2);
+      x.fillStyle = C.text; x.fillText(r.accuracy[j] === null ? "—" : r.accuracy[j].toFixed(4), Rr + 6, y + rh / 2 + 2); }
+    const first = r.burn_time.map((t, j) => [t, j]).filter(([t]) => t !== null).sort((a, b) => a[0] - b[0]);
+    $("tribeOut").innerHTML = `<div>switches in the world</div><div>${r.switches}</div><div>first switch at step</div><div>${fmt(r.first_switch)}</div>
+      <div>sharp witness accuracy</div><div>${fmt(r.accuracy[7], 4)}</div><div>slow witnesses (median)</div><div>${fmt(r.accuracy.slice(0, 7).slice().sort((a, b) => a - b)[3], 4)}</div>
+      <div>sharp witness burned</div><div>${r.sharp_burned ? "yes, at step " + r.sharp_burn_time : "no"}</div><div>first witness burned</div><div>${first.length ? (first[0][1] === 7 ? "the sharp one" : "slow #" + (first[0][1] + 1)) : "nobody"}</div>
+      <div>slow witnesses burned</div><div>${r.slow_burned}</div><div>group accuracy with / without the sharp one</div><div>${fmt(r.group_with, 4)} / ${fmt(r.group_without, 4)}</div>`;
+  }
+
+  $("pairGo").addEventListener("click", readPair); $("pa").addEventListener("change", readPair); $("pb").addEventListener("change", readPair);
+  $("runGo").addEventListener("click", runObservers); $("tribeGo").addEventListener("click", runTribe);
+  renderNodes(); renderLenses(); runObservers(); runTribe();
+  setTimeout(selfCheck, 20);
+})();
+</script>
+</body>
+</html>
