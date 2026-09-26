@@ -1,0 +1,45 @@
+response table (derived):
+  C   (i,-i)   + →   0 class  0 sends silent   × →   1 class  1 sends *
+  U    (i,i)   + →  2i class  1 sends *        × →  -1 class -1 sends +
+  D  (-i,-i)   + → -2i class -1 sends +        × →  -1 class -1 sends +
+
+single-wire monoid: 9 maps (shortest word, rightmost applied first):
+    id: +→+, ×→*
+     C: +→·, ×→*
+     D: +→+, ×→+
+     U: +→*, ×→+
+    CD: +→·, ×→·
+    CU: +→*, ×→·
+    UC: +→·, ×→+
+    UD: +→*, ×→*
+   UCU: +→+, ×→·
+
+gate ledger (exhaustively verified):
+  gate             inputs biases nodes depth patterns verified
+  NOT                   1      0     1     1        2 True
+  NOR                   2      1     1     1        4 True
+  OR                    2      1     2     2        4 True
+  NAND                  2      1     1     1        4 True
+  AND                   2      1     2     2        4 True
+  MAJ3                  3      0     2     2        8 True
+  XOR                   2      2    13     5        4 True
+  THR_5>=3              5      0     2     2       32 True
+  THR_7>=4              7      0     2     2      128 True
+  THR_8>=8 (AND)        8      7     2     2      256 True
+  THR_8>=1 (OR)         8      7     2     2      256 True
+  THR_9>=6              9      2     2     2      512 True
+  PARITY_2              2      2    23     5        4 True
+  PARITY_4              4      2    59    10       16 True
+  PARITY_8              8      2   121    15      256 True
+  PARITY_16            16      2   235    20    65536 True
+
+lens census:
+  trusting/noise/raw         score/1k  901.45 hit 0.9539520549575207 regimeAcc 0.96675 void 0.0185 alarms 58.0 burned 0.0 liarBurnSeeds  0 falseBurns   0 firstTrue  None E -0.6246 AR -0.1357
+  trusting/noise/U1          score/1k  901.55 hit 0.9539555257255266 regimeAcc 0.03325 void 0.0185 alarms 58.0 burned 0.0 liarBurnSeeds  0 falseBurns   0 firstTrue  None E  0.6482 AR -0.13565
+  trusting/noise/C1          score/1k 775.7750000000001 hit 0.891029331231503 regimeAcc  0.5221 void 0.1292 alarms  0.0 burned 0.0 liarBurnSeeds  0 falseBurns   0 firstTrue  None E  0.8322 AR     1.0
+  trusting/noise/D1          score/1k   999.9 hit 0.99995 regimeAcc 0.51035 void    0.0 alarms  0.0 burned 0.0 liarBurnSeeds  0 falseBurns   0 firstTrue  None E    -1.0 AR    0.51
+  skeptic4/trick/raw         score/1k 885.925 hit 0.9394727136386976 regimeAcc 0.96895 void 0.0316 alarms 62.5 burned 6.0 liarBurnSeeds 20 falseBurns 100 firstTrue  84.0 E -0.5691 AR -0.09305
+  skeptic4/trick/U2          score/1k 887.875 hit 0.9382326239586389 regimeAcc  0.0315 void 0.0321 alarms 49.5 burned 2.0 liarBurnSeeds 20 falseBurns   0 firstTrue 259.0 E  0.5726 AR -0.1069
+  skeptic4/trick/C2          score/1k 837.775 hit 0.923475526794654 regimeAcc 0.50885 void 0.0925 alarms  0.0 burned 0.0 liarBurnSeeds  0 falseBurns   0 firstTrue  None E  0.4703 AR     1.0
+wrote results/opnet.json
+OPNET_DONE

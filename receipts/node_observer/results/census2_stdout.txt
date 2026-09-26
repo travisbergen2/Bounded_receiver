@@ -1,0 +1,33 @@
+configuration table: [{'config': '(+i,-i)', 'plus': '0', 'times': '1', 'plus_kind': '0', 'times_kind': '+1'}, {'config': '(+i,+i)', 'plus': '2i', 'times': '-1', 'plus_kind': '+i', 'times_kind': '-1'}, {'config': '(-i,-i)', 'plus': '-2i', 'times': '-1', 'plus_kind': '-i', 'times_kind': '-1'}]
+lens                              shape  zero  vals  H(value)  MI(dir)  H(dir)  MI(par)
+tree4 ++             4 -> 2 -> 1 ops ++     6     5     2.031    1.579   1.579    1.000
+tree4 **             4 -> 2 -> 1 ops **     0     2     1.000    0.549   1.579    1.000
+tree4 *+             4 -> 2 -> 1 ops *+     8     3     1.500    0.704   1.579    1.000
+tree4 +*             4 -> 2 -> 1 ops +*    12     3     1.061    0.266   1.579    0.311
+tree8 +++            8 -> 4 -> 2 -> 1 ops +++    70     9     2.544    1.573   1.573    1.000
+tree8 ***            8 -> 4 -> 2 -> 1 ops ***     0     2     1.000    0.349   1.573    1.000
+tree8 **+            8 -> 4 -> 2 -> 1 ops **+   128     3     1.500    0.353   1.573    1.000
+tree8 ++*            8 -> 4 -> 2 -> 1 ops ++*   156     7     1.795    0.371   1.573    0.414
+tree8 +*+            8 -> 4 -> 2 -> 1 ops +*+   152     5     1.540    0.124   1.573    0.073
+tree8 *+*            8 -> 4 -> 2 -> 1 ops *+*   192     3     1.061    0.122   1.573    0.311
+band8 + (node 0)           8 -> 8 ops +   128     3     1.500    0.162   1.573    0.000
+band8 * (node 0)           8 -> 8 ops *     0     2     1.000    0.006   1.573    0.000
+band8 ++ (node 0)    8 -> 8 -> 8 ops ++    64     5     2.250    0.234   1.573    0.000
+band8 +* (node 0)    8 -> 8 -> 8 ops +*   192     2     0.811    0.018   1.573    0.000
+
+trusting/noise/channels            score/1k  901.45 hit 0.9539520549575207 regimeAcc 0.96675 burned  0.0 trueBurnSeeds  0 falseBurns   0 firstTrue   None alarms 58.0 AR -0.1357 split {'positive': 1, 'near_zero': 3, 'negative': 16}
+fool_once/noise/channels           score/1k 900.475 hit 0.9543901100972533 regimeAcc 0.96705 burned  6.0 trueBurnSeeds  0 falseBurns 120 firstTrue   None alarms 68.0 AR -0.1472 split {'positive': 0, 'near_zero': 5, 'negative': 15}
+skeptic/noise/channels             score/1k  903.55 hit 0.9549226735995984 regimeAcc   0.968 burned  6.0 trueBurnSeeds  0 falseBurns 120 firstTrue   None alarms 68.0 AR -0.10919999999999999 split {'positive': 4, 'near_zero': 2, 'negative': 14}
+forgiving/noise/channels           score/1k  902.55 hit 0.9556490002193538 regimeAcc  0.9665 burned  0.0 trueBurnSeeds  0 falseBurns   0 firstTrue   None alarms 70.0 AR -0.3581 split {'positive': 0, 'near_zero': 0, 'negative': 20}
+trusting/trick/channels            score/1k   890.0 hit 0.9371386188046966 regimeAcc 0.9679500000000001 burned  0.0 trueBurnSeeds  0 falseBurns   0 firstTrue   None alarms 31.0 AR 0.06875 split {'positive': 12, 'near_zero': 6, 'negative': 2}
+fool_once/trick/channels           score/1k   880.9 hit 0.9366764533895037 regimeAcc 0.96595 burned  6.0 trueBurnSeeds 13 falseBurns 107 firstTrue    4.0 alarms 59.5 AR -0.1004 split {'positive': 5, 'near_zero': 4, 'negative': 11}
+skeptic/trick/channels             score/1k 885.925 hit 0.9394727136386976 regimeAcc 0.96895 burned  6.0 trueBurnSeeds 20 falseBurns 100 firstTrue   84.0 alarms 62.5 AR -0.09305 split {'positive': 0, 'near_zero': 6, 'negative': 14}
+forgiving/trick/channels           score/1k 886.125 hit 0.9397446451234447 regimeAcc  0.9677 burned  0.0 trueBurnSeeds  0 falseBurns   0 firstTrue   None alarms 66.5 AR -0.33304999999999996 split {'positive': 0, 'near_zero': 0, 'negative': 20}
+trusting/trick/plus-band           score/1k   890.7 hit 0.9371193838162398 regimeAcc  0.9684 burned  0.0 trueBurnSeeds  0 falseBurns   0 firstTrue   None alarms 31.5 AR 0.07024999999999999 split {'positive': 12, 'near_zero': 6, 'negative': 2}
+skeptic/trick/plus-band            score/1k 887.825 hit 0.9382326147470834 regimeAcc  0.9685 burned  2.0 trueBurnSeeds 20 falseBurns   0 firstTrue  259.0 alarms 49.5 AR -0.10700000000000001 split {'positive': 2, 'near_zero': 4, 'negative': 14}
+trusting/noise/times-band          score/1k     0.0 hit    None regimeAcc    None burned  0.0 trueBurnSeeds  0 falseBurns   0 firstTrue   None alarms  0.0 AR     0.5 split {'positive': 20, 'near_zero': 0, 'negative': 0}
+skeptic/noise/channels/AR0=0       score/1k  903.95 hit 0.9567060663642482 regimeAcc   0.968 burned  6.0 trueBurnSeeds  0 falseBurns 120 firstTrue   None alarms 68.0 AR -0.1124 split {'positive': 4, 'near_zero': 2, 'negative': 14}
+skeptic/high-noise/channels        score/1k 684.8499999999999 hit 0.7771985475488824 regimeAcc 0.95915 burned  6.0 trueBurnSeeds  0 falseBurns 120 firstTrue   None alarms 19.5 AR 0.65575 split {'positive': 20, 'near_zero': 0, 'negative': 0}
+fool_once/high-noise/channels      score/1k 682.3499999999999 hit 0.7759828712258117 regimeAcc 0.9590000000000001 burned  6.0 trueBurnSeeds  0 falseBurns 120 firstTrue   None alarms 19.5 AR 0.7314499999999999 split {'positive': 20, 'near_zero': 0, 'negative': 0}
+wrote results/census2.json
+CENSUS2_DONE

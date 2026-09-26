@@ -1,0 +1,15 @@
+honest                     score/1k    792.3 hit 0.9070112824429187 ambBet 0.1547008547008547 alarms  93.0 delay   4.0 FA  0.0 AR -0.47945 split {'positive': 0, 'near_zero': 0, 'negative': 30} narr 0.70015 true 0.69875 gap -0.00055
+ego_0.5                    score/1k  792.575 hit 0.9071487119084636 ambBet 0.11593560773888642 alarms  93.0 delay   4.0 FA  0.0 AR -0.7224999999999999 split {'positive': 0, 'near_zero': 0, 'negative': 30} narr 0.88455 true 0.72275 gap  0.1626
+ego_0.9                    score/1k  792.625 hit 0.9072000821692687 ambBet 0.0976497156239545 alarms  93.0 delay   4.0 FA  0.0 AR -0.8910499999999999 split {'positive': 0, 'near_zero': 0, 'negative': 30} narr  0.9834 true  0.7318 gap 0.25395
+ego_1.0                    score/1k  792.625 hit 0.9072998948174804 ambBet 0.09131515932952661 alarms  93.0 delay   4.0 FA  0.0 AR -0.91715 split {'positive': 0, 'near_zero': 0, 'negative': 30} narr     1.0 true 0.72265 gap 0.27735
+ego_0.9_blinds_detect      score/1k   788.55 hit 0.9069904390168031 ambBet 0.04215873701088464 alarms  21.0 delay   5.5 FA  0.0 AR -0.8308500000000001 split {'positive': 0, 'near_zero': 0, 'negative': 30} narr 0.9297500000000001 true 0.44125000000000003 gap  0.4914
+honest_no_detect           score/1k 791.5250000000001 hit 0.8996139514155144 ambBet 0.7015660790800549 alarms   0.0 delay  None FA  0.0 AR 0.21284999999999998 split {'positive': 29, 'near_zero': 1, 'negative': 0} narr 0.53365 true 0.5276000000000001 gap 0.00255
+honest_1node               score/1k      0.0 hit    None ambBet    None alarms   0.0 delay  None FA  0.0 AR     0.0 split {'positive': 0, 'near_zero': 30, 'negative': 0} narr    None true    None gap    None
+honest_4nodes              score/1k    792.3 hit 0.9070112824429187 ambBet 0.1547008547008547 alarms  93.0 delay   4.0 FA  0.0 AR -0.47945 split {'positive': 0, 'near_zero': 0, 'negative': 30} narr 0.70015 true 0.69875 gap -0.00055
+honest_blind_pair          score/1k      0.0 hit    None ambBet    None alarms   0.0 delay  None FA  0.0 AR     0.0 split {'positive': 0, 'near_zero': 30, 'negative': 0} narr    None true    None gap    None
+honest_eisenstein          score/1k  812.825 hit 0.9130721922599445 ambBet 0.21245706311721768 alarms  90.5 delay   5.0 FA  0.0 AR -0.43984999999999996 split {'positive': 0, 'near_zero': 0, 'negative': 30} narr     0.7 true  0.6927 gap -0.00435
+ego_0.9_eisenstein         score/1k  812.925 hit 0.913377482640471 ambBet 0.1225276665881799 alarms  90.5 delay   5.0 FA  0.0 AR -0.7764 split {'positive': 0, 'near_zero': 0, 'negative': 30} narr 0.9873000000000001 true  0.7408 gap 0.24764999999999998
+honest_high_noise          score/1k   551.05 hit 0.7813129227830231 ambBet 0.8347142971036776 alarms  51.5 delay   6.0 FA  1.0 AR 0.30665 split {'positive': 29, 'near_zero': 1, 'negative': 0} narr  0.5951 true  0.5973 gap -0.00265
+ego_0.9_high_noise         score/1k  553.475 hit 0.780438516722239 ambBet 0.9811608590734688 alarms  51.5 delay   6.0 FA  1.0 AR 0.9511499999999999 split {'positive': 28, 'near_zero': 0, 'negative': 2} narr  0.9721 true 0.63615 gap  0.3339
+wrote results/census.json
+CENSUS_DONE

@@ -1,0 +1,4099 @@
+{
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19
+ ],
+ "steps": 20000,
+ "arms": {
+  "hetero alpha=0.05 / noise": {
+   "summary": {
+    "score_per_1000": 964.875,
+    "hit_rate": 0.9739028213576324,
+    "regime_accuracy": 0.9943,
+    "ambiguous_frac": 0.00455,
+    "alarms": 108.5,
+    "detected": 98.5,
+    "attributed": 98.5,
+    "spurious": 9.0,
+    "median_delay": 0.0,
+    "max_delay": 1.0,
+    "switches": 99.5,
+    "AR_final": 0.44355
+   },
+   "runs": [
+    {
+     "seed": 0,
+     "steps": 20000,
+     "score": 19261,
+     "score_per_1000": 963.05,
+     "bets": 19967,
+     "hit_rate": 0.9730054590073621,
+     "void": 373,
+     "counts": {
+      "confident": 19909,
+      "ambiguous-bet": 58,
+      "abstain-ambiguous": 33,
+      "hits": 19428,
+      "misses": 167,
+      "void": 373
+     },
+     "ambiguous_frac": 0.0046,
+     "ambiguous_bet_rate": 0.6373626373626373,
+     "regime_accuracy": 0.9942,
+     "switches": 99,
+     "alarms": 107,
+     "detected": 99,
+     "attributed": 99,
+     "spurious": 8,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.2563,
+     "narrative_rate": 0.6842,
+     "true_rate": 0.6111,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 1,
+     "steps": 20000,
+     "score": 19242,
+     "score_per_1000": 962.1,
+     "bets": 19986,
+     "hit_rate": 0.9713299309516662,
+     "void": 405,
+     "counts": {
+      "confident": 19900,
+      "ambiguous-bet": 86,
+      "abstain-ambiguous": 14,
+      "hits": 19413,
+      "misses": 171,
+      "void": 405
+     },
+     "ambiguous_frac": 0.005,
+     "ambiguous_bet_rate": 0.86,
+     "regime_accuracy": 0.9944,
+     "switches": 97,
+     "alarms": 109,
+     "detected": 97,
+     "attributed": 97,
+     "spurious": 12,
+     "median_delay": 0,
+     "max_delay": 2,
+     "AR_final": 0.4612,
+     "narrative_rate": 0.7843,
+     "true_rate": 0.7604,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 2,
+     "steps": 20000,
+     "score": 19246,
+     "score_per_1000": 962.3,
+     "bets": 19983,
+     "hit_rate": 0.9722764349697243,
+     "void": 371,
+     "counts": {
+      "confident": 19890,
+      "ambiguous-bet": 93,
+      "abstain-ambiguous": 17,
+      "hits": 19429,
+      "misses": 183,
+      "void": 371
+     },
+     "ambiguous_frac": 0.0055,
+     "ambiguous_bet_rate": 0.8454545454545455,
+     "regime_accuracy": 0.9938,
+     "switches": 109,
+     "alarms": 121,
+     "detected": 109,
+     "attributed": 109,
+     "spurious": 12,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.4571,
+     "narrative_rate": 0.6471,
+     "true_rate": 0.7115,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 3,
+     "steps": 20000,
+     "score": 19320,
+     "score_per_1000": 966.0,
+     "bets": 19979,
+     "hit_rate": 0.9751238800740778,
+     "void": 335,
+     "counts": {
+      "confident": 19907,
+      "ambiguous-bet": 72,
+      "abstain-ambiguous": 21,
+      "hits": 19482,
+      "misses": 162,
+      "void": 335
+     },
+     "ambiguous_frac": 0.0046,
+     "ambiguous_bet_rate": 0.7741935483870968,
+     "regime_accuracy": 0.9939,
+     "switches": 104,
+     "alarms": 110,
+     "detected": 104,
+     "attributed": 104,
+     "spurious": 6,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.3411,
+     "narrative_rate": 0.6977,
+     "true_rate": 0.7391,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 4,
+     "steps": 20000,
+     "score": 19248,
+     "score_per_1000": 962.4,
+     "bets": 19992,
+     "hit_rate": 0.9713385354141657,
+     "void": 402,
+     "counts": {
+      "confident": 19902,
+      "ambiguous-bet": 90,
+      "abstain-ambiguous": 8,
+      "hits": 19419,
+      "misses": 171,
+      "void": 402
+     },
+     "ambiguous_frac": 0.0049,
+     "ambiguous_bet_rate": 0.9183673469387755,
+     "regime_accuracy": 0.9941,
+     "switches": 104,
+     "alarms": 112,
+     "detected": 102,
+     "attributed": 102,
+     "spurious": 10,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.4968,
+     "narrative_rate": 0.8333,
+     "true_rate": 0.8085,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 5,
+     "steps": 20000,
+     "score": 19268,
+     "score_per_1000": 963.4,
+     "bets": 19974,
+     "hit_rate": 0.9730149193952138,
+     "void": 373,
+     "counts": {
+      "confident": 19910,
+      "ambiguous-bet": 64,
+      "abstain-ambiguous": 26,
+      "hits": 19435,
+      "misses": 167,
+      "void": 373
+     },
+     "ambiguous_frac": 0.0045,
+     "ambiguous_bet_rate": 0.7111111111111111,
+     "regime_accuracy": 0.9944,
+     "switches": 95,
+     "alarms": 113,
+     "detected": 95,
+     "attributed": 95,
+     "spurious": 18,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.3372,
+     "narrative_rate": 0.7333,
+     "true_rate": 0.7079,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 6,
+     "steps": 20000,
+     "score": 19314,
+     "score_per_1000": 965.7,
+     "bets": 19983,
+     "hit_rate": 0.9745283490967322,
+     "void": 349,
+     "counts": {
+      "confident": 19907,
+      "ambiguous-bet": 76,
+      "abstain-ambiguous": 17,
+      "hits": 19474,
+      "misses": 160,
+      "void": 349
+     },
+     "ambiguous_frac": 0.0046,
+     "ambiguous_bet_rate": 0.8172043010752689,
+     "regime_accuracy": 0.9945,
+     "switches": 95,
+     "alarms": 107,
+     "detected": 95,
+     "attributed": 95,
+     "spurious": 12,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.4573,
+     "narrative_rate": 0.7255,
+     "true_rate": 0.7174,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 7,
+     "steps": 20000,
+     "score": 19295,
+     "score_per_1000": 964.75,
+     "bets": 19978,
+     "hit_rate": 0.9740214235659225,
+     "void": 355,
+     "counts": {
+      "confident": 19916,
+      "ambiguous-bet": 62,
+      "abstain-ambiguous": 22,
+      "hits": 19459,
+      "misses": 164,
+      "void": 355
+     },
+     "ambiguous_frac": 0.0042,
+     "ambiguous_bet_rate": 0.7380952380952381,
+     "regime_accuracy": 0.9936,
+     "switches": 109,
+     "alarms": 125,
+     "detected": 109,
+     "attributed": 109,
+     "spurious": 16,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.3764,
+     "narrative_rate": 0.6977,
+     "true_rate": 0.6867,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 8,
+     "steps": 20000,
+     "score": 19248,
+     "score_per_1000": 962.4,
+     "bets": 19978,
+     "hit_rate": 0.971819000900991,
+     "void": 396,
+     "counts": {
+      "confident": 19900,
+      "ambiguous-bet": 78,
+      "abstain-ambiguous": 22,
+      "hits": 19415,
+      "misses": 167,
+      "void": 396
+     },
+     "ambiguous_frac": 0.005,
+     "ambiguous_bet_rate": 0.78,
+     "regime_accuracy": 0.9946,
+     "switches": 88,
+     "alarms": 100,
+     "detected": 88,
+     "attributed": 88,
+     "spurious": 12,
+     "median_delay": 0,
+     "max_delay": 2,
+     "AR_final": 0.463,
+     "narrative_rate": 0.76,
+     "true_rate": 0.697,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 9,
+     "steps": 20000,
+     "score": 19266,
+     "score_per_1000": 963.3,
+     "bets": 19981,
+     "hit_rate": 0.9731244682448326,
+     "void": 360,
+     "counts": {
+      "confident": 19906,
+      "ambiguous-bet": 75,
+      "abstain-ambiguous": 19,
+      "hits": 19444,
+      "misses": 178,
+      "void": 360
+     },
+     "ambiguous_frac": 0.0047,
+     "ambiguous_bet_rate": 0.7978723404255319,
+     "regime_accuracy": 0.994,
+     "switches": 105,
+     "alarms": 123,
+     "detected": 105,
+     "attributed": 105,
+     "spurious": 18,
+     "median_delay": 0,
+     "max_delay": 2,
+     "AR_final": 0.4601,
+     "narrative_rate": 0.7708,
+     "true_rate": 0.7634,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 10,
+     "steps": 20000,
+     "score": 19334,
+     "score_per_1000": 966.7,
+     "bets": 19987,
+     "hit_rate": 0.9743333166558263,
+     "void": 373,
+     "counts": {
+      "confident": 19931,
+      "ambiguous-bet": 56,
+      "abstain-ambiguous": 13,
+      "hits": 19474,
+      "misses": 140,
+      "void": 373
+     },
+     "ambiguous_frac": 0.0034,
+     "ambiguous_bet_rate": 0.8115942028985508,
+     "regime_accuracy": 0.995,
+     "switches": 91,
+     "alarms": 97,
+     "detected": 91,
+     "attributed": 91,
+     "spurious": 6,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.3739,
+     "narrative_rate": 0.8214,
+     "true_rate": 0.7353,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 11,
+     "steps": 20000,
+     "score": 19292,
+     "score_per_1000": 964.6,
+     "bets": 19980,
+     "hit_rate": 0.9740740740740741,
+     "void": 348,
+     "counts": {
+      "confident": 19919,
+      "ambiguous-bet": 61,
+      "abstain-ambiguous": 20,
+      "hits": 19462,
+      "misses": 170,
+      "void": 348
+     },
+     "ambiguous_frac": 0.004,
+     "ambiguous_bet_rate": 0.7530864197530864,
+     "regime_accuracy": 0.9942,
+     "switches": 107,
+     "alarms": 113,
+     "detected": 107,
+     "attributed": 107,
+     "spurious": 6,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.4173,
+     "narrative_rate": 0.6923,
+     "true_rate": 0.6667,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 12,
+     "steps": 20000,
+     "score": 19300,
+     "score_per_1000": 965.0,
+     "bets": 19987,
+     "hit_rate": 0.974383349176965,
+     "void": 337,
+     "counts": {
+      "confident": 19913,
+      "ambiguous-bet": 74,
+      "abstain-ambiguous": 13,
+      "hits": 19475,
+      "misses": 175,
+      "void": 337
+     },
+     "ambiguous_frac": 0.0043,
+     "ambiguous_bet_rate": 0.8505747126436781,
+     "regime_accuracy": 0.9938,
+     "switches": 109,
+     "alarms": 115,
+     "detected": 109,
+     "attributed": 109,
+     "spurious": 6,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.4553,
+     "narrative_rate": 0.7143,
+     "true_rate": 0.7471,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 13,
+     "steps": 20000,
+     "score": 19317,
+     "score_per_1000": 965.85,
+     "bets": 19984,
+     "hit_rate": 0.9751801441152922,
+     "void": 325,
+     "counts": {
+      "confident": 19897,
+      "ambiguous-bet": 87,
+      "abstain-ambiguous": 16,
+      "hits": 19488,
+      "misses": 171,
+      "void": 325
+     },
+     "ambiguous_frac": 0.0052,
+     "ambiguous_bet_rate": 0.8446601941747572,
+     "regime_accuracy": 0.9947,
+     "switches": 94,
+     "alarms": 100,
+     "detected": 94,
+     "attributed": 94,
+     "spurious": 6,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.5306,
+     "narrative_rate": 0.7818,
+     "true_rate": 0.7255,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 14,
+     "steps": 20000,
+     "score": 19303,
+     "score_per_1000": 965.15,
+     "bets": 19989,
+     "hit_rate": 0.973085196858272,
+     "void": 390,
+     "counts": {
+      "confident": 19911,
+      "ambiguous-bet": 78,
+      "abstain-ambiguous": 11,
+      "hits": 19451,
+      "misses": 148,
+      "void": 390
+     },
+     "ambiguous_frac": 0.0044,
+     "ambiguous_bet_rate": 0.8764044943820225,
+     "regime_accuracy": 0.9954,
+     "switches": 78,
+     "alarms": 86,
+     "detected": 78,
+     "attributed": 78,
+     "spurious": 8,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.5017,
+     "narrative_rate": 0.8163,
+     "true_rate": 0.7841,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 15,
+     "steps": 20000,
+     "score": 19307,
+     "score_per_1000": 965.35,
+     "bets": 19987,
+     "hit_rate": 0.9738830239655776,
+     "void": 364,
+     "counts": {
+      "confident": 19909,
+      "ambiguous-bet": 78,
+      "abstain-ambiguous": 13,
+      "hits": 19465,
+      "misses": 158,
+      "void": 364
+     },
+     "ambiguous_frac": 0.0046,
+     "ambiguous_bet_rate": 0.8571428571428571,
+     "regime_accuracy": 0.9942,
+     "switches": 98,
+     "alarms": 102,
+     "detected": 98,
+     "attributed": 98,
+     "spurious": 4,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.4318,
+     "narrative_rate": 0.7292,
+     "true_rate": 0.7273,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 16,
+     "steps": 20000,
+     "score": 19293,
+     "score_per_1000": 964.65,
+     "bets": 19985,
+     "hit_rate": 0.9733800350262697,
+     "void": 372,
+     "counts": {
+      "confident": 19920,
+      "ambiguous-bet": 65,
+      "abstain-ambiguous": 15,
+      "hits": 19453,
+      "misses": 160,
+      "void": 372
+     },
+     "ambiguous_frac": 0.004,
+     "ambiguous_bet_rate": 0.8125,
+     "regime_accuracy": 0.9943,
+     "switches": 105,
+     "alarms": 105,
+     "detected": 105,
+     "attributed": 105,
+     "spurious": 0,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.4574,
+     "narrative_rate": 0.7209,
+     "true_rate": 0.7436,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 17,
+     "steps": 20000,
+     "score": 19302,
+     "score_per_1000": 965.1,
+     "bets": 19980,
+     "hit_rate": 0.9739239239239239,
+     "void": 364,
+     "counts": {
+      "confident": 19910,
+      "ambiguous-bet": 70,
+      "abstain-ambiguous": 20,
+      "hits": 19459,
+      "misses": 157,
+      "void": 364
+     },
+     "ambiguous_frac": 0.0045,
+     "ambiguous_bet_rate": 0.7777777777777778,
+     "regime_accuracy": 0.9943,
+     "switches": 100,
+     "alarms": 108,
+     "detected": 98,
+     "attributed": 98,
+     "spurious": 10,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.3429,
+     "narrative_rate": 0.7059,
+     "true_rate": 0.7126,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 18,
+     "steps": 20000,
+     "score": 19316,
+     "score_per_1000": 965.8,
+     "bets": 19986,
+     "hit_rate": 0.9740818573001101,
+     "void": 367,
+     "counts": {
+      "confident": 19933,
+      "ambiguous-bet": 53,
+      "abstain-ambiguous": 14,
+      "hits": 19468,
+      "misses": 152,
+      "void": 367
+     },
+     "ambiguous_frac": 0.0034,
+     "ambiguous_bet_rate": 0.7910447761194029,
+     "regime_accuracy": 0.9943,
+     "switches": 104,
+     "alarms": 110,
+     "detected": 104,
+     "attributed": 104,
+     "spurious": 6,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.3928,
+     "narrative_rate": 0.8333,
+     "true_rate": 0.7576,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 19,
+     "steps": 20000,
+     "score": 19310,
+     "score_per_1000": 965.5,
+     "bets": 19979,
+     "hit_rate": 0.9739226187496872,
+     "void": 373,
+     "counts": {
+      "confident": 19921,
+      "ambiguous-bet": 58,
+      "abstain-ambiguous": 21,
+      "hits": 19458,
+      "misses": 148,
+      "void": 373
+     },
+     "ambiguous_frac": 0.004,
+     "ambiguous_bet_rate": 0.7341772151898734,
+     "regime_accuracy": 0.9949,
+     "switches": 84,
+     "alarms": 98,
+     "detected": 84,
+     "attributed": 84,
+     "spurious": 14,
+     "median_delay": 0,
+     "max_delay": 2,
+     "AR_final": 0.2812,
+     "narrative_rate": 0.5152,
+     "true_rate": 0.6026,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    }
+   ]
+  },
+  "hetero alpha=0.01 / noise": {
+   "summary": {
+    "score_per_1000": 964.725,
+    "hit_rate": 0.9735768872663975,
+    "regime_accuracy": 0.9943,
+    "ambiguous_frac": 0.0046,
+    "alarms": 109.0,
+    "detected": 98.5,
+    "attributed": 98.5,
+    "spurious": 10.0,
+    "median_delay": 0.0,
+    "max_delay": 1.0,
+    "switches": 99.5,
+    "AR_final": 0.44575
+   },
+   "runs": [
+    {
+     "seed": 0,
+     "steps": 20000,
+     "score": 19266,
+     "score_per_1000": 963.3,
+     "bets": 19967,
+     "hit_rate": 0.973205789552762,
+     "void": 370,
+     "counts": {
+      "confident": 19909,
+      "ambiguous-bet": 58,
+      "abstain-ambiguous": 33,
+      "hits": 19432,
+      "misses": 166,
+      "void": 370
+     },
+     "ambiguous_frac": 0.0046,
+     "ambiguous_bet_rate": 0.6373626373626373,
+     "regime_accuracy": 0.9942,
+     "switches": 99,
+     "alarms": 107,
+     "detected": 99,
+     "attributed": 99,
+     "spurious": 8,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.2563,
+     "narrative_rate": 0.6842,
+     "true_rate": 0.6111,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 1,
+     "steps": 20000,
+     "score": 19241,
+     "score_per_1000": 962.05,
+     "bets": 19986,
+     "hit_rate": 0.971279895927149,
+     "void": 406,
+     "counts": {
+      "confident": 19900,
+      "ambiguous-bet": 86,
+      "abstain-ambiguous": 14,
+      "hits": 19412,
+      "misses": 171,
+      "void": 406
+     },
+     "ambiguous_frac": 0.005,
+     "ambiguous_bet_rate": 0.86,
+     "regime_accuracy": 0.9943,
+     "switches": 98,
+     "alarms": 110,
+     "detected": 98,
+     "attributed": 98,
+     "spurious": 12,
+     "median_delay": 0,
+     "max_delay": 2,
+     "AR_final": 0.4612,
+     "narrative_rate": 0.7843,
+     "true_rate": 0.7604,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 2,
+     "steps": 20000,
+     "score": 19245,
+     "score_per_1000": 962.25,
+     "bets": 19984,
+     "hit_rate": 0.972177742193755,
+     "void": 373,
+     "counts": {
+      "confident": 19890,
+      "ambiguous-bet": 94,
+      "abstain-ambiguous": 16,
+      "hits": 19428,
+      "misses": 183,
+      "void": 373
+     },
+     "ambiguous_frac": 0.0055,
+     "ambiguous_bet_rate": 0.8545454545454545,
+     "regime_accuracy": 0.9939,
+     "switches": 110,
+     "alarms": 120,
+     "detected": 109,
+     "attributed": 109,
+     "spurious": 11,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.4653,
+     "narrative_rate": 0.7,
+     "true_rate": 0.7308,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 3,
+     "steps": 20000,
+     "score": 19322,
+     "score_per_1000": 966.1,
+     "bets": 19978,
+     "hit_rate": 0.9751726899589549,
+     "void": 336,
+     "counts": {
+      "confident": 19907,
+      "ambiguous-bet": 71,
+      "abstain-ambiguous": 22,
+      "hits": 19482,
+      "misses": 160,
+      "void": 336
+     },
+     "ambiguous_frac": 0.0046,
+     "ambiguous_bet_rate": 0.7634408602150538,
+     "regime_accuracy": 0.994,
+     "switches": 103,
+     "alarms": 109,
+     "detected": 103,
+     "attributed": 103,
+     "spurious": 6,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.3292,
+     "narrative_rate": 0.6905,
+     "true_rate": 0.7283,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 4,
+     "steps": 20000,
+     "score": 19256,
+     "score_per_1000": 962.8,
+     "bets": 19992,
+     "hit_rate": 0.9715386154461785,
+     "void": 402,
+     "counts": {
+      "confident": 19902,
+      "ambiguous-bet": 90,
+      "abstain-ambiguous": 8,
+      "hits": 19423,
+      "misses": 167,
+      "void": 402
+     },
+     "ambiguous_frac": 0.0049,
+     "ambiguous_bet_rate": 0.9183673469387755,
+     "regime_accuracy": 0.9943,
+     "switches": 101,
+     "alarms": 109,
+     "detected": 99,
+     "attributed": 99,
+     "spurious": 10,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.4968,
+     "narrative_rate": 0.8333,
+     "true_rate": 0.8191,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 5,
+     "steps": 20000,
+     "score": 19268,
+     "score_per_1000": 963.4,
+     "bets": 19974,
+     "hit_rate": 0.9730149193952138,
+     "void": 373,
+     "counts": {
+      "confident": 19910,
+      "ambiguous-bet": 64,
+      "abstain-ambiguous": 26,
+      "hits": 19435,
+      "misses": 167,
+      "void": 373
+     },
+     "ambiguous_frac": 0.0045,
+     "ambiguous_bet_rate": 0.7111111111111111,
+     "regime_accuracy": 0.9944,
+     "switches": 95,
+     "alarms": 113,
+     "detected": 95,
+     "attributed": 95,
+     "spurious": 18,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.3372,
+     "narrative_rate": 0.7333,
+     "true_rate": 0.7079,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 6,
+     "steps": 20000,
+     "score": 19319,
+     "score_per_1000": 965.95,
+     "bets": 19986,
+     "hit_rate": 0.9745822075452817,
+     "void": 349,
+     "counts": {
+      "confident": 19907,
+      "ambiguous-bet": 79,
+      "abstain-ambiguous": 14,
+      "hits": 19478,
+      "misses": 159,
+      "void": 349
+     },
+     "ambiguous_frac": 0.0046,
+     "ambiguous_bet_rate": 0.8494623655913979,
+     "regime_accuracy": 0.9946,
+     "switches": 94,
+     "alarms": 106,
+     "detected": 94,
+     "attributed": 94,
+     "spurious": 12,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.4681,
+     "narrative_rate": 0.7308,
+     "true_rate": 0.75,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 7,
+     "steps": 20000,
+     "score": 19287,
+     "score_per_1000": 964.35,
+     "bets": 19986,
+     "hit_rate": 0.9732312618833183,
+     "void": 372,
+     "counts": {
+      "confident": 19911,
+      "ambiguous-bet": 75,
+      "abstain-ambiguous": 14,
+      "hits": 19451,
+      "misses": 164,
+      "void": 372
+     },
+     "ambiguous_frac": 0.0044,
+     "ambiguous_bet_rate": 0.8426966292134831,
+     "regime_accuracy": 0.9938,
+     "switches": 106,
+     "alarms": 120,
+     "detected": 106,
+     "attributed": 106,
+     "spurious": 14,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.4026,
+     "narrative_rate": 0.8043,
+     "true_rate": 0.7816,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 8,
+     "steps": 20000,
+     "score": 19250,
+     "score_per_1000": 962.5,
+     "bets": 19978,
+     "hit_rate": 0.9717689458404245,
+     "void": 400,
+     "counts": {
+      "confident": 19900,
+      "ambiguous-bet": 78,
+      "abstain-ambiguous": 22,
+      "hits": 19414,
+      "misses": 164,
+      "void": 400
+     },
+     "ambiguous_frac": 0.005,
+     "ambiguous_bet_rate": 0.78,
+     "regime_accuracy": 0.9946,
+     "switches": 87,
+     "alarms": 99,
+     "detected": 87,
+     "attributed": 87,
+     "spurious": 12,
+     "median_delay": 0,
+     "max_delay": 2,
+     "AR_final": 0.4528,
+     "narrative_rate": 0.7551,
+     "true_rate": 0.697,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 9,
+     "steps": 20000,
+     "score": 19272,
+     "score_per_1000": 963.6,
+     "bets": 19983,
+     "hit_rate": 0.9732772856928389,
+     "void": 358,
+     "counts": {
+      "confident": 19906,
+      "ambiguous-bet": 77,
+      "abstain-ambiguous": 17,
+      "hits": 19449,
+      "misses": 177,
+      "void": 358
+     },
+     "ambiguous_frac": 0.0047,
+     "ambiguous_bet_rate": 0.8191489361702128,
+     "regime_accuracy": 0.9941,
+     "switches": 104,
+     "alarms": 120,
+     "detected": 104,
+     "attributed": 104,
+     "spurious": 16,
+     "median_delay": 0,
+     "max_delay": 2,
+     "AR_final": 0.4682,
+     "narrative_rate": 0.7447,
+     "true_rate": 0.7527,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 10,
+     "steps": 20000,
+     "score": 19334,
+     "score_per_1000": 966.7,
+     "bets": 19987,
+     "hit_rate": 0.9742832841346876,
+     "void": 375,
+     "counts": {
+      "confident": 19931,
+      "ambiguous-bet": 56,
+      "abstain-ambiguous": 13,
+      "hits": 19473,
+      "misses": 139,
+      "void": 375
+     },
+     "ambiguous_frac": 0.0034,
+     "ambiguous_bet_rate": 0.8115942028985508,
+     "regime_accuracy": 0.995,
+     "switches": 91,
+     "alarms": 97,
+     "detected": 91,
+     "attributed": 91,
+     "spurious": 6,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.3857,
+     "narrative_rate": 0.8276,
+     "true_rate": 0.7353,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 11,
+     "steps": 20000,
+     "score": 19285,
+     "score_per_1000": 964.25,
+     "bets": 19982,
+     "hit_rate": 0.9738764888399559,
+     "void": 347,
+     "counts": {
+      "confident": 19910,
+      "ambiguous-bet": 72,
+      "abstain-ambiguous": 18,
+      "hits": 19460,
+      "misses": 175,
+      "void": 347
+     },
+     "ambiguous_frac": 0.0045,
+     "ambiguous_bet_rate": 0.8,
+     "regime_accuracy": 0.9941,
+     "switches": 107,
+     "alarms": 113,
+     "detected": 107,
+     "attributed": 107,
+     "spurious": 6,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.4539,
+     "narrative_rate": 0.7021,
+     "true_rate": 0.7,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 12,
+     "steps": 20000,
+     "score": 19305,
+     "score_per_1000": 965.25,
+     "bets": 19987,
+     "hit_rate": 0.9744333816981038,
+     "void": 340,
+     "counts": {
+      "confident": 19913,
+      "ambiguous-bet": 74,
+      "abstain-ambiguous": 13,
+      "hits": 19476,
+      "misses": 171,
+      "void": 340
+     },
+     "ambiguous_frac": 0.0043,
+     "ambiguous_bet_rate": 0.8505747126436781,
+     "regime_accuracy": 0.9939,
+     "switches": 107,
+     "alarms": 113,
+     "detected": 107,
+     "attributed": 107,
+     "spurious": 6,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.4559,
+     "narrative_rate": 0.7143,
+     "true_rate": 0.7471,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 13,
+     "steps": 20000,
+     "score": 19306,
+     "score_per_1000": 965.3,
+     "bets": 19983,
+     "hit_rate": 0.9749286893859781,
+     "void": 325,
+     "counts": {
+      "confident": 19892,
+      "ambiguous-bet": 91,
+      "abstain-ambiguous": 17,
+      "hits": 19482,
+      "misses": 176,
+      "void": 325
+     },
+     "ambiguous_frac": 0.0054,
+     "ambiguous_bet_rate": 0.8425925925925926,
+     "regime_accuracy": 0.9944,
+     "switches": 97,
+     "alarms": 107,
+     "detected": 97,
+     "attributed": 97,
+     "spurious": 10,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.5026,
+     "narrative_rate": 0.75,
+     "true_rate": 0.7264,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 14,
+     "steps": 20000,
+     "score": 19306,
+     "score_per_1000": 965.3,
+     "bets": 19988,
+     "hit_rate": 0.9732339403642185,
+     "void": 388,
+     "counts": {
+      "confident": 19911,
+      "ambiguous-bet": 77,
+      "abstain-ambiguous": 12,
+      "hits": 19453,
+      "misses": 147,
+      "void": 388
+     },
+     "ambiguous_frac": 0.0044,
+     "ambiguous_bet_rate": 0.8651685393258427,
+     "regime_accuracy": 0.9954,
+     "switches": 77,
+     "alarms": 85,
+     "detected": 77,
+     "attributed": 77,
+     "spurious": 8,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.4777,
+     "narrative_rate": 0.8,
+     "true_rate": 0.7727,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 15,
+     "steps": 20000,
+     "score": 19310,
+     "score_per_1000": 965.5,
+     "bets": 19987,
+     "hit_rate": 0.9739330564867164,
+     "void": 365,
+     "counts": {
+      "confident": 19909,
+      "ambiguous-bet": 78,
+      "abstain-ambiguous": 13,
+      "hits": 19466,
+      "misses": 156,
+      "void": 365
+     },
+     "ambiguous_frac": 0.0046,
+     "ambiguous_bet_rate": 0.8571428571428571,
+     "regime_accuracy": 0.9943,
+     "switches": 97,
+     "alarms": 101,
+     "detected": 97,
+     "attributed": 97,
+     "spurious": 4,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.4387,
+     "narrative_rate": 0.7347,
+     "true_rate": 0.7273,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 16,
+     "steps": 20000,
+     "score": 19278,
+     "score_per_1000": 963.9,
+     "bets": 19985,
+     "hit_rate": 0.972579434575932,
+     "void": 389,
+     "counts": {
+      "confident": 19920,
+      "ambiguous-bet": 65,
+      "abstain-ambiguous": 15,
+      "hits": 19437,
+      "misses": 159,
+      "void": 389
+     },
+     "ambiguous_frac": 0.004,
+     "ambiguous_bet_rate": 0.8125,
+     "regime_accuracy": 0.9941,
+     "switches": 108,
+     "alarms": 114,
+     "detected": 108,
+     "attributed": 108,
+     "spurious": 6,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.4279,
+     "narrative_rate": 0.7381,
+     "true_rate": 0.7564,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 17,
+     "steps": 20000,
+     "score": 19302,
+     "score_per_1000": 965.1,
+     "bets": 19979,
+     "hit_rate": 0.9739726713048701,
+     "void": 363,
+     "counts": {
+      "confident": 19909,
+      "ambiguous-bet": 70,
+      "abstain-ambiguous": 21,
+      "hits": 19459,
+      "misses": 157,
+      "void": 363
+     },
+     "ambiguous_frac": 0.0046,
+     "ambiguous_bet_rate": 0.7692307692307693,
+     "regime_accuracy": 0.9943,
+     "switches": 100,
+     "alarms": 108,
+     "detected": 98,
+     "attributed": 98,
+     "spurious": 10,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.3429,
+     "narrative_rate": 0.7059,
+     "true_rate": 0.7045,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 18,
+     "steps": 20000,
+     "score": 19327,
+     "score_per_1000": 966.35,
+     "bets": 19988,
+     "hit_rate": 0.974384630778467,
+     "void": 364,
+     "counts": {
+      "confident": 19933,
+      "ambiguous-bet": 55,
+      "abstain-ambiguous": 12,
+      "hits": 19476,
+      "misses": 149,
+      "void": 364
+     },
+     "ambiguous_frac": 0.0034,
+     "ambiguous_bet_rate": 0.8208955223880597,
+     "regime_accuracy": 0.9944,
+     "switches": 101,
+     "alarms": 109,
+     "detected": 101,
+     "attributed": 101,
+     "spurious": 8,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.3817,
+     "narrative_rate": 0.8966,
+     "true_rate": 0.7727,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 19,
+     "steps": 20000,
+     "score": 19310,
+     "score_per_1000": 965.5,
+     "bets": 19979,
+     "hit_rate": 0.9739226187496872,
+     "void": 373,
+     "counts": {
+      "confident": 19921,
+      "ambiguous-bet": 58,
+      "abstain-ambiguous": 21,
+      "hits": 19458,
+      "misses": 148,
+      "void": 373
+     },
+     "ambiguous_frac": 0.004,
+     "ambiguous_bet_rate": 0.7341772151898734,
+     "regime_accuracy": 0.9949,
+     "switches": 84,
+     "alarms": 98,
+     "detected": 84,
+     "attributed": 84,
+     "spurious": 14,
+     "median_delay": 0,
+     "max_delay": 2,
+     "AR_final": 0.2812,
+     "narrative_rate": 0.5152,
+     "true_rate": 0.6026,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": null,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    }
+   ]
+  },
+  "hetero alpha=0.05 / trick": {
+   "summary": {
+    "score_per_1000": 943.825,
+    "hit_rate": 0.9571671387342142,
+    "regime_accuracy": 0.9934000000000001,
+    "ambiguous_frac": 0.0085,
+    "alarms": 121.0,
+    "detected": 101.5,
+    "attributed": 101.5,
+    "spurious": 24.0,
+    "median_delay": 0.0,
+    "max_delay": 2.0,
+    "switches": 101.5,
+    "AR_final": 0.5374
+   },
+   "runs": [
+    {
+     "seed": 0,
+     "steps": 20000,
+     "score": 18857,
+     "score_per_1000": 942.85,
+     "bets": 19969,
+     "hit_rate": 0.9550302969602884,
+     "void": 688,
+     "counts": {
+      "confident": 19851,
+      "ambiguous-bet": 118,
+      "abstain-ambiguous": 31,
+      "hits": 19071,
+      "misses": 214,
+      "void": 688
+     },
+     "ambiguous_frac": 0.0075,
+     "ambiguous_bet_rate": 0.7919463087248322,
+     "regime_accuracy": 0.9935,
+     "switches": 107,
+     "alarms": 121,
+     "detected": 105,
+     "attributed": 106,
+     "spurious": 15,
+     "median_delay": 0,
+     "max_delay": 168,
+     "AR_final": 0.4782,
+     "narrative_rate": 0.6567,
+     "true_rate": 0.7214,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 1,
+     "steps": 20000,
+     "score": 18962,
+     "score_per_1000": 948.1,
+     "bets": 19982,
+     "hit_rate": 0.9587628865979382,
+     "void": 629,
+     "counts": {
+      "confident": 19850,
+      "ambiguous-bet": 132,
+      "abstain-ambiguous": 18,
+      "hits": 19158,
+      "misses": 196,
+      "void": 629
+     },
+     "ambiguous_frac": 0.0075,
+     "ambiguous_bet_rate": 0.88,
+     "regime_accuracy": 0.9949,
+     "switches": 79,
+     "alarms": 87,
+     "detected": 79,
+     "attributed": 79,
+     "spurious": 8,
+     "median_delay": 0,
+     "max_delay": 2,
+     "AR_final": 0.6594,
+     "narrative_rate": 0.8625,
+     "true_rate": 0.8082,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 2,
+     "steps": 20000,
+     "score": 18938,
+     "score_per_1000": 946.9,
+     "bets": 19970,
+     "hit_rate": 0.9595393089634452,
+     "void": 584,
+     "counts": {
+      "confident": 19831,
+      "ambiguous-bet": 139,
+      "abstain-ambiguous": 30,
+      "hits": 19162,
+      "misses": 224,
+      "void": 584
+     },
+     "ambiguous_frac": 0.0084,
+     "ambiguous_bet_rate": 0.8224852071005917,
+     "regime_accuracy": 0.9936,
+     "switches": 97,
+     "alarms": 121,
+     "detected": 97,
+     "attributed": 97,
+     "spurious": 24,
+     "median_delay": 0,
+     "max_delay": 2,
+     "AR_final": 0.4919,
+     "narrative_rate": 0.726,
+     "true_rate": 0.7152,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 3,
+     "steps": 20000,
+     "score": 18877,
+     "score_per_1000": 943.85,
+     "bets": 19981,
+     "hit_rate": 0.9572593964266053,
+     "void": 604,
+     "counts": {
+      "confident": 19826,
+      "ambiguous-bet": 155,
+      "abstain-ambiguous": 19,
+      "hits": 19127,
+      "misses": 250,
+      "void": 604
+     },
+     "ambiguous_frac": 0.0087,
+     "ambiguous_bet_rate": 0.8908045977011494,
+     "regime_accuracy": 0.9929,
+     "switches": 106,
+     "alarms": 130,
+     "detected": 106,
+     "attributed": 106,
+     "spurious": 24,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.6044,
+     "narrative_rate": 0.7765,
+     "true_rate": 0.7784,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 4,
+     "steps": 20000,
+     "score": 18935,
+     "score_per_1000": 946.75,
+     "bets": 19971,
+     "hit_rate": 0.9590906814881578,
+     "void": 598,
+     "counts": {
+      "confident": 19835,
+      "ambiguous-bet": 136,
+      "abstain-ambiguous": 29,
+      "hits": 19154,
+      "misses": 219,
+      "void": 598
+     },
+     "ambiguous_frac": 0.0083,
+     "ambiguous_bet_rate": 0.8242424242424242,
+     "regime_accuracy": 0.9941,
+     "switches": 84,
+     "alarms": 112,
+     "detected": 84,
+     "attributed": 84,
+     "spurious": 28,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.4929,
+     "narrative_rate": 0.7416,
+     "true_rate": 0.7197,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 5,
+     "steps": 20000,
+     "score": 18848,
+     "score_per_1000": 942.4,
+     "bets": 19979,
+     "hit_rate": 0.9556534361079133,
+     "void": 643,
+     "counts": {
+      "confident": 19829,
+      "ambiguous-bet": 150,
+      "abstain-ambiguous": 21,
+      "hits": 19093,
+      "misses": 245,
+      "void": 643
+     },
+     "ambiguous_frac": 0.0086,
+     "ambiguous_bet_rate": 0.8771929824561403,
+     "regime_accuracy": 0.9933,
+     "switches": 101,
+     "alarms": 141,
+     "detected": 101,
+     "attributed": 101,
+     "spurious": 40,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.5637,
+     "narrative_rate": 0.7528,
+     "true_rate": 0.7321,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 6,
+     "steps": 20000,
+     "score": 18908,
+     "score_per_1000": 945.4,
+     "bets": 19983,
+     "hit_rate": 0.9565630786168243,
+     "void": 661,
+     "counts": {
+      "confident": 19861,
+      "ambiguous-bet": 122,
+      "abstain-ambiguous": 17,
+      "hits": 19115,
+      "misses": 207,
+      "void": 661
+     },
+     "ambiguous_frac": 0.0069,
+     "ambiguous_bet_rate": 0.8776978417266187,
+     "regime_accuracy": 0.9942,
+     "switches": 92,
+     "alarms": 112,
+     "detected": 92,
+     "attributed": 92,
+     "spurious": 20,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.3785,
+     "narrative_rate": 0.6515,
+     "true_rate": 0.7681,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 7,
+     "steps": 20000,
+     "score": 18825,
+     "score_per_1000": 941.25,
+     "bets": 19970,
+     "hit_rate": 0.9553830746119178,
+     "void": 639,
+     "counts": {
+      "confident": 19811,
+      "ambiguous-bet": 159,
+      "abstain-ambiguous": 30,
+      "hits": 19079,
+      "misses": 254,
+      "void": 639
+     },
+     "ambiguous_frac": 0.0095,
+     "ambiguous_bet_rate": 0.8412698412698413,
+     "regime_accuracy": 0.9927,
+     "switches": 111,
+     "alarms": 145,
+     "detected": 109,
+     "attributed": 109,
+     "spurious": 36,
+     "median_delay": 0,
+     "max_delay": 3,
+     "AR_final": 0.5806,
+     "narrative_rate": 0.7234,
+     "true_rate": 0.7514,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 8,
+     "steps": 20000,
+     "score": 18907,
+     "score_per_1000": 945.35,
+     "bets": 19979,
+     "hit_rate": 0.9575053806496822,
+     "void": 627,
+     "counts": {
+      "confident": 19846,
+      "ambiguous-bet": 133,
+      "abstain-ambiguous": 21,
+      "hits": 19130,
+      "misses": 223,
+      "void": 627
+     },
+     "ambiguous_frac": 0.0077,
+     "ambiguous_bet_rate": 0.8636363636363636,
+     "regime_accuracy": 0.9931,
+     "switches": 108,
+     "alarms": 118,
+     "detected": 106,
+     "attributed": 107,
+     "spurious": 11,
+     "median_delay": 0,
+     "max_delay": 4,
+     "AR_final": 0.5364,
+     "narrative_rate": 0.7733,
+     "true_rate": 0.7718,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 9,
+     "steps": 20000,
+     "score": 18806,
+     "score_per_1000": 940.3,
+     "bets": 19974,
+     "hit_rate": 0.9535896665665365,
+     "void": 686,
+     "counts": {
+      "confident": 19828,
+      "ambiguous-bet": 146,
+      "abstain-ambiguous": 26,
+      "hits": 19047,
+      "misses": 241,
+      "void": 686
+     },
+     "ambiguous_frac": 0.0086,
+     "ambiguous_bet_rate": 0.8488372093023255,
+     "regime_accuracy": 0.9926,
+     "switches": 114,
+     "alarms": 136,
+     "detected": 114,
+     "attributed": 114,
+     "spurious": 22,
+     "median_delay": 0,
+     "max_delay": 2,
+     "AR_final": 0.5493,
+     "narrative_rate": 0.7875,
+     "true_rate": 0.7725,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 10,
+     "steps": 20000,
+     "score": 18872,
+     "score_per_1000": 943.6,
+     "bets": 19983,
+     "hit_rate": 0.955862483110644,
+     "void": 654,
+     "counts": {
+      "confident": 19835,
+      "ambiguous-bet": 148,
+      "abstain-ambiguous": 17,
+      "hits": 19101,
+      "misses": 229,
+      "void": 654
+     },
+     "ambiguous_frac": 0.0083,
+     "ambiguous_bet_rate": 0.896969696969697,
+     "regime_accuracy": 0.9938,
+     "switches": 97,
+     "alarms": 115,
+     "detected": 96,
+     "attributed": 96,
+     "spurious": 19,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.5173,
+     "narrative_rate": 0.7317,
+     "true_rate": 0.7421,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 11,
+     "steps": 20000,
+     "score": 18949,
+     "score_per_1000": 947.45,
+     "bets": 19979,
+     "hit_rate": 0.9586565894188899,
+     "void": 622,
+     "counts": {
+      "confident": 19848,
+      "ambiguous-bet": 131,
+      "abstain-ambiguous": 21,
+      "hits": 19153,
+      "misses": 204,
+      "void": 622
+     },
+     "ambiguous_frac": 0.0076,
+     "ambiguous_bet_rate": 0.8618421052631579,
+     "regime_accuracy": 0.9949,
+     "switches": 80,
+     "alarms": 98,
+     "detected": 80,
+     "attributed": 80,
+     "spurious": 18,
+     "median_delay": 0,
+     "max_delay": 2,
+     "AR_final": 0.5384,
+     "narrative_rate": 0.7671,
+     "true_rate": 0.7467,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 12,
+     "steps": 20000,
+     "score": 18888,
+     "score_per_1000": 944.4,
+     "bets": 19974,
+     "hit_rate": 0.957344547912286,
+     "void": 619,
+     "counts": {
+      "confident": 19839,
+      "ambiguous-bet": 135,
+      "abstain-ambiguous": 26,
+      "hits": 19122,
+      "misses": 234,
+      "void": 619
+     },
+     "ambiguous_frac": 0.008,
+     "ambiguous_bet_rate": 0.8385093167701864,
+     "regime_accuracy": 0.9925,
+     "switches": 111,
+     "alarms": 139,
+     "detected": 111,
+     "attributed": 111,
+     "spurious": 28,
+     "median_delay": 0,
+     "max_delay": 2,
+     "AR_final": 0.5483,
+     "narrative_rate": 0.7973,
+     "true_rate": 0.7452,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 13,
+     "steps": 20000,
+     "score": 18823,
+     "score_per_1000": 941.15,
+     "bets": 19967,
+     "hit_rate": 0.9549256272850203,
+     "void": 656,
+     "counts": {
+      "confident": 19822,
+      "ambiguous-bet": 145,
+      "abstain-ambiguous": 33,
+      "hits": 19067,
+      "misses": 244,
+      "void": 656
+     },
+     "ambiguous_frac": 0.0089,
+     "ambiguous_bet_rate": 0.8146067415730337,
+     "regime_accuracy": 0.9933,
+     "switches": 107,
+     "alarms": 133,
+     "detected": 107,
+     "attributed": 107,
+     "spurious": 26,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.6041,
+     "narrative_rate": 0.6914,
+     "true_rate": 0.7427,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 14,
+     "steps": 20000,
+     "score": 18812,
+     "score_per_1000": 940.6,
+     "bets": 19980,
+     "hit_rate": 0.954004004004004,
+     "void": 671,
+     "counts": {
+      "confident": 19826,
+      "ambiguous-bet": 154,
+      "abstain-ambiguous": 20,
+      "hits": 19061,
+      "misses": 249,
+      "void": 671
+     },
+     "ambiguous_frac": 0.0087,
+     "ambiguous_bet_rate": 0.8850574712643678,
+     "regime_accuracy": 0.9932,
+     "switches": 102,
+     "alarms": 118,
+     "detected": 102,
+     "attributed": 102,
+     "spurious": 16,
+     "median_delay": 0,
+     "max_delay": 2,
+     "AR_final": 0.4411,
+     "narrative_rate": 0.679,
+     "true_rate": 0.7679,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 15,
+     "steps": 20000,
+     "score": 18908,
+     "score_per_1000": 945.4,
+     "bets": 19977,
+     "hit_rate": 0.958051759523452,
+     "void": 607,
+     "counts": {
+      "confident": 19828,
+      "ambiguous-bet": 149,
+      "abstain-ambiguous": 23,
+      "hits": 19139,
+      "misses": 231,
+      "void": 607
+     },
+     "ambiguous_frac": 0.0086,
+     "ambiguous_bet_rate": 0.8662790697674418,
+     "regime_accuracy": 0.9938,
+     "switches": 98,
+     "alarms": 118,
+     "detected": 98,
+     "attributed": 98,
+     "spurious": 20,
+     "median_delay": 0,
+     "max_delay": 2,
+     "AR_final": 0.4955,
+     "narrative_rate": 0.7711,
+     "true_rate": 0.75,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 16,
+     "steps": 20000,
+     "score": 18876,
+     "score_per_1000": 943.8,
+     "bets": 19975,
+     "hit_rate": 0.9574468085106383,
+     "void": 602,
+     "counts": {
+      "confident": 19808,
+      "ambiguous-bet": 167,
+      "abstain-ambiguous": 25,
+      "hits": 19125,
+      "misses": 249,
+      "void": 602
+     },
+     "ambiguous_frac": 0.0096,
+     "ambiguous_bet_rate": 0.8697916666666666,
+     "regime_accuracy": 0.9939,
+     "switches": 94,
+     "alarms": 130,
+     "detected": 92,
+     "attributed": 93,
+     "spurious": 37,
+     "median_delay": 0,
+     "max_delay": 106,
+     "AR_final": 0.5664,
+     "narrative_rate": 0.7447,
+     "true_rate": 0.7403,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 17,
+     "steps": 20000,
+     "score": 18944,
+     "score_per_1000": 947.2,
+     "bets": 19973,
+     "hit_rate": 0.958594102037751,
+     "void": 625,
+     "counts": {
+      "confident": 19858,
+      "ambiguous-bet": 115,
+      "abstain-ambiguous": 27,
+      "hits": 19146,
+      "misses": 202,
+      "void": 625
+     },
+     "ambiguous_frac": 0.0071,
+     "ambiguous_bet_rate": 0.8098591549295775,
+     "regime_accuracy": 0.9943,
+     "switches": 85,
+     "alarms": 111,
+     "detected": 85,
+     "attributed": 85,
+     "spurious": 26,
+     "median_delay": 0,
+     "max_delay": 2,
+     "AR_final": 0.5161,
+     "narrative_rate": 0.7465,
+     "true_rate": 0.7372,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 18,
+     "steps": 20000,
+     "score": 18860,
+     "score_per_1000": 943.0,
+     "bets": 19965,
+     "hit_rate": 0.9570748810418231,
+     "void": 612,
+     "counts": {
+      "confident": 19828,
+      "ambiguous-bet": 137,
+      "abstain-ambiguous": 35,
+      "hits": 19108,
+      "misses": 248,
+      "void": 612
+     },
+     "ambiguous_frac": 0.0086,
+     "ambiguous_bet_rate": 0.7965116279069767,
+     "regime_accuracy": 0.9923,
+     "switches": 110,
+     "alarms": 152,
+     "detected": 110,
+     "attributed": 110,
+     "spurious": 42,
+     "median_delay": 0,
+     "max_delay": 2,
+     "AR_final": 0.447,
+     "narrative_rate": 0.7108,
+     "true_rate": 0.6886,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 19,
+     "steps": 20000,
+     "score": 18805,
+     "score_per_1000": 940.25,
+     "bets": 19972,
+     "hit_rate": 0.9538353695173243,
+     "void": 680,
+     "counts": {
+      "confident": 19816,
+      "ambiguous-bet": 156,
+      "abstain-ambiguous": 28,
+      "hits": 19050,
+      "misses": 245,
+      "void": 680
+     },
+     "ambiguous_frac": 0.0092,
+     "ambiguous_bet_rate": 0.8478260869565217,
+     "regime_accuracy": 0.9931,
+     "switches": 105,
+     "alarms": 129,
+     "detected": 104,
+     "attributed": 104,
+     "spurious": 25,
+     "median_delay": 0,
+     "max_delay": 3,
+     "AR_final": 0.5937,
+     "narrative_rate": 0.7821,
+     "true_rate": 0.7674,
+     "band_A": 2.9444,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.05,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    }
+   ]
+  },
+  "hetero alpha=0.01 / trick": {
+   "summary": {
+    "score_per_1000": 944.575,
+    "hit_rate": 0.9568067980426639,
+    "regime_accuracy": 0.9936,
+    "ambiguous_frac": 0.00865,
+    "alarms": 122.0,
+    "detected": 99.0,
+    "attributed": 99.0,
+    "spurious": 22.0,
+    "median_delay": 0.0,
+    "max_delay": 2.0,
+    "switches": 99.5,
+    "AR_final": 0.54465
+   },
+   "runs": [
+    {
+     "seed": 0,
+     "steps": 20000,
+     "score": 18848,
+     "score_per_1000": 942.4,
+     "bets": 19974,
+     "hit_rate": 0.9548412936817863,
+     "void": 679,
+     "counts": {
+      "confident": 19843,
+      "ambiguous-bet": 131,
+      "abstain-ambiguous": 26,
+      "hits": 19072,
+      "misses": 224,
+      "void": 679
+     },
+     "ambiguous_frac": 0.0078,
+     "ambiguous_bet_rate": 0.8343949044585988,
+     "regime_accuracy": 0.9931,
+     "switches": 113,
+     "alarms": 121,
+     "detected": 111,
+     "attributed": 112,
+     "spurious": 9,
+     "median_delay": 0,
+     "max_delay": 168,
+     "AR_final": 0.5699,
+     "narrative_rate": 0.68,
+     "true_rate": 0.7368,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 1,
+     "steps": 20000,
+     "score": 18916,
+     "score_per_1000": 945.8,
+     "bets": 19984,
+     "hit_rate": 0.9576160928742994,
+     "void": 627,
+     "counts": {
+      "confident": 19827,
+      "ambiguous-bet": 157,
+      "abstain-ambiguous": 16,
+      "hits": 19137,
+      "misses": 221,
+      "void": 627
+     },
+     "ambiguous_frac": 0.0086,
+     "ambiguous_bet_rate": 0.9075144508670521,
+     "regime_accuracy": 0.994,
+     "switches": 89,
+     "alarms": 109,
+     "detected": 89,
+     "attributed": 89,
+     "spurious": 20,
+     "median_delay": 0,
+     "max_delay": 2,
+     "AR_final": 0.6439,
+     "narrative_rate": 0.8118,
+     "true_rate": 0.8084,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 2,
+     "steps": 20000,
+     "score": 18894,
+     "score_per_1000": 944.7,
+     "bets": 19984,
+     "hit_rate": 0.9571657325860689,
+     "void": 622,
+     "counts": {
+      "confident": 19806,
+      "ambiguous-bet": 178,
+      "abstain-ambiguous": 16,
+      "hits": 19128,
+      "misses": 234,
+      "void": 622
+     },
+     "ambiguous_frac": 0.0097,
+     "ambiguous_bet_rate": 0.9175257731958762,
+     "regime_accuracy": 0.9936,
+     "switches": 95,
+     "alarms": 123,
+     "detected": 95,
+     "attributed": 95,
+     "spurious": 28,
+     "median_delay": 0,
+     "max_delay": 2,
+     "AR_final": 0.4445,
+     "narrative_rate": 0.7342,
+     "true_rate": 0.7796,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 3,
+     "steps": 20000,
+     "score": 18889,
+     "score_per_1000": 944.45,
+     "bets": 19989,
+     "hit_rate": 0.956826254439942,
+     "void": 626,
+     "counts": {
+      "confident": 19815,
+      "ambiguous-bet": 174,
+      "abstain-ambiguous": 11,
+      "hits": 19126,
+      "misses": 237,
+      "void": 626
+     },
+     "ambiguous_frac": 0.0092,
+     "ambiguous_bet_rate": 0.9405405405405406,
+     "regime_accuracy": 0.9934,
+     "switches": 100,
+     "alarms": 118,
+     "detected": 100,
+     "attributed": 100,
+     "spurious": 18,
+     "median_delay": 0,
+     "max_delay": 2,
+     "AR_final": 0.5517,
+     "narrative_rate": 0.8,
+     "true_rate": 0.8068,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 4,
+     "steps": 20000,
+     "score": 18903,
+     "score_per_1000": 945.15,
+     "bets": 19984,
+     "hit_rate": 0.9565152121697358,
+     "void": 657,
+     "counts": {
+      "confident": 19830,
+      "ambiguous-bet": 154,
+      "abstain-ambiguous": 16,
+      "hits": 19115,
+      "misses": 212,
+      "void": 657
+     },
+     "ambiguous_frac": 0.0085,
+     "ambiguous_bet_rate": 0.9058823529411765,
+     "regime_accuracy": 0.9942,
+     "switches": 93,
+     "alarms": 113,
+     "detected": 93,
+     "attributed": 93,
+     "spurious": 20,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.5765,
+     "narrative_rate": 0.7753,
+     "true_rate": 0.784,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 5,
+     "steps": 20000,
+     "score": 18826,
+     "score_per_1000": 941.3,
+     "bets": 19982,
+     "hit_rate": 0.9546591932739465,
+     "void": 658,
+     "counts": {
+      "confident": 19818,
+      "ambiguous-bet": 164,
+      "abstain-ambiguous": 18,
+      "hits": 19076,
+      "misses": 250,
+      "void": 658
+     },
+     "ambiguous_frac": 0.0091,
+     "ambiguous_bet_rate": 0.9010989010989011,
+     "regime_accuracy": 0.993,
+     "switches": 111,
+     "alarms": 141,
+     "detected": 111,
+     "attributed": 111,
+     "spurious": 30,
+     "median_delay": 0,
+     "max_delay": 2,
+     "AR_final": 0.564,
+     "narrative_rate": 0.8191,
+     "true_rate": 0.8079,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 6,
+     "steps": 20000,
+     "score": 18904,
+     "score_per_1000": 945.2,
+     "bets": 19981,
+     "hit_rate": 0.9564586357039188,
+     "void": 663,
+     "counts": {
+      "confident": 19856,
+      "ambiguous-bet": 125,
+      "abstain-ambiguous": 19,
+      "hits": 19111,
+      "misses": 207,
+      "void": 663
+     },
+     "ambiguous_frac": 0.0072,
+     "ambiguous_bet_rate": 0.8680555555555556,
+     "regime_accuracy": 0.9942,
+     "switches": 92,
+     "alarms": 112,
+     "detected": 92,
+     "attributed": 92,
+     "spurious": 20,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.3928,
+     "narrative_rate": 0.6471,
+     "true_rate": 0.7622,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 7,
+     "steps": 20000,
+     "score": 18861,
+     "score_per_1000": 943.05,
+     "bets": 19972,
+     "hit_rate": 0.9563889445223313,
+     "void": 632,
+     "counts": {
+      "confident": 19816,
+      "ambiguous-bet": 156,
+      "abstain-ambiguous": 28,
+      "hits": 19101,
+      "misses": 240,
+      "void": 632
+     },
+     "ambiguous_frac": 0.0092,
+     "ambiguous_bet_rate": 0.8478260869565217,
+     "regime_accuracy": 0.9931,
+     "switches": 106,
+     "alarms": 138,
+     "detected": 104,
+     "attributed": 104,
+     "spurious": 34,
+     "median_delay": 0,
+     "max_delay": 2,
+     "AR_final": 0.5376,
+     "narrative_rate": 0.7253,
+     "true_rate": 0.7558,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 8,
+     "steps": 20000,
+     "score": 18937,
+     "score_per_1000": 946.85,
+     "bets": 19986,
+     "hit_rate": 0.9574201941358951,
+     "void": 653,
+     "counts": {
+      "confident": 19854,
+      "ambiguous-bet": 132,
+      "abstain-ambiguous": 14,
+      "hits": 19135,
+      "misses": 198,
+      "void": 653
+     },
+     "ambiguous_frac": 0.0073,
+     "ambiguous_bet_rate": 0.9041095890410958,
+     "regime_accuracy": 0.9942,
+     "switches": 97,
+     "alarms": 103,
+     "detected": 97,
+     "attributed": 97,
+     "spurious": 6,
+     "median_delay": 0,
+     "max_delay": 2,
+     "AR_final": 0.6341,
+     "narrative_rate": 0.8354,
+     "true_rate": 0.8239,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 9,
+     "steps": 20000,
+     "score": 18771,
+     "score_per_1000": 938.55,
+     "bets": 19982,
+     "hit_rate": 0.9526573916524872,
+     "void": 681,
+     "counts": {
+      "confident": 19792,
+      "ambiguous-bet": 190,
+      "abstain-ambiguous": 18,
+      "hits": 19036,
+      "misses": 265,
+      "void": 681
+     },
+     "ambiguous_frac": 0.0104,
+     "ambiguous_bet_rate": 0.9134615384615384,
+     "regime_accuracy": 0.9925,
+     "switches": 118,
+     "alarms": 138,
+     "detected": 118,
+     "attributed": 118,
+     "spurious": 20,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.635,
+     "narrative_rate": 0.8,
+     "true_rate": 0.8191,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 10,
+     "steps": 20000,
+     "score": 18915,
+     "score_per_1000": 945.75,
+     "bets": 19984,
+     "hit_rate": 0.9572658126501201,
+     "void": 640,
+     "counts": {
+      "confident": 19840,
+      "ambiguous-bet": 144,
+      "abstain-ambiguous": 16,
+      "hits": 19130,
+      "misses": 215,
+      "void": 640
+     },
+     "ambiguous_frac": 0.008,
+     "ambiguous_bet_rate": 0.9,
+     "regime_accuracy": 0.9939,
+     "switches": 94,
+     "alarms": 112,
+     "detected": 94,
+     "attributed": 94,
+     "spurious": 18,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.5121,
+     "narrative_rate": 0.7674,
+     "true_rate": 0.7727,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 11,
+     "steps": 20000,
+     "score": 18943,
+     "score_per_1000": 947.15,
+     "bets": 19974,
+     "hit_rate": 0.9585961750275358,
+     "void": 623,
+     "counts": {
+      "confident": 19847,
+      "ambiguous-bet": 127,
+      "abstain-ambiguous": 26,
+      "hits": 19147,
+      "misses": 204,
+      "void": 623
+     },
+     "ambiguous_frac": 0.0076,
+     "ambiguous_bet_rate": 0.8300653594771242,
+     "regime_accuracy": 0.9944,
+     "switches": 84,
+     "alarms": 106,
+     "detected": 84,
+     "attributed": 84,
+     "spurious": 22,
+     "median_delay": 0,
+     "max_delay": 2,
+     "AR_final": 0.4726,
+     "narrative_rate": 0.6857,
+     "true_rate": 0.6933,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 12,
+     "steps": 20000,
+     "score": 18873,
+     "score_per_1000": 943.65,
+     "bets": 19971,
+     "hit_rate": 0.9567873416453858,
+     "void": 629,
+     "counts": {
+      "confident": 19838,
+      "ambiguous-bet": 133,
+      "abstain-ambiguous": 29,
+      "hits": 19108,
+      "misses": 235,
+      "void": 629
+     },
+     "ambiguous_frac": 0.0081,
+     "ambiguous_bet_rate": 0.8209876543209876,
+     "regime_accuracy": 0.9925,
+     "switches": 113,
+     "alarms": 141,
+     "detected": 113,
+     "attributed": 113,
+     "spurious": 28,
+     "median_delay": 0,
+     "max_delay": 2,
+     "AR_final": 0.4731,
+     "narrative_rate": 0.7262,
+     "true_rate": 0.6923,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 13,
+     "steps": 20000,
+     "score": 18860,
+     "score_per_1000": 943.0,
+     "bets": 19968,
+     "hit_rate": 0.9558293269230769,
+     "void": 656,
+     "counts": {
+      "confident": 19832,
+      "ambiguous-bet": 136,
+      "abstain-ambiguous": 32,
+      "hits": 19086,
+      "misses": 226,
+      "void": 656
+     },
+     "ambiguous_frac": 0.0084,
+     "ambiguous_bet_rate": 0.8095238095238095,
+     "regime_accuracy": 0.9936,
+     "switches": 105,
+     "alarms": 127,
+     "detected": 105,
+     "attributed": 105,
+     "spurious": 22,
+     "median_delay": 0,
+     "max_delay": 1,
+     "AR_final": 0.6076,
+     "narrative_rate": 0.7051,
+     "true_rate": 0.7578,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 14,
+     "steps": 20000,
+     "score": 18824,
+     "score_per_1000": 941.2,
+     "bets": 19980,
+     "hit_rate": 0.9544544544544544,
+     "void": 665,
+     "counts": {
+      "confident": 19826,
+      "ambiguous-bet": 154,
+      "abstain-ambiguous": 20,
+      "hits": 19070,
+      "misses": 246,
+      "void": 665
+     },
+     "ambiguous_frac": 0.0087,
+     "ambiguous_bet_rate": 0.8850574712643678,
+     "regime_accuracy": 0.9932,
+     "switches": 102,
+     "alarms": 118,
+     "detected": 102,
+     "attributed": 102,
+     "spurious": 16,
+     "median_delay": 0,
+     "max_delay": 2,
+     "AR_final": 0.449,
+     "narrative_rate": 0.6867,
+     "true_rate": 0.7679,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 15,
+     "steps": 20000,
+     "score": 18916,
+     "score_per_1000": 945.8,
+     "bets": 19975,
+     "hit_rate": 0.9588485607008761,
+     "void": 585,
+     "counts": {
+      "confident": 19820,
+      "ambiguous-bet": 155,
+      "abstain-ambiguous": 25,
+      "hits": 19153,
+      "misses": 237,
+      "void": 585
+     },
+     "ambiguous_frac": 0.009,
+     "ambiguous_bet_rate": 0.8611111111111112,
+     "regime_accuracy": 0.9935,
+     "switches": 103,
+     "alarms": 125,
+     "detected": 103,
+     "attributed": 103,
+     "spurious": 22,
+     "median_delay": 0,
+     "max_delay": 2,
+     "AR_final": 0.5018,
+     "narrative_rate": 0.7667,
+     "true_rate": 0.75,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 16,
+     "steps": 20000,
+     "score": 18921,
+     "score_per_1000": 946.05,
+     "bets": 19975,
+     "hit_rate": 0.9589987484355444,
+     "void": 586,
+     "counts": {
+      "confident": 19818,
+      "ambiguous-bet": 157,
+      "abstain-ambiguous": 25,
+      "hits": 19156,
+      "misses": 235,
+      "void": 586
+     },
+     "ambiguous_frac": 0.0091,
+     "ambiguous_bet_rate": 0.8626373626373627,
+     "regime_accuracy": 0.9942,
+     "switches": 88,
+     "alarms": 128,
+     "detected": 86,
+     "attributed": 87,
+     "spurious": 41,
+     "median_delay": 0,
+     "max_delay": 106,
+     "AR_final": 0.5621,
+     "narrative_rate": 0.7473,
+     "true_rate": 0.7485,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 17,
+     "steps": 20000,
+     "score": 18928,
+     "score_per_1000": 946.4,
+     "bets": 19975,
+     "hit_rate": 0.958397997496871,
+     "void": 616,
+     "counts": {
+      "confident": 19840,
+      "ambiguous-bet": 135,
+      "abstain-ambiguous": 25,
+      "hits": 19144,
+      "misses": 216,
+      "void": 616
+     },
+     "ambiguous_frac": 0.008,
+     "ambiguous_bet_rate": 0.84375,
+     "regime_accuracy": 0.994,
+     "switches": 89,
+     "alarms": 117,
+     "detected": 89,
+     "attributed": 89,
+     "spurious": 28,
+     "median_delay": 0,
+     "max_delay": 2,
+     "AR_final": 0.4894,
+     "narrative_rate": 0.7403,
+     "true_rate": 0.7468,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 18,
+     "steps": 20000,
+     "score": 18870,
+     "score_per_1000": 943.5,
+     "bets": 19966,
+     "hit_rate": 0.9573274566763498,
+     "void": 611,
+     "counts": {
+      "confident": 19823,
+      "ambiguous-bet": 143,
+      "abstain-ambiguous": 34,
+      "hits": 19114,
+      "misses": 244,
+      "void": 611
+     },
+     "ambiguous_frac": 0.0089,
+     "ambiguous_bet_rate": 0.807909604519774,
+     "regime_accuracy": 0.9927,
+     "switches": 106,
+     "alarms": 148,
+     "detected": 106,
+     "attributed": 106,
+     "spurious": 42,
+     "median_delay": 0,
+     "max_delay": 2,
+     "AR_final": 0.4654,
+     "narrative_rate": 0.7093,
+     "true_rate": 0.6977,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    },
+    {
+     "seed": 19,
+     "steps": 20000,
+     "score": 18842,
+     "score_per_1000": 942.1,
+     "bets": 19973,
+     "hit_rate": 0.9555399789716117,
+     "void": 648,
+     "counts": {
+      "confident": 19812,
+      "ambiguous-bet": 161,
+      "abstain-ambiguous": 27,
+      "hits": 19085,
+      "misses": 243,
+      "void": 648
+     },
+     "ambiguous_frac": 0.0094,
+     "ambiguous_bet_rate": 0.8563829787234043,
+     "regime_accuracy": 0.9936,
+     "switches": 99,
+     "alarms": 127,
+     "detected": 98,
+     "attributed": 98,
+     "spurious": 29,
+     "median_delay": 0,
+     "max_delay": 3,
+     "AR_final": 0.6161,
+     "narrative_rate": 0.825,
+     "true_rate": 0.7865,
+     "band_A": 4.5951,
+     "llr_weight": 1.7346,
+     "params": {
+      "world": {
+       "n": 8,
+       "eps": 0.15,
+       "p_switch": 0.005,
+       "trickster": 3,
+       "lie_on": 0.01,
+       "lie_len": 60.0,
+       "regime0": 1
+      },
+      "observer": {
+       "alpha": 0.01,
+       "AR0": 0.0,
+       "eta": 0.02,
+       "tau": 0.15,
+       "kappa": 0.0
+      }
+     }
+    }
+   ]
+  }
+ }
+}
