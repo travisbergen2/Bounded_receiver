@@ -79,7 +79,8 @@ def run_lens(world_p: ChannelWorldParams, obs_p: SkepticParams, lens: str, steps
     tr = obs.dec_right / (obs.dec_right + obs.dec_wrong) if (obs.dec_right + obs.dec_wrong) else None
     return dict(
         seed=seed, steps=steps, lens=lens, score=obs.score, score_per_1000=round(1000.0 * obs.score / steps, 2),
-        bets=bets, hits=c["hits"], misses=c["misses"], hit_rate=(c["hits"] / bets) if bets else None,
+        bets=bets, hits=c["hits"], misses=c["misses"],
+        hit_rate=(c["hits"] / (c["hits"] + c["misses"])) if (c["hits"] + c["misses"]) else None,
         void=c["void"], void_frac=round(c["void"] / steps, 4), counts=dict(c),
         ambiguous_frac=round(amb / steps, 4), ambiguous_bet_rate=(c["ambiguous-bet"] / amb) if amb else None,
         regime_accuracy=round(obs.regime_agree / obs.regime_checked, 4) if obs.regime_checked else None,

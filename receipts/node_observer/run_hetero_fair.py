@@ -35,7 +35,8 @@ def run_uniform(world_p, steps, seed):
         else: spurious += 1
         prev = a
     detected = sum(1 for s in switches if any(s <= a <= s + 3 for a in obs.alarms))
-    return dict(seed=seed, score_per_1000=round(1000.0 * obs.score / steps, 2), hit_rate=c["hits"] / bets if bets else None,
+    return dict(seed=seed, score_per_1000=round(1000.0 * obs.score / steps, 2),
+                hit_rate=(c["hits"] / (c["hits"] + c["misses"])) if (c["hits"] + c["misses"]) else None,
                 regime_accuracy=round(obs.regime_agree / obs.regime_checked, 4), ambiguous_frac=round(amb / steps, 4),
                 alarms=len(obs.alarms), detected=detected, attributed=attributed, spurious=spurious,
                 median_delay=(sorted(delays)[len(delays)//2] if delays else None), max_delay=(max(delays) if delays else None),

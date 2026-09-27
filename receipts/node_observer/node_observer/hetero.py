@@ -35,6 +35,17 @@ class HeteroParams:
 
 class HeteroObserver:
     def __init__(self, params: HeteroParams, world: ChannelWorldParams, rng: random.Random):
+        # domain guards (added 2026-09-27 after an outside review): the likelihood ratio (1-eps)/eps and the
+        # Wald band log((1-alpha)/alpha) are finite only strictly inside (0, 1); the switch prior must be > 0
+        # for the posterior's odds to stay bounded; tau > 0 keeps the prior's bet probability defined.
+        if not (0.0 < world.eps < 1.0):
+            raise ValueError("HeteroObserver needs 0 < eps < 1 (a deterministic channel has no finite likelihood ratio)")
+        if not (0.0 < world.p_switch < 1.0):
+            raise ValueError("HeteroObserver needs 0 < p_switch < 1")
+        if not (0.0 < params.alpha < 1.0):
+            raise ValueError("HeteroObserver needs 0 < alpha < 1")
+        if not (params.tau > 0.0):
+            raise ValueError("HeteroObserver needs tau > 0")
         self.p = params
         self.eps = world.eps
         self.ps = world.p_switch
@@ -147,7 +158,8 @@ def run_hetero(world_p: ChannelWorldParams, obs_p: HeteroParams, steps: int, see
     tr = obs.dec_right / (obs.dec_right + obs.dec_wrong) if (obs.dec_right + obs.dec_wrong) else None
     return dict(
         seed=seed, steps=steps, score=obs.score, score_per_1000=round(1000.0 * obs.score / steps, 2),
-        bets=bets, hit_rate=(c["hits"] / bets) if bets else None, void=c["void"], counts=dict(c),
+        bets=bets, hit_rate=(c["hits"] / (c["hits"] + c["misses"])) if (c["hits"] + c["misses"]) else None,   # scored, non-tie bets (corrected 2026-09-27)
+        void=c["void"], counts=dict(c),
         ambiguous_frac=round(amb / steps, 4), ambiguous_bet_rate=(c["ambiguous-bet"] / amb) if amb else None,
         regime_accuracy=round(obs.regime_agree / obs.regime_checked, 4) if obs.regime_checked else None,
         switches=len(switches), alarms=len(obs.alarms), detected=detected, attributed=attributed, spurious=spurious,

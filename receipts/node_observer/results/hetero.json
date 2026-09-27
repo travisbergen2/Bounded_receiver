@@ -26,7 +26,7 @@
   "hetero alpha=0.05 / noise": {
    "summary": {
     "score_per_1000": 964.875,
-    "hit_rate": 0.9739028213576324,
+    "hit_rate": 0.9915614607777793,
     "regime_accuracy": 0.9943,
     "ambiguous_frac": 0.00455,
     "alarms": 108.5,
@@ -45,7 +45,7 @@
      "score": 19261,
      "score_per_1000": 963.05,
      "bets": 19967,
-     "hit_rate": 0.9730054590073621,
+     "hit_rate": 0.9914774177085991,
      "void": 373,
      "counts": {
       "confident": 19909,
@@ -95,7 +95,7 @@
      "score": 19242,
      "score_per_1000": 962.1,
      "bets": 19986,
-     "hit_rate": 0.9713299309516662,
+     "hit_rate": 0.9912683823529411,
      "void": 405,
      "counts": {
       "confident": 19900,
@@ -145,7 +145,7 @@
      "score": 19246,
      "score_per_1000": 962.3,
      "bets": 19983,
-     "hit_rate": 0.9722764349697243,
+     "hit_rate": 0.9906689781766266,
      "void": 371,
      "counts": {
       "confident": 19890,
@@ -195,7 +195,7 @@
      "score": 19320,
      "score_per_1000": 966.0,
      "bets": 19979,
-     "hit_rate": 0.9751238800740778,
+     "hit_rate": 0.9917532070861331,
      "void": 335,
      "counts": {
       "confident": 19907,
@@ -245,7 +245,7 @@
      "score": 19248,
      "score_per_1000": 962.4,
      "bets": 19992,
-     "hit_rate": 0.9713385354141657,
+     "hit_rate": 0.991271056661562,
      "void": 402,
      "counts": {
       "confident": 19902,
@@ -295,7 +295,7 @@
      "score": 19268,
      "score_per_1000": 963.4,
      "bets": 19974,
-     "hit_rate": 0.9730149193952138,
+     "hit_rate": 0.9914804611774308,
      "void": 373,
      "counts": {
       "confident": 19910,
@@ -345,7 +345,7 @@
      "score": 19314,
      "score_per_1000": 965.7,
      "bets": 19983,
-     "hit_rate": 0.9745283490967322,
+     "hit_rate": 0.9918508709381685,
      "void": 349,
      "counts": {
       "confident": 19907,
@@ -395,7 +395,7 @@
      "score": 19295,
      "score_per_1000": 964.75,
      "bets": 19978,
-     "hit_rate": 0.9740214235659225,
+     "hit_rate": 0.9916424603781278,
      "void": 355,
      "counts": {
       "confident": 19916,
@@ -445,7 +445,7 @@
      "score": 19248,
      "score_per_1000": 962.4,
      "bets": 19978,
-     "hit_rate": 0.971819000900991,
+     "hit_rate": 0.9914717597793893,
      "void": 396,
      "counts": {
       "confident": 19900,
@@ -495,7 +495,7 @@
      "score": 19266,
      "score_per_1000": 963.3,
      "bets": 19981,
-     "hit_rate": 0.9731244682448326,
+     "hit_rate": 0.990928549587198,
      "void": 360,
      "counts": {
       "confident": 19906,
@@ -545,7 +545,7 @@
      "score": 19334,
      "score_per_1000": 966.7,
      "bets": 19987,
-     "hit_rate": 0.9743333166558263,
+     "hit_rate": 0.9928622412562456,
      "void": 373,
      "counts": {
       "confident": 19931,
@@ -595,7 +595,7 @@
      "score": 19292,
      "score_per_1000": 964.6,
      "bets": 19980,
-     "hit_rate": 0.9740740740740741,
+     "hit_rate": 0.9913406682966586,
      "void": 348,
      "counts": {
       "confident": 19919,
@@ -645,7 +645,7 @@
      "score": 19300,
      "score_per_1000": 965.0,
      "bets": 19987,
-     "hit_rate": 0.974383349176965,
+     "hit_rate": 0.9910941475826972,
      "void": 337,
      "counts": {
       "confident": 19913,
@@ -695,7 +695,7 @@
      "score": 19317,
      "score_per_1000": 965.85,
      "bets": 19984,
-     "hit_rate": 0.9751801441152922,
+     "hit_rate": 0.9913016938806654,
      "void": 325,
      "counts": {
       "confident": 19897,
@@ -745,7 +745,7 @@
      "score": 19303,
      "score_per_1000": 965.15,
      "bets": 19989,
-     "hit_rate": 0.973085196858272,
+     "hit_rate": 0.9924485943160365,
      "void": 390,
      "counts": {
       "confident": 19911,
@@ -795,7 +795,7 @@
      "score": 19307,
      "score_per_1000": 965.35,
      "bets": 19987,
-     "hit_rate": 0.9738830239655776,
+     "hit_rate": 0.9919482240228303,
      "void": 364,
      "counts": {
       "confident": 19909,
@@ -845,7 +845,7 @@
      "score": 19293,
      "score_per_1000": 964.65,
      "bets": 19985,
-     "hit_rate": 0.9733800350262697,
+     "hit_rate": 0.9918421455157294,
      "void": 372,
      "counts": {
       "confident": 19920,
@@ -895,7 +895,7 @@
      "score": 19302,
      "score_per_1000": 965.1,
      "bets": 19980,
-     "hit_rate": 0.9739239239239239,
+     "hit_rate": 0.9919963295269169,
      "void": 364,
      "counts": {
       "confident": 19910,
@@ -945,7 +945,7 @@
      "score": 19316,
      "score_per_1000": 965.8,
      "bets": 19986,
-     "hit_rate": 0.9740818573001101,
+     "hit_rate": 0.9922528032619776,
      "void": 367,
      "counts": {
       "confident": 19933,
@@ -995,7 +995,7 @@
      "score": 19310,
      "score_per_1000": 965.5,
      "bets": 19979,
-     "hit_rate": 0.9739226187496872,
+     "hit_rate": 0.9924512904212996,
      "void": 373,
      "counts": {
       "confident": 19921,
@@ -1044,7 +1044,7 @@
   "hetero alpha=0.01 / noise": {
    "summary": {
     "score_per_1000": 964.725,
-    "hit_rate": 0.9735768872663975,
+    "hit_rate": 0.9916311511667533,
     "regime_accuracy": 0.9943,
     "ambiguous_frac": 0.0046,
     "alarms": 109.0,
@@ -1063,7 +1063,7 @@
      "score": 19266,
      "score_per_1000": 963.3,
      "bets": 19967,
-     "hit_rate": 0.973205789552762,
+     "hit_rate": 0.9915297479334626,
      "void": 370,
      "counts": {
       "confident": 19909,
@@ -1113,7 +1113,7 @@
      "score": 19241,
      "score_per_1000": 962.05,
      "bets": 19986,
-     "hit_rate": 0.971279895927149,
+     "hit_rate": 0.9912679364755145,
      "void": 406,
      "counts": {
       "confident": 19900,
@@ -1163,7 +1163,7 @@
      "score": 19245,
      "score_per_1000": 962.25,
      "bets": 19984,
-     "hit_rate": 0.972177742193755,
+     "hit_rate": 0.9906685023711183,
      "void": 373,
      "counts": {
       "confident": 19890,
@@ -1213,7 +1213,7 @@
      "score": 19322,
      "score_per_1000": 966.1,
      "bets": 19978,
-     "hit_rate": 0.9751726899589549,
+     "hit_rate": 0.9918541900010183,
      "void": 336,
      "counts": {
       "confident": 19907,
@@ -1263,7 +1263,7 @@
      "score": 19256,
      "score_per_1000": 962.8,
      "bets": 19992,
-     "hit_rate": 0.9715386154461785,
+     "hit_rate": 0.9914752424706483,
      "void": 402,
      "counts": {
       "confident": 19902,
@@ -1313,7 +1313,7 @@
      "score": 19268,
      "score_per_1000": 963.4,
      "bets": 19974,
-     "hit_rate": 0.9730149193952138,
+     "hit_rate": 0.9914804611774308,
      "void": 373,
      "counts": {
       "confident": 19910,
@@ -1363,7 +1363,7 @@
      "score": 19319,
      "score_per_1000": 965.95,
      "bets": 19986,
-     "hit_rate": 0.9745822075452817,
+     "hit_rate": 0.9919030401792535,
      "void": 349,
      "counts": {
       "confident": 19907,
@@ -1413,7 +1413,7 @@
      "score": 19287,
      "score_per_1000": 964.35,
      "bets": 19986,
-     "hit_rate": 0.9732312618833183,
+     "hit_rate": 0.9916390517461127,
      "void": 372,
      "counts": {
       "confident": 19911,
@@ -1463,7 +1463,7 @@
      "score": 19250,
      "score_per_1000": 962.5,
      "bets": 19978,
-     "hit_rate": 0.9717689458404245,
+     "hit_rate": 0.991623250587394,
      "void": 400,
      "counts": {
       "confident": 19900,
@@ -1513,7 +1513,7 @@
      "score": 19272,
      "score_per_1000": 963.6,
      "bets": 19983,
-     "hit_rate": 0.9732772856928389,
+     "hit_rate": 0.9909813512687251,
      "void": 358,
      "counts": {
       "confident": 19906,
@@ -1563,7 +1563,7 @@
      "score": 19334,
      "score_per_1000": 966.7,
      "bets": 19987,
-     "hit_rate": 0.9742832841346876,
+     "hit_rate": 0.9929125025494595,
      "void": 375,
      "counts": {
       "confident": 19931,
@@ -1613,7 +1613,7 @@
      "score": 19285,
      "score_per_1000": 964.25,
      "bets": 19982,
-     "hit_rate": 0.9738764888399559,
+     "hit_rate": 0.9910873440285205,
      "void": 347,
      "counts": {
       "confident": 19910,
@@ -1663,7 +1663,7 @@
      "score": 19305,
      "score_per_1000": 965.25,
      "bets": 19987,
-     "hit_rate": 0.9744333816981038,
+     "hit_rate": 0.9912963811268896,
      "void": 340,
      "counts": {
       "confident": 19913,
@@ -1713,7 +1713,7 @@
      "score": 19306,
      "score_per_1000": 965.3,
      "bets": 19983,
-     "hit_rate": 0.9749286893859781,
+     "hit_rate": 0.991046902024621,
      "void": 325,
      "counts": {
       "confident": 19892,
@@ -1763,7 +1763,7 @@
      "score": 19306,
      "score_per_1000": 965.3,
      "bets": 19988,
-     "hit_rate": 0.9732339403642185,
+     "hit_rate": 0.9925,
      "void": 388,
      "counts": {
       "confident": 19911,
@@ -1813,7 +1813,7 @@
      "score": 19310,
      "score_per_1000": 965.5,
      "bets": 19987,
-     "hit_rate": 0.9739330564867164,
+     "hit_rate": 0.9920497400876567,
      "void": 365,
      "counts": {
       "confident": 19909,
@@ -1863,7 +1863,7 @@
      "score": 19278,
      "score_per_1000": 963.9,
      "bets": 19985,
-     "hit_rate": 0.972579434575932,
+     "hit_rate": 0.9918860992039191,
      "void": 389,
      "counts": {
       "confident": 19920,
@@ -1913,7 +1913,7 @@
      "score": 19302,
      "score_per_1000": 965.1,
      "bets": 19979,
-     "hit_rate": 0.9739726713048701,
+     "hit_rate": 0.9919963295269169,
      "void": 363,
      "counts": {
       "confident": 19909,
@@ -1963,7 +1963,7 @@
      "score": 19327,
      "score_per_1000": 966.35,
      "bets": 19988,
-     "hit_rate": 0.974384630778467,
+     "hit_rate": 0.992407643312102,
      "void": 364,
      "counts": {
       "confident": 19933,
@@ -2013,7 +2013,7 @@
      "score": 19310,
      "score_per_1000": 965.5,
      "bets": 19979,
-     "hit_rate": 0.9739226187496872,
+     "hit_rate": 0.9924512904212996,
      "void": 373,
      "counts": {
       "confident": 19921,
@@ -2062,7 +2062,7 @@
   "hetero alpha=0.05 / trick": {
    "summary": {
     "score_per_1000": 943.825,
-    "hit_rate": 0.9571671387342142,
+    "hit_rate": 0.9879925335610478,
     "regime_accuracy": 0.9934000000000001,
     "ambiguous_frac": 0.0085,
     "alarms": 121.0,
@@ -2081,7 +2081,7 @@
      "score": 18857,
      "score_per_1000": 942.85,
      "bets": 19969,
-     "hit_rate": 0.9550302969602884,
+     "hit_rate": 0.988903292714545,
      "void": 688,
      "counts": {
       "confident": 19851,
@@ -2131,7 +2131,7 @@
      "score": 18962,
      "score_per_1000": 948.1,
      "bets": 19982,
-     "hit_rate": 0.9587628865979382,
+     "hit_rate": 0.9898728944920947,
      "void": 629,
      "counts": {
       "confident": 19850,
@@ -2181,7 +2181,7 @@
      "score": 18938,
      "score_per_1000": 946.9,
      "bets": 19970,
-     "hit_rate": 0.9595393089634452,
+     "hit_rate": 0.9884452697823172,
      "void": 584,
      "counts": {
       "confident": 19831,
@@ -2231,7 +2231,7 @@
      "score": 18877,
      "score_per_1000": 943.85,
      "bets": 19981,
-     "hit_rate": 0.9572593964266053,
+     "hit_rate": 0.9870981060019611,
      "void": 604,
      "counts": {
       "confident": 19826,
@@ -2281,7 +2281,7 @@
      "score": 18935,
      "score_per_1000": 946.75,
      "bets": 19971,
-     "hit_rate": 0.9590906814881578,
+     "hit_rate": 0.9886956072884943,
      "void": 598,
      "counts": {
       "confident": 19835,
@@ -2331,7 +2331,7 @@
      "score": 18848,
      "score_per_1000": 942.4,
      "bets": 19979,
-     "hit_rate": 0.9556534361079133,
+     "hit_rate": 0.9873306443272314,
      "void": 643,
      "counts": {
       "confident": 19829,
@@ -2381,7 +2381,7 @@
      "score": 18908,
      "score_per_1000": 945.4,
      "bets": 19983,
-     "hit_rate": 0.9565630786168243,
+     "hit_rate": 0.9892868233102163,
      "void": 661,
      "counts": {
       "confident": 19861,
@@ -2431,7 +2431,7 @@
      "score": 18825,
      "score_per_1000": 941.25,
      "bets": 19970,
-     "hit_rate": 0.9553830746119178,
+     "hit_rate": 0.9868618424455594,
      "void": 639,
      "counts": {
       "confident": 19811,
@@ -2481,7 +2481,7 @@
      "score": 18907,
      "score_per_1000": 945.35,
      "bets": 19979,
-     "hit_rate": 0.9575053806496822,
+     "hit_rate": 0.9884772386710071,
      "void": 627,
      "counts": {
       "confident": 19846,
@@ -2531,7 +2531,7 @@
      "score": 18806,
      "score_per_1000": 940.3,
      "bets": 19974,
-     "hit_rate": 0.9535896665665365,
+     "hit_rate": 0.9875051845707176,
      "void": 686,
      "counts": {
       "confident": 19828,
@@ -2581,7 +2581,7 @@
      "score": 18872,
      "score_per_1000": 943.6,
      "bets": 19983,
-     "hit_rate": 0.955862483110644,
+     "hit_rate": 0.9881531298499742,
      "void": 654,
      "counts": {
       "confident": 19835,
@@ -2631,7 +2631,7 @@
      "score": 18949,
      "score_per_1000": 947.45,
      "bets": 19979,
-     "hit_rate": 0.9586565894188899,
+     "hit_rate": 0.9894611768352534,
      "void": 622,
      "counts": {
       "confident": 19848,
@@ -2681,7 +2681,7 @@
      "score": 18888,
      "score_per_1000": 944.4,
      "bets": 19974,
-     "hit_rate": 0.957344547912286,
+     "hit_rate": 0.9879107253564786,
      "void": 619,
      "counts": {
       "confident": 19839,
@@ -2731,7 +2731,7 @@
      "score": 18823,
      "score_per_1000": 941.15,
      "bets": 19967,
-     "hit_rate": 0.9549256272850203,
+     "hit_rate": 0.9873647144114753,
      "void": 656,
      "counts": {
       "confident": 19822,
@@ -2781,7 +2781,7 @@
      "score": 18812,
      "score_per_1000": 940.6,
      "bets": 19980,
-     "hit_rate": 0.954004004004004,
+     "hit_rate": 0.9871051268772657,
      "void": 671,
      "counts": {
       "confident": 19826,
@@ -2831,7 +2831,7 @@
      "score": 18908,
      "score_per_1000": 945.4,
      "bets": 19977,
-     "hit_rate": 0.958051759523452,
+     "hit_rate": 0.9880743417656169,
      "void": 607,
      "counts": {
       "confident": 19828,
@@ -2881,7 +2881,7 @@
      "score": 18876,
      "score_per_1000": 943.8,
      "bets": 19975,
-     "hit_rate": 0.9574468085106383,
+     "hit_rate": 0.987147723753484,
      "void": 602,
      "counts": {
       "confident": 19808,
@@ -2931,7 +2931,7 @@
      "score": 18944,
      "score_per_1000": 947.2,
      "bets": 19973,
-     "hit_rate": 0.958594102037751,
+     "hit_rate": 0.9895596444076907,
      "void": 625,
      "counts": {
       "confident": 19858,
@@ -2981,7 +2981,7 @@
      "score": 18860,
      "score_per_1000": 943.0,
      "bets": 19965,
-     "hit_rate": 0.9570748810418231,
+     "hit_rate": 0.9871874354205414,
      "void": 612,
      "counts": {
       "confident": 19828,
@@ -3031,7 +3031,7 @@
      "score": 18805,
      "score_per_1000": 940.25,
      "bets": 19972,
-     "hit_rate": 0.9538353695173243,
+     "hit_rate": 0.9873024099507645,
      "void": 680,
      "counts": {
       "confident": 19816,
@@ -3080,7 +3080,7 @@
   "hetero alpha=0.01 / trick": {
    "summary": {
     "score_per_1000": 944.575,
-    "hit_rate": 0.9568067980426639,
+    "hit_rate": 0.9878977236779362,
     "regime_accuracy": 0.9936,
     "ambiguous_frac": 0.00865,
     "alarms": 122.0,
@@ -3099,7 +3099,7 @@
      "score": 18848,
      "score_per_1000": 942.4,
      "bets": 19974,
-     "hit_rate": 0.9548412936817863,
+     "hit_rate": 0.988391376451078,
      "void": 679,
      "counts": {
       "confident": 19843,
@@ -3149,7 +3149,7 @@
      "score": 18916,
      "score_per_1000": 945.8,
      "bets": 19984,
-     "hit_rate": 0.9576160928742994,
+     "hit_rate": 0.9885835313565451,
      "void": 627,
      "counts": {
       "confident": 19827,
@@ -3199,7 +3199,7 @@
      "score": 18894,
      "score_per_1000": 944.7,
      "bets": 19984,
-     "hit_rate": 0.9571657325860689,
+     "hit_rate": 0.9879144716454912,
      "void": 622,
      "counts": {
       "confident": 19806,
@@ -3249,7 +3249,7 @@
      "score": 18889,
      "score_per_1000": 944.45,
      "bets": 19989,
-     "hit_rate": 0.956826254439942,
+     "hit_rate": 0.987760161132056,
      "void": 626,
      "counts": {
       "confident": 19815,
@@ -3299,7 +3299,7 @@
      "score": 18903,
      "score_per_1000": 945.15,
      "bets": 19984,
-     "hit_rate": 0.9565152121697358,
+     "hit_rate": 0.9890308894292958,
      "void": 657,
      "counts": {
       "confident": 19830,
@@ -3349,7 +3349,7 @@
      "score": 18826,
      "score_per_1000": 941.3,
      "bets": 19982,
-     "hit_rate": 0.9546591932739465,
+     "hit_rate": 0.9870640587809169,
      "void": 658,
      "counts": {
       "confident": 19818,
@@ -3399,7 +3399,7 @@
      "score": 18904,
      "score_per_1000": 945.2,
      "bets": 19981,
-     "hit_rate": 0.9564586357039188,
+     "hit_rate": 0.9892846050315768,
      "void": 663,
      "counts": {
       "confident": 19856,
@@ -3449,7 +3449,7 @@
      "score": 18861,
      "score_per_1000": 943.05,
      "bets": 19972,
-     "hit_rate": 0.9563889445223313,
+     "hit_rate": 0.9875911276562742,
      "void": 632,
      "counts": {
       "confident": 19816,
@@ -3499,7 +3499,7 @@
      "score": 18937,
      "score_per_1000": 946.85,
      "bets": 19986,
-     "hit_rate": 0.9574201941358951,
+     "hit_rate": 0.9897584441111054,
      "void": 653,
      "counts": {
       "confident": 19854,
@@ -3549,7 +3549,7 @@
      "score": 18771,
      "score_per_1000": 938.55,
      "bets": 19982,
-     "hit_rate": 0.9526573916524872,
+     "hit_rate": 0.9862701414434485,
      "void": 681,
      "counts": {
       "confident": 19792,
@@ -3599,7 +3599,7 @@
      "score": 18915,
      "score_per_1000": 945.75,
      "bets": 19984,
-     "hit_rate": 0.9572658126501201,
+     "hit_rate": 0.9888860170586715,
      "void": 640,
      "counts": {
       "confident": 19840,
@@ -3649,7 +3649,7 @@
      "score": 18943,
      "score_per_1000": 947.15,
      "bets": 19974,
-     "hit_rate": 0.9585961750275358,
+     "hit_rate": 0.9894579091519818,
      "void": 623,
      "counts": {
       "confident": 19847,
@@ -3699,7 +3699,7 @@
      "score": 18873,
      "score_per_1000": 943.65,
      "bets": 19971,
-     "hit_rate": 0.9567873416453858,
+     "hit_rate": 0.9878509021351394,
      "void": 629,
      "counts": {
       "confident": 19838,
@@ -3749,7 +3749,7 @@
      "score": 18860,
      "score_per_1000": 943.0,
      "bets": 19968,
-     "hit_rate": 0.9558293269230769,
+     "hit_rate": 0.9882974316487159,
      "void": 656,
      "counts": {
       "confident": 19832,
@@ -3799,7 +3799,7 @@
      "score": 18824,
      "score_per_1000": 941.2,
      "bets": 19980,
-     "hit_rate": 0.9544544544544544,
+     "hit_rate": 0.9872644439842617,
      "void": 665,
      "counts": {
       "confident": 19826,
@@ -3849,7 +3849,7 @@
      "score": 18916,
      "score_per_1000": 945.8,
      "bets": 19975,
-     "hit_rate": 0.9588485607008761,
+     "hit_rate": 0.9877772047447138,
      "void": 585,
      "counts": {
       "confident": 19820,
@@ -3899,7 +3899,7 @@
      "score": 18921,
      "score_per_1000": 946.05,
      "bets": 19975,
-     "hit_rate": 0.9589987484355444,
+     "hit_rate": 0.9878809757103811,
      "void": 586,
      "counts": {
       "confident": 19818,
@@ -3949,7 +3949,7 @@
      "score": 18928,
      "score_per_1000": 946.4,
      "bets": 19975,
-     "hit_rate": 0.958397997496871,
+     "hit_rate": 0.9888429752066116,
      "void": 616,
      "counts": {
       "confident": 19840,
@@ -3999,7 +3999,7 @@
      "score": 18870,
      "score_per_1000": 943.5,
      "bets": 19966,
-     "hit_rate": 0.9573274566763498,
+     "hit_rate": 0.9873953920859593,
      "void": 611,
      "counts": {
       "confident": 19823,
@@ -4049,7 +4049,7 @@
      "score": 18842,
      "score_per_1000": 942.1,
      "bets": 19973,
-     "hit_rate": 0.9555399789716117,
+     "hit_rate": 0.9874275662251656,
      "void": 648,
      "counts": {
       "confident": 19812,

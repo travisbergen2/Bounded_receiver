@@ -659,7 +659,7 @@ log-odds weight (1.735 nats per channel at ε = 0.15), with *presence* the count
 
 | block | job | optimal algorithm | what it does with ℓ_t | consumes | emits |
 |---|---|---|---|---|---|
-| ESTIMATE | track the hidden regime | Bayes filter (exact two-state hidden Markov model) | accumulates it with prior mixing for switches | ℓ_t, switch rate | log-odds L: direction = sign L, confidence = \|L\| |
+| ESTIMATE | track the hidden regime | Bayes filter (exact two-state hidden Markov model — exact for the clean model: two regimes, symmetric switching at a known rate, independent channels with known error ε; misspecified by design when the liar is on) | accumulates it with prior mixing for switches | ℓ_t, switch rate | log-odds L: direction = sign L, confidence = \|L\| |
 | DETECT | notice the world changed | quickest change detection — CUSUM (Lorden 1971; Moustakides 1986); given the posterior, its side-switch | reflected sum with a floor at 0 / the sign of L | ℓ_t, the current model | alarm / reset |
 | COMMIT | decide when to act | Wald's sequential test (1945; Wald–Wolfowitz 1948 optimality) | acts when \|L\| ≥ A = log((1−α)/α); inside the band the prior decides | L, the prior AR | bet / hold |
 
@@ -673,14 +673,14 @@ but the two observers consume the random stream differently, so the worlds are e
 step.) "det ≤ 3" = switches with an alarm within 3 steps; "spurious" = alarms with no switch since the
 previous alarm.
 
-| observer / world | score/1k | hit rate | regime acc. | held | alarms | det ≤ 3 | spurious | delay (max) |
+| observer / world | score/1k | hit rate (hits/(hits+misses), corrected 09-27) | regime acc. | held | alarms | det ≤ 3 | spurious | delay (max) |
 |---|---|---|---|---|---|---|---|---|
-| uniform v0.2 / noise | 901.5 | 0.954 | 0.967 | 0.027 | 58 | **0** of 105 | 0 | 6 (8) |
-| **hetero α 0.05 / noise** | **964.9** | **0.974** | **0.994** | **0.005** | 108.5 | **98.5** of 99.5 | 9 | **0 (1)** |
-| hetero α 0.01 / noise | 964.7 | 0.974 | 0.994 | 0.005 | 109 | 98.5 | 10 | 0 (1) |
-| uniform v0.2 / trick | 890.0 | 0.937 | 0.968 | 0.037 | 31 | 0 of 96.5 | 0 | 6 (8) |
-| **hetero α 0.05 / trick** | **943.8** | **0.957** | **0.993** | **0.009** | 121 | 101.5 | 24 | 0 (2) |
-| hetero α 0.01 / trick | 944.6 | 0.957 | 0.994 | 0.009 | 122 | 99 | 22 | 0 (2) |
+| uniform v0.2 / noise | 901.5 | 0.972 | 0.967 | 0.027 | 58 | **0** of 105 | 0 | 6 (8) |
+| **hetero α 0.05 / noise** | **964.9** | **0.992** | **0.994** | **0.005** | 108.5 | **98.5** of 99.5 | 9 | **0 (1)** |
+| hetero α 0.01 / noise | 964.7 | 0.992 | 0.994 | 0.005 | 109 | 98.5 | 10 | 0 (1) |
+| uniform v0.2 / trick | 890.0 | 0.968 | 0.968 | 0.037 | 31 | 0 of 96.5 | 0 | 6 (8) |
+| **hetero α 0.05 / trick** | **943.8** | **0.988** | **0.993** | **0.009** | 121 | 101.5 | 24 | 0 (2) |
+| hetero α 0.01 / trick | 944.6 | 0.988 | 0.994 | 0.009 | 122 | 99 | 22 | 0 (2) |
 
 Band A = 2.94 nats at α = 0.05; eight agreeing channels carry 13.9 nats per step; the switch prior caps the
 carried-over log-odds at log(0.995/0.005) = 5.3 nats. So one contradicting step (−13.9 + 5.3) flips the
@@ -724,8 +724,11 @@ sign of its estimate. A judge applies v0.2's consensus-relative trust rules to t
 All five expectations confirmed. The mechanism is exact: when the world changes, the sharp witness
 re-locks in one step and the seven slow ones take about six; for those six steps the sharp witness
 contradicts the trusted consensus — so a one-strike rule burns it at the first change, and an accumulating
-rule with threshold 4 burns it too (6 × 0.75 = 4.5 ≥ 4). Threshold 8 keeps it. The tolerance a group needs
-to keep its fastest honest member is **its own re-lock lag**. And the group loses nothing measurable by
+rule with threshold 4 burns it too: the per-witness statistic is S ← max(0, S + [contradicts] − 0.25), each
+contradiction adds 1 and every step drifts 0.25 down, so six consecutive contradicting steps raise S by
+6 × (1 − 0.25) = 4.5 ≥ 4. Threshold 8 keeps it. The tolerance a group needs to keep its fastest honest member
+is **its own re-lock lag**. (Wording corrected 2026-09-27 after an outside review: an earlier version said
+"6 × 0.75 = 4.5 contradictions", which misdescribed the increment; the number was right, the words were not.) And the group loses nothing measurable by
 burning it — one vote in eight, consensus accuracy 0.9724 either way — which is exactly why the rule can
 persist: exclusion of the early-right is cheap for the majority. No liar, no malice, no dislike of honesty
 is needed anywhere in the model; the statistics of consensus-relative trust do it alone.
@@ -841,5 +844,14 @@ summarize_results.py         markdown table from census.json
 summarize_results2.py        markdown table from census2.json (also refreshes its lenses block)
 ```
 
-Run everything: `python3 -m unittest discover -s tests` (45 tests), then the four report scripts
-(about 2, 3, 1 and 3 minutes).
+Run everything from THIS directory (the package must be importable — `python3 -m unittest` puts the
+current directory on `sys.path`; from elsewhere set `PYTHONPATH` to this directory):
+`python3 -m unittest discover -s tests` (86 tests), then the report scripts.
+
+**Correction on display (2026-09-27).** In the channel-world results of §7–§8 (v0.2 and v0.6 tables) the
+"hit rate" column was computed as hits / (bets placed), a denominator that included bets whose outcome was a
+*tie* in the observable and therefore scored nothing. At n = 8, ε = 0.15 ties are ≈ 1.9% of steps, so those
+hit rates are understated by ≈ 2% uniformly (e.g. 0.954 → ≈ 0.973); scores, regime accuracies, alarms and every
+comparison between arms are unaffected. The definition is now hits / (hits + misses) — scored bets with a
+non-tie outcome — in `layered.py`, `hetero.py`, `run_hetero_fair.py` and `run_opnet.py`; the stored census
+JSONs keep the old column. Found by the tie-world boundary test proposed in the 2026-09-27 outside review.

@@ -3,7 +3,7 @@
   {
    "seed": 0,
    "score_per_1000": 907.65,
-   "hit_rate": 0.956002256294549,
+   "hit_rate": 0.9743897977316678,
    "regime_accuracy": 0.9692,
    "ambiguous_frac": 0.0245,
    "alarms": 51,
@@ -18,7 +18,7 @@
   {
    "seed": 1,
    "score_per_1000": 909.3,
-   "hit_rate": 0.9562833128331283,
+   "hit_rate": 0.9752770227890445,
    "regime_accuracy": 0.9703,
    "ambiguous_frac": 0.0248,
    "alarms": 49,
@@ -33,7 +33,7 @@
   {
    "seed": 2,
    "score_per_1000": 907.8,
-   "hit_rate": 0.9562163547808255,
+   "hit_rate": 0.9741460357254779,
    "regime_accuracy": 0.9691,
    "ambiguous_frac": 0.0232,
    "alarms": 57,
@@ -48,7 +48,7 @@
   {
    "seed": 3,
    "score_per_1000": 905.15,
-   "hit_rate": 0.9533159482538222,
+   "hit_rate": 0.9718008861089392,
    "regime_accuracy": 0.9674,
    "ambiguous_frac": 0.0294,
    "alarms": 47,
@@ -63,7 +63,7 @@
   {
    "seed": 4,
    "score_per_1000": 899.55,
-   "hit_rate": 0.9523564783882408,
+   "hit_rate": 0.971734228328701,
    "regime_accuracy": 0.9665,
    "ambiguous_frac": 0.0276,
    "alarms": 54,
@@ -78,7 +78,7 @@
   {
    "seed": 5,
    "score_per_1000": 897.8,
-   "hit_rate": 0.9528491275029598,
+   "hit_rate": 0.9708905905800902,
    "regime_accuracy": 0.9645,
    "ambiguous_frac": 0.0297,
    "alarms": 60,
@@ -93,7 +93,7 @@
   {
    "seed": 6,
    "score_per_1000": 893.95,
-   "hit_rate": 0.9514332852134461,
+   "hit_rate": 0.9697829628461822,
    "regime_accuracy": 0.9623,
    "ambiguous_frac": 0.03,
    "alarms": 65,
@@ -108,7 +108,7 @@
   {
    "seed": 7,
    "score_per_1000": 914.25,
-   "hit_rate": 0.9556662768824038,
+   "hit_rate": 0.9734838676264954,
    "regime_accuracy": 0.9726,
    "ambiguous_frac": 0.0231,
    "alarms": 42,
@@ -123,7 +123,7 @@
   {
    "seed": 8,
    "score_per_1000": 899.85,
-   "hit_rate": 0.9526648506964075,
+   "hit_rate": 0.971743119266055,
    "regime_accuracy": 0.9674,
    "ambiguous_frac": 0.0254,
    "alarms": 61,
@@ -138,7 +138,7 @@
   {
    "seed": 9,
    "score_per_1000": 896.05,
-   "hit_rate": 0.9530685920577617,
+   "hit_rate": 0.9706392142444457,
    "regime_accuracy": 0.9628,
    "ambiguous_frac": 0.031,
    "alarms": 58,
@@ -153,7 +153,7 @@
   {
    "seed": 10,
    "score_per_1000": 897.75,
-   "hit_rate": 0.9521481862618987,
+   "hit_rate": 0.9711361847284178,
    "regime_accuracy": 0.9646,
    "ambiguous_frac": 0.029,
    "alarms": 58,
@@ -168,7 +168,7 @@
   {
    "seed": 11,
    "score_per_1000": 897.15,
-   "hit_rate": 0.9544258064516129,
+   "hit_rate": 0.9711674806995431,
    "regime_accuracy": 0.9636,
    "ambiguous_frac": 0.0258,
    "alarms": 72,
@@ -183,7 +183,7 @@
   {
    "seed": 12,
    "score_per_1000": 917.85,
-   "hit_rate": 0.9597977114834492,
+   "hit_rate": 0.9775245824879039,
    "regime_accuracy": 0.9737,
    "ambiguous_frac": 0.0213,
    "alarms": 48,
@@ -198,7 +198,7 @@
   {
    "seed": 13,
    "score_per_1000": 904.0,
-   "hit_rate": 0.955908833667747,
+   "hit_rate": 0.9737945492662474,
    "regime_accuracy": 0.967,
    "ambiguous_frac": 0.0252,
    "alarms": 60,
@@ -213,7 +213,7 @@
   {
    "seed": 14,
    "score_per_1000": 903.85,
-   "hit_rate": 0.9543615223070225,
+   "hit_rate": 0.9710741647990827,
    "regime_accuracy": 0.9662,
    "ambiguous_frac": 0.0301,
    "alarms": 51,
@@ -228,7 +228,7 @@
   {
    "seed": 15,
    "score_per_1000": 885.8,
-   "hit_rate": 0.9491849935316947,
+   "hit_rate": 0.9669478123352662,
    "regime_accuracy": 0.959,
    "ambiguous_frac": 0.0336,
    "alarms": 66,
@@ -243,7 +243,7 @@
   {
    "seed": 16,
    "score_per_1000": 905.4,
-   "hit_rate": 0.956501619620546,
+   "hit_rate": 0.974081055607917,
    "regime_accuracy": 0.9679,
    "ambiguous_frac": 0.0249,
    "alarms": 58,
@@ -258,7 +258,7 @@
   {
    "seed": 17,
    "score_per_1000": 903.05,
-   "hit_rate": 0.9521426017671996,
+   "hit_rate": 0.9697757894189253,
    "regime_accuracy": 0.967,
    "ambiguous_frac": 0.029,
    "alarms": 50,
@@ -273,7 +273,7 @@
   {
    "seed": 18,
    "score_per_1000": 897.6,
-   "hit_rate": 0.9540579560688873,
+   "hit_rate": 0.9710821874671985,
    "regime_accuracy": 0.9638,
    "ambiguous_frac": 0.0272,
    "alarms": 66,
@@ -288,7 +288,7 @@
   {
    "seed": 19,
    "score_per_1000": 894.8,
-   "hit_rate": 0.9538461538461539,
+   "hit_rate": 0.9726389182336784,
    "regime_accuracy": 0.9631,
    "ambiguous_frac": 0.0295,
    "alarms": 65,
@@ -305,7 +305,7 @@
   {
    "seed": 0,
    "score_per_1000": 900.65,
-   "hit_rate": 0.9406261063065797,
+   "hit_rate": 0.9694553036226219,
    "regime_accuracy": 0.9732,
    "ambiguous_frac": 0.0323,
    "alarms": 23,
@@ -320,7 +320,7 @@
   {
    "seed": 1,
    "score_per_1000": 887.65,
-   "hit_rate": 0.934972566551514,
+   "hit_rate": 0.9658357386512726,
    "regime_accuracy": 0.9668,
    "ambiguous_frac": 0.0404,
    "alarms": 27,
@@ -335,7 +335,7 @@
   {
    "seed": 2,
    "score_per_1000": 895.65,
-   "hit_rate": 0.93952802359882,
+   "hit_rate": 0.9705774181684442,
    "regime_accuracy": 0.9723,
    "ambiguous_frac": 0.0297,
    "alarms": 33,
@@ -350,7 +350,7 @@
   {
    "seed": 3,
    "score_per_1000": 888.5,
-   "hit_rate": 0.9344453457716487,
+   "hit_rate": 0.9653781688665409,
    "regime_accuracy": 0.9674,
    "ambiguous_frac": 0.0408,
    "alarms": 26,
@@ -365,7 +365,7 @@
   {
    "seed": 4,
    "score_per_1000": 889.9,
-   "hit_rate": 0.936210322514903,
+   "hit_rate": 0.9695546644153651,
    "regime_accuracy": 0.9696,
    "ambiguous_frac": 0.035,
    "alarms": 30,
@@ -380,7 +380,7 @@
   {
    "seed": 5,
    "score_per_1000": 883.7,
-   "hit_rate": 0.9312740921079327,
+   "hit_rate": 0.9639332213355732,
    "regime_accuracy": 0.9667,
    "ambiguous_frac": 0.0418,
    "alarms": 27,
@@ -395,7 +395,7 @@
   {
    "seed": 6,
    "score_per_1000": 890.1,
-   "hit_rate": 0.9386578208726716,
+   "hit_rate": 0.9688685208596713,
    "regime_accuracy": 0.9685,
    "ambiguous_frac": 0.0368,
    "alarms": 31,
@@ -410,7 +410,7 @@
   {
    "seed": 7,
    "score_per_1000": 897.05,
-   "hit_rate": 0.9401340509799939,
+   "hit_rate": 0.9699303263659699,
    "regime_accuracy": 0.9721,
    "ambiguous_frac": 0.0314,
    "alarms": 33,
@@ -425,7 +425,7 @@
   {
    "seed": 8,
    "score_per_1000": 893.1,
-   "hit_rate": 0.9381333061764856,
+   "hit_rate": 0.9703992415464026,
    "regime_accuracy": 0.9708,
    "ambiguous_frac": 0.0342,
    "alarms": 28,
@@ -440,7 +440,7 @@
   {
    "seed": 9,
    "score_per_1000": 891.7,
-   "hit_rate": 0.9392225788374344,
+   "hit_rate": 0.9683790314108625,
    "regime_accuracy": 0.9676,
    "ambiguous_frac": 0.0375,
    "alarms": 31,
@@ -455,7 +455,7 @@
   {
    "seed": 10,
    "score_per_1000": 880.1,
-   "hit_rate": 0.9321056927157723,
+   "hit_rate": 0.9645798141891891,
    "regime_accuracy": 0.9662,
    "ambiguous_frac": 0.0384,
    "alarms": 36,
@@ -470,7 +470,7 @@
   {
    "seed": 11,
    "score_per_1000": 897.45,
-   "hit_rate": 0.9409852717115287,
+   "hit_rate": 0.9696969696969697,
    "regime_accuracy": 0.9719,
    "ambiguous_frac": 0.0295,
    "alarms": 35,
@@ -485,7 +485,7 @@
   {
    "seed": 12,
    "score_per_1000": 900.8,
-   "hit_rate": 0.9412121825356673,
+   "hit_rate": 0.9693622342642768,
    "regime_accuracy": 0.9721,
    "ambiguous_frac": 0.0348,
    "alarms": 24,
@@ -500,7 +500,7 @@
   {
    "seed": 13,
    "score_per_1000": 893.5,
-   "hit_rate": 0.9377319168403395,
+   "hit_rate": 0.9696205192893934,
    "regime_accuracy": 0.9707,
    "ambiguous_frac": 0.034,
    "alarms": 28,
@@ -515,7 +515,7 @@
   {
    "seed": 14,
    "score_per_1000": 886.3,
-   "hit_rate": 0.9331708307942311,
+   "hit_rate": 0.9658362241143698,
    "regime_accuracy": 0.9674,
    "ambiguous_frac": 0.0403,
    "alarms": 31,
@@ -530,7 +530,7 @@
   {
    "seed": 15,
    "score_per_1000": 885.5,
-   "hit_rate": 0.9369672842341653,
+   "hit_rate": 0.9659055035252025,
    "regime_accuracy": 0.967,
    "ambiguous_frac": 0.038,
    "alarms": 34,
@@ -545,7 +545,7 @@
   {
    "seed": 16,
    "score_per_1000": 885.5,
-   "hit_rate": 0.9362494895875868,
+   "hit_rate": 0.9666420741989882,
    "regime_accuracy": 0.9676,
    "ambiguous_frac": 0.0371,
    "alarms": 38,
@@ -560,7 +560,7 @@
   {
    "seed": 17,
    "score_per_1000": 892.25,
-   "hit_rate": 0.937309953375228,
+   "hit_rate": 0.9660485766518673,
    "regime_accuracy": 0.9683,
    "ambiguous_frac": 0.0364,
    "alarms": 31,
@@ -575,7 +575,7 @@
   {
    "seed": 18,
    "score_per_1000": 881.55,
-   "hit_rate": 0.9328787339066714,
+   "hit_rate": 0.9631692323858562,
    "regime_accuracy": 0.9647,
    "ambiguous_frac": 0.0398,
    "alarms": 38,
@@ -590,7 +590,7 @@
   {
    "seed": 19,
    "score_per_1000": 882.7,
-   "hit_rate": 0.933414845381833,
+   "hit_rate": 0.9648235913638757,
    "regime_accuracy": 0.9652,
    "ambiguous_frac": 0.0408,
    "alarms": 39,

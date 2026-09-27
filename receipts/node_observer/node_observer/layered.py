@@ -545,7 +545,8 @@ def run_layered(params: LayeredRunParams, seed: int) -> Dict[str, Any]:
     return dict(
         seed=seed, steps=params.steps, circuit=circ.describe(), witness_layer=L, witnesses=obs.m,
         score=obs.score, score_per_1000=round(1000.0 * obs.score / params.steps, 2),
-        bets=bets, hits=c["hits"], misses=c["misses"], hit_rate=(c["hits"] / bets) if bets else None,
+        bets=bets, hits=c["hits"], misses=c["misses"],
+        hit_rate=(c["hits"] / (c["hits"] + c["misses"])) if (c["hits"] + c["misses"]) else None,   # scored, non-tie bets (corrected 2026-09-27)
         void=c["void"], counts=dict(c),
         ambiguous_frac=round(amb / params.steps, 4),
         ambiguous_bet_rate=(c["ambiguous-bet"] / amb) if amb else None,
