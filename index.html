@@ -105,7 +105,7 @@
 
 <section id="blocks">
   <h2><span class="no">3 · Three blocks, one currency</span>The uniform receiver against the heterogeneous one — same world, same seed</h2>
-  <p>Eight channels each report the sign of a hidden regime that flips at a small rate; each channel is wrong with probability ε. The <b>uniform</b> receiver runs one architecture for all three jobs — a moving average to estimate, a cumulative-sum detector to notice change, a fixed margin to commit. The <b>heterogeneous</b> receiver gives each job its optimal algorithm: the exact posterior (a Bayes filter), the posterior changing sides (the accumulated form of contradiction), and Wald's sequential band to commit. They stay compatible because all three are functionals of one number — the log-likelihood increment, (n₊ − n₋)·log((1−ε)/ε): the direction channel weighted by the noise. Inside the band, the <b>commit</b> block's prior decides: it starts blank and accumulates a narrative from what it records — honestly (κ = 0) or through a self-serving filter (κ → 1) that records right decisions and forgets wrong ones.</p>
+  <p>Eight channels each report the sign of a hidden regime that flips at a small rate; each channel is wrong with probability ε. The <b>uniform</b> receiver runs one architecture for all three jobs — a moving average to estimate, a cumulative-sum detector to notice change, a fixed margin to commit. The <b>heterogeneous</b> receiver gives each job its optimal algorithm: the exact posterior (a Bayes filter — exact for the clean model it assumes: two regimes, symmetric switching at a known rate, independent channels each wrong with a known probability ε; with the liar switched on it is deliberately misspecified), the posterior changing sides (the accumulated form of contradiction), and Wald's sequential band to commit. They stay compatible because all three are functionals of one number — the log-likelihood increment, (n₊ − n₋)·log((1−ε)/ε): the direction channel weighted by the noise. Inside the band, the <b>commit</b> block's prior decides: it starts blank and accumulates a narrative from what it records — honestly (κ = 0) or through a self-serving filter (κ → 1) that records right decisions and forgets wrong ones.</p>
   <div class="panel">
     <div class="controls">
       <div class="ctl">seed <input type="number" id="seed" value="1" step="1" min="0"></div>
@@ -124,7 +124,8 @@
     <canvas id="prior" width="1000" height="160"></canvas>
     <div class="legend"><span><i style="background:var(--blue)"></i>uniform prior AR</span><span><i style="background:var(--gold)"></i>heterogeneous prior AR</span><span>the narrative accumulates from what the commit block records under ambiguity</span></div>
     <div class="grid2" style="margin-top:12px">
-      <div><table id="resTable"><thead><tr><th></th><th>uniform</th><th>heterogeneous</th></tr></thead><tbody></tbody></table></div>
+      <div><table id="resTable"><thead><tr><th></th><th>uniform</th><th>heterogeneous</th></tr></thead><tbody></tbody></table>
+        <div class="cap">Alarm attribution is a stated heuristic: each alarm is credited to the most recent switch since the previous alarm; an alarm with no switch since the previous alarm is spurious; delay = alarm − that switch; the median is the conventional one (mean of the middle two for even counts). Several switches in one interval count once.</div></div>
       <div>
         <p><b>What to try.</b> Run it clean, then turn the liar on: the sharper receiver wins both worlds but <i>loses more</i> to a structured liar, because it weights every source by its full likelihood. Sharpness is exploitability; the remedy is a trust layer (below), not blunting. Raise κ and watch the narrative rate leave the true rate while the score does not move: the ego inflates the ledger for free. Raise ε and watch the honest prior become an optimist — ambiguity has become noise instead of change.</p>
       </div>
@@ -146,14 +147,14 @@
     <div class="legend"><span>rows: witnesses 1–7 slow, 8 sharp</span><span><i style="background:var(--red)"></i>regime switches</span><span><i style="background:var(--violet)"></i>burned from here on</span><span>accuracy printed at right</span></div>
     <div class="grid2" style="margin-top:12px">
       <div class="kv" id="tribeOut"></div>
-      <div><p>The tolerance a group needs to keep its fastest honest member is <b>its own re-lock lag</b>: 6 × 0.75 = 4.5 contradictions clears a threshold of 4 and not of 8. And the group loses nothing measurable by burning it — one vote in eight — which is exactly why the rule can persist. No liar, no malice, no dislike of honesty appears anywhere in this room; the statistics of consensus-relative trust do it alone.</p></div>
+      <div><p>The tolerance a group needs to keep its fastest honest member is <b>its own re-lock lag</b>. The threshold rule keeps a per-witness statistic S ← max(0, S + [contradicts] − 0.25): each contradiction adds 1 and every step drifts 0.25 down, so six consecutive contradicting steps raise S by 6 × (1 − 0.25) = 4.5 — which clears a threshold of 4 and not of 8. And the group loses nothing measurable by burning it — one vote in eight — which is exactly why the rule can persist. No liar, no malice, no dislike of honesty appears anywhere in this room; the statistics of consensus-relative trust do it alone.</p></div>
     </div>
   </div>
 </section>
 
 <section id="fence">
   <div class="fence">
-    <b>What this room does not claim.</b> These are eight-bit toys: channels are not people, a "witness" is a moving average, and "neurotypical" appears nowhere in the mathematics. Nothing here bears on the Riemann Hypothesis, on any market, or on any brain; nothing is an edge; nothing is registered as evidence for any claim in the papers. Every statement about the toy is exact where it says exact (the node tables, the lens enumeration, the burn times) and descriptive elsewhere (seeded runs at stated parameters). The full design record — six model versions, 84 unit tests, every pre-stated expectation with its verdict including the refuted ones — is the <span class="dim"><a href="https://github.com/travisbergen2/Bounded_receiver" target="_blank" rel="noopener noreferrer">source repository</a></span>. Room X's first version was withdrawn by the author on 26 September 2026; this is its replacement.
+    <b>What this room does not claim.</b> These are eight-bit toys: channels are not people, a "witness" is a moving average, and "neurotypical" appears nowhere in the mathematics. Nothing here bears on the Riemann Hypothesis, on any market, or on any brain; nothing is an edge; nothing is registered as evidence for any claim in the papers. Every statement about the toy is exact where it says exact (the node tables, the lens enumeration, the burn times) and descriptive elsewhere (seeded runs at stated parameters). The self-check proves that the browser and the Python twin agree on the frozen cases and reject the same out-of-domain parameters; it does not prove the formulation is well defined outside the guarded domain (0 &lt; ε &lt; 1, 0 &lt; switch rate &lt; 1, 0 &lt; α &lt; 1, positive time constants) — those inputs are refused, not interpreted. An outside review on 27 September 2026 (Manus, at the author's request) reproduced the checks and found the wording and domain issues now fixed; its findings are listed in the repository. The full design record — six model versions, 84 unit tests, every pre-stated expectation with its verdict including the refuted ones — is the <span class="dim"><a href="https://github.com/travisbergen2/Bounded_receiver" target="_blank" rel="noopener noreferrer">source repository</a></span>. Room X's first version was withdrawn by the author on 26 September 2026; this is its replacement.
   </div>
 </section>
 
@@ -171,7 +172,9 @@
 <script>/* Room X · The Bounded Receiver — computational core.
    Runs identically in the browser and in Node. Every number on the page is computed here and checked
    against receipts/twin.json (the Python twin, same PRNG, same operation order).
-   Design record: node_observer v0.1–v0.6 (Travis Bergen with the Riemann agent, 2026-09-25/26). */
+   Design record: node_observer v0.1–v0.6 (Travis Bergen with the Riemann agent, 2026-09-25/26).
+   Hardened 2026-09-27 after an outside review: parameters are validated (no silent coercion), the median is
+   the conventional one, and the summaries name their denominators. */
 (function (root) {
   "use strict";
 
@@ -188,6 +191,47 @@
   }
   function sign(x) { return x > 0 ? 1 : (x < 0 ? -1 : 0); }
   function sigmoid(x) { return x >= 0 ? 1 / (1 + Math.exp(-x)) : Math.exp(x) / (1 + Math.exp(x)); }
+  function median(arr) {
+    if (!arr.length) return null;
+    const a = arr.slice().sort((x, y) => x - y), m = a.length >> 1;
+    return a.length % 2 ? a[m] : (a[m - 1] + a[m]) / 2;
+  }
+
+  // ---------------------------------------------------------------- parameter validation: fail loudly, never coerce
+  function must(cond, msg) { if (!cond) throw new Error("Room: " + msg); }
+  const isInt = x => Number.isInteger(x);
+  const isNum = x => typeof x === "number" && Number.isFinite(x);
+  function validateWorld(p) {
+    must(isInt(p.n) && p.n >= 1, "n must be an integer >= 1");
+    must(isNum(p.eps) && p.eps >= 0 && p.eps <= 1, "eps must lie in [0, 1]");
+    must(isNum(p.pSwitch) && p.pSwitch >= 0 && p.pSwitch <= 1, "pSwitch must lie in [0, 1]");
+    if (p.liar) must(isInt(p.liarIdx) && p.liarIdx >= 0 && p.liarIdx < p.n, "liarIdx must index a channel when the liar is on");
+    must(isNum(p.lieOn) && p.lieOn >= 0 && p.lieOn <= 1, "lieOn must lie in [0, 1]");
+    must(isNum(p.lieLen) && p.lieLen >= 1, "lieLen must be >= 1");
+  }
+  function validateNarrative(o) {
+    must(isNum(o.tau) && o.tau > 0, "tau must be > 0");
+    must(isNum(o.eta) && o.eta >= 0 && o.eta <= 1, "eta must lie in [0, 1]");
+    must(isNum(o.kappa) && o.kappa >= 0 && o.kappa <= 1, "kappa must lie in [0, 1]");
+    must(isNum(o.AR0), "AR0 must be finite");
+  }
+  function validateUniform(o) {
+    validateNarrative(o);
+    must(isNum(o.TI) && o.TI > 0, "TI must be > 0");
+    must(isNum(o.FT) && o.FT > 0, "FT must be > 0");
+    must(isNum(o.UE) && o.UE > 0 && o.UE <= 1, "UE must lie in (0, 1]");
+    must(isNum(o.SG), "SG must be finite");
+    must(isNum(o.margin) && o.margin >= 0, "margin must be >= 0");
+    must(isInt(o.seamLen) && o.seamLen >= 0, "seamLen must be an integer >= 0");
+    must(isNum(o.boost) && o.boost >= 1, "boost must be >= 1");
+  }
+  function validateHetero(o, wp) {
+    validateNarrative(o);
+    must(isNum(o.alpha) && o.alpha > 0 && o.alpha < 1, "alpha must lie strictly inside (0, 1)");
+    must(wp.eps > 0 && wp.eps < 1, "the heterogeneous receiver needs 0 < eps < 1: a deterministic channel has no finite likelihood ratio");
+    must(wp.pSwitch > 0 && wp.pSwitch < 1, "the heterogeneous receiver needs 0 < pSwitch < 1: its prior mixing bounds the odds only then");
+  }
+  function validateSteps(steps) { must(isInt(steps) && steps >= 0, "steps must be an integer >= 0"); }
 
   // ---------------------------------------------------------------- Gaussian integers [a, b] = a + b i
   function gAdd(x, y) { return [x[0] + y[0], x[1] + y[1]]; }
@@ -200,6 +244,7 @@
     return a + (b > 0 ? "+" : "-") + im;
   }
   function pairInfo(a, b) {
+    must(isInt(a) && isInt(b), "a and b must be integers");
     const trace = 2 * a, norm = a * a + b * b;
     return { a, b, trace, norm, gap: Math.abs(trace - norm), dist2: norm - trace + 1, blind: trace === norm };
   }
@@ -214,6 +259,7 @@
     return rows;
   }
   function blindLattice(radius) {
+    must(isInt(radius) && radius >= 0, "radius must be an integer >= 0");
     const out = [];
     for (let a = -radius; a <= radius; a++) for (let b = -radius; b <= radius; b++) {
       const p = pairInfo(a, b);
@@ -234,6 +280,7 @@
     return entropyBits(mx) + entropyBits(my) - entropyBits(jx);
   }
   function lensTree4(op1, op2) {
+    must((op1 === "+" || op1 === "*") && (op2 === "+" || op2 === "*"), "ops must be '+' or '*'");
     const ap = (op, x, y) => op === "+" ? gAdd(x, y) : gMul(x, y);
     const vals = [], dirs = [], pars = [];
     for (let m = 0; m < 16; m++) {
@@ -247,7 +294,6 @@
     }
     const counts = {}; vals.forEach(v => counts[v] = (counts[v] || 0) + 1);
     const nontie = []; for (let k = 0; k < 16; k++) if (dirs[k] !== 0) nontie.push([vals[k], dirs[k]]);
-    // sign-blind: output invariant under the global flip (pattern m -> 15 - m)
     let blind = true; for (let m = 0; m < 16; m++) if (vals[m] !== vals[15 - m]) { blind = false; break; }
     return {
       ops: op1 + op2, zero: vals.filter(v => v === "0").length, distinct: Object.keys(counts).length,
@@ -261,6 +307,7 @@
     const w = { n: p.n, eps: p.eps, pSwitch: p.pSwitch, liar: !!p.liar, liarIdx: p.liarIdx == null ? 3 : p.liarIdx,
       lieOn: p.lieOn == null ? 0.01 : p.lieOn, lieLen: p.lieLen == null ? 60 : p.lieLen,
       regime: 1, lying: false, signs: [], switched: false, t: 0 };
+    validateWorld(w);
     w.step = function () {
       w.switched = false;
       if (rnd() < w.pSwitch) { w.regime = -w.regime; w.switched = true; }
@@ -299,6 +346,7 @@
 
   // ---------------------------------------------------------------- the uniform observer: EMA / CUSUM / margin
   function makeUniform(o, rnd) {
+    validateUniform(o);
     const u = { E: 0, S: 0, seam: 0, t: 0, score: 0, hits: 0, misses: 0, voids: 0, confident: 0, ambBet: 0, ambAbstain: 0, seamAbstain: 0,
       alarms: [], regimeAgree: 0, regimeChecked: 0, nar: makeNarrative(o, rnd),
       TI: o.TI, SG: o.SG, FT: o.FT, UE: o.UE, margin: o.margin, seamLen: o.seamLen, boost: o.boost };
@@ -329,7 +377,14 @@
   }
 
   // ---------------------------------------------------------------- the heterogeneous observer: posterior odds / side-switch / Wald band
+  // Exact posterior for the clean model it assumes: two regimes, symmetric switching at a known rate pSwitch,
+  // independent channels each wrong with a known probability eps. With the liar on, it is deliberately misspecified.
+  // Kept in ODDS (not log-odds) so the JavaScript and Python twins agree bit for bit: the prior-mixing step is
+  // rational, and it CONTRACTS the odds into [pSwitch/(1-pSwitch), (1-pSwitch)/pSwitch] before each evidence
+  // update, so the odds stay bounded whenever 0 < pSwitch < 1 (see mixOdds and the boundary receipts).
+  function mixOdds(o, ps) { return (o * (1 - ps) + ps) / (o * ps + (1 - ps)); }
   function makeHetero(o, wp, rnd) {
+    validateHetero(o, wp);
     const w = (1 - wp.eps) / wp.eps, band = (1 - o.alpha) / o.alpha;   // odds ratio per channel; Wald band as odds
     const h = { odds: 1, prevMap: 0, t: 0, score: 0, hits: 0, misses: 0, voids: 0, confident: 0, ambBet: 0, ambAbstain: 0,
       alarms: [], regimeAgree: 0, regimeChecked: 0, nar: makeNarrative(o, rnd), w, band, pSwitch: wp.pSwitch };
@@ -349,9 +404,7 @@
       if (rec.kind === "ambBet" || rec.kind === "ambAbstain") h.nar.settle(rec.kind === "ambBet", wouldHit);
     };
     h.observe = function (signs) {
-      // prior mixing (rational in the odds), then evidence: multiply by w per + vote, divide per − vote
-      const o = h.odds, ps = h.pSwitch;
-      let odds = (o * (1 - ps) + ps) / (o * ps + (1 - ps));
+      let odds = mixOdds(h.odds, h.pSwitch);
       for (let j = 0; j < signs.length; j++) { if (signs[j] > 0) odds *= h.w; else odds /= h.w; }
       h.odds = odds;
       const cur = sign(h.odds - 1);
@@ -366,26 +419,44 @@
   const DEFAULT_UNIFORM = { TI: 8, SG: 1, FT: 4, UE: 0.1, margin: 0.3, seamLen: 4, boost: 3, AR0: 0, eta: 0.02, tau: 0.15, kappa: 0 };
   const DEFAULT_HETERO = { alpha: 0.05, AR0: 0, eta: 0.02, tau: 0.15, kappa: 0 };
 
+  // hit_rate = hits / (hits + misses): bets that were placed AND met a non-tie outcome. Abstentions and voided
+  // bets (a tie in the observable) are excluded from both numerator and denominator — a betting metric conditional
+  // on a scored bet, not the fraction of all steps predicted correctly. (Corrected 2026-09-27: an earlier version
+  // divided by all bets placed, including those voided by a tie — understating hit rates by the tie fraction.)
   function summarize(obs, isHetero) {
-    const bets = obs.confident + obs.ambBet, amb = obs.ambBet + obs.ambAbstain;
-    return {
-      score: obs.score, hits: obs.hits, misses: obs.misses, voids: obs.voids, bets, hit_rate: bets ? obs.hits / bets : null,
+    const bets = obs.confident + obs.ambBet, amb = obs.ambBet + obs.ambAbstain, scored = obs.hits + obs.misses;
+    const s = {
+      score: obs.score, hits: obs.hits, misses: obs.misses, voids: obs.voids, bets, scored_bets: scored, voided_bets: bets - scored,
+      hit_rate: scored ? obs.hits / scored : null,
       ambiguous: amb, ambiguous_bet_rate: amb ? obs.ambBet / amb : null, alarms: obs.alarms.length,
       regime_accuracy: obs.regimeChecked ? obs.regimeAgree / obs.regimeChecked : null,
       AR_final: obs.nar.AR, narrative_rate: obs.nar.narrativeRate(), true_rate: obs.nar.trueRate(),
       recorded: obs.nar.recRight + obs.nar.recWrong, resolved: obs.nar.decRight + obs.nar.decWrong,
       seam_abstain: isHetero ? 0 : obs.seamAbstain,
     };
+    if (isHetero) { s.odds_final = obs.odds; s.odds_finite = Number.isFinite(obs.odds) && obs.odds > 0; }
+    return s;
+  }
+
+  // Alarm attribution (a descriptive heuristic, stated so it can be read): walking the alarms in order, each alarm
+  // is credited to the MOST RECENT switch since the previous alarm; an alarm with no switch since the previous
+  // alarm is SPURIOUS; delay = alarm − that switch. Several switches inside one interval count once; a switch
+  // is never matched twice. median_delay is the conventional median (mean of the middle two for even counts).
+  function attribution(alarms, switches) {
+    let spurious = 0, attributed = 0; const delays = []; let prev = 0;
+    for (const a of alarms) { const recent = switches.filter(s => s > prev && s <= a); if (recent.length) { attributed++; delays.push(a - recent[recent.length - 1]); } else spurious++; prev = a; }
+    return { attributed, spurious, median_delay: median(delays) };
   }
 
   // ---------------------------------------------------------------- run both observers on ONE world (same PRNG stream for the world)
   function run(seed, steps, wp, up, hp, wantTraces) {
+    must(isInt(seed) && seed >= 0, "seed must be an integer >= 0");
+    validateSteps(steps);
     wp = Object.assign({}, DEFAULT_WORLD, wp || {}); up = Object.assign({}, DEFAULT_UNIFORM, up || {}); hp = Object.assign({}, DEFAULT_HETERO, hp || {});
     const rndW = mulberry32(seed), rndU = mulberry32(seed + 1000), rndH = mulberry32(seed + 2000);
     const world = makeWorld(wp, rndW), U = makeUniform(up, rndU), H = makeHetero(hp, wp, rndH);
     const switches = [];
     const tr = wantTraces ? { E: [], L: [], regime: [], ARu: [], ARh: [], signs: [], lying: [] } : null;
-    // both observers see the initial signs
     U.observe(world.signs.reduce((a, b) => a + b, 0) / world.n);
     H.observe(world.signs);
     for (let t = 0; t < steps; t++) {
@@ -398,19 +469,22 @@
       H.observe(world.signs);
       if (tr) { tr.E.push(U.E); tr.L.push(H.L()); tr.regime.push(world.regime); tr.ARu.push(U.nar.AR); tr.ARh.push(H.nar.AR); tr.signs.push(world.signs.slice()); tr.lying.push(world.lying ? 1 : 0); }
     }
-    const attribution = (alarms) => {
-      let spurious = 0, attributed = 0; const delays = []; let prev = 0;
-      for (const a of alarms) { const recent = switches.filter(s => s > prev && s <= a); if (recent.length) { attributed++; delays.push(a - recent[recent.length - 1]); } else spurious++; prev = a; }
-      delays.sort((x, y) => x - y);
-      return { attributed, spurious, median_delay: delays.length ? delays[Math.floor(delays.length / 2)] : null };
-    };
-    return { seed, steps, switches: switches.length, uniform: Object.assign(summarize(U, false), attribution(U.alarms)),
-      hetero: Object.assign(summarize(H, true), attribution(H.alarms)), traces: tr, alarmsU: U.alarms, alarmsH: H.alarms, switchTimes: switches };
+    return { seed, steps, switches: switches.length, uniform: Object.assign(summarize(U, false), attribution(U.alarms, switches)),
+      hetero: Object.assign(summarize(H, true), attribution(H.alarms, switches)), traces: tr, alarmsU: U.alarms, alarmsH: H.alarms, switchTimes: switches };
   }
 
-  // ---------------------------------------------------------------- the tribe: 7 slow witnesses + 1 sharp, judged by a trust rule
+  // ---------------------------------------------------------------- the tribe: nSlow slow witnesses + 1 sharp, judged by a trust rule
+  // rule 'strike': the first contradiction of the trusted consensus burns a witness. rule 'cusum': a per-witness
+  // statistic S ← max(0, S + [contradicts] − 0.25) burns the witness when S ≥ FT — each contradiction adds 1 and
+  // every step drifts 0.25 down, so a run of k contradicting steps raises S by 0.75·k.
   function tribe(seed, steps, wp, rule, FT, nSlow) {
-    wp = Object.assign({}, DEFAULT_WORLD, wp || {}); nSlow = nSlow || 7;
+    must(isInt(seed) && seed >= 0, "seed must be an integer >= 0");
+    validateSteps(steps);
+    wp = Object.assign({}, DEFAULT_WORLD, wp || {}); validateWorld(wp);
+    must(rule === "strike" || rule === "cusum", "rule must be 'strike' or 'cusum'");
+    if (rule === "cusum") must(isNum(FT) && FT > 0, "FT must be > 0 for the cusum rule");
+    nSlow = (nSlow === undefined || nSlow === null) ? 7 : nSlow;
+    must(isInt(nSlow) && nSlow >= 1, "nSlow must be an integer >= 1 (no silent default for 0)");
     const rndW = mulberry32(seed);
     const world = makeWorld(wp, rndW);
     const m = nSlow + 1, E = new Array(nSlow).fill(0);
@@ -440,18 +514,19 @@
         else { S[j] = Math.max(0, S[j] + (contradicts ? 1 : 0) - 0.25); if (S[j] >= FT) { burned[j] = true; burnTime[j] = t + 1; } }
       }
     }
-    return { seed, steps, rule, FT, switches: switches.length, first_switch: switches.length ? switches[0] : null,
+    return { seed, steps, rule, FT, nSlow, switches: switches.length, first_switch: switches.length ? switches[0] : null,
       accuracy: right.map((r, j) => checked[j] ? r / checked[j] : null), burned, burn_time: burnTime,
       sharp_burned: burned[nSlow], sharp_burn_time: burnTime[nSlow], slow_burned: burned.slice(0, nSlow).filter(Boolean).length,
       group_with: grpChecked ? grpAll / grpChecked : null, group_without: grpChecked ? grpSlow / grpChecked : null, switchTimes: switches };
   }
 
   root.Room = { mulberry32, gAdd, gMul, gStr, pairInfo, configTable, blindLattice, lensTree4, makeWorld, makeUniform, makeHetero, run, tribe,
-    DEFAULT_WORLD, DEFAULT_UNIFORM, DEFAULT_HETERO, sign, sigmoid };
+    DEFAULT_WORLD, DEFAULT_UNIFORM, DEFAULT_HETERO, sign, sigmoid, median, mixOdds,
+    validateWorld, validateUniform, validateHetero, validateSteps };
 })(typeof globalThis !== "undefined" ? globalThis : this);
 </script>
 <script>
-const TWIN = {"version":"Room X twin v1 (2026-09-26)","config_table":[{"config":"(+i,-i)","plus":"0","times":"1","plus_class":0,"times_class":1},{"config":"(+i,+i)","plus":"2i","times":"-1","plus_class":1,"times_class":-1},{"config":"(-i,-i)","plus":"-2i","times":"-1","plus_class":-1,"times_class":-1}],"blind_lattice":[[0,0],[1,-1],[1,1],[2,0]],"lenses":[{"ops":"++","zero":6,"distinct":5,"H_value":2.0306390622295662,"MI_sign":0.9999999999999998,"MI_parity":1.0,"sign_blind":false},{"ops":"**","zero":0,"distinct":2,"H_value":1.0,"MI_sign":0.0,"MI_parity":1.0,"sign_blind":true},{"ops":"*+","zero":8,"distinct":3,"H_value":1.5,"MI_sign":0.0,"MI_parity":1.0,"sign_blind":true},{"ops":"+*","zero":12,"distinct":3,"H_value":1.061278124459133,"MI_sign":0.0,"MI_parity":0.31127812445913294,"sign_blind":true}],"runs":[{"params":{"seed":1,"steps":4000,"wp":{},"up":{},"hp":{}},"result":{"seed":1,"steps":4000,"switches":18,"uniform":{"score":3661,"hits":3752,"misses":91,"voids":74,"bets":3915,"hit_rate":0.9583652618135376,"ambiguous":84,"ambiguous_bet_rate":0.4166666666666667,"alarms":9,"regime_accuracy":0.974,"AR_final":-0.10090103233861576,"narrative_rate":0.4418604651162791,"true_rate":0.4878048780487805,"recorded":43,"resolved":82,"seam_abstain":36,"attributed":9,"spurious":0,"median_delay":6},"hetero":{"score":3851,"hits":3887,"misses":36,"voids":74,"bets":3997,"hit_rate":0.9724793595196397,"ambiguous":20,"ambiguous_bet_rate":0.85,"alarms":22,"regime_accuracy":0.9945,"AR_final":0.199268649250204,"narrative_rate":0.9090909090909091,"true_rate":0.8,"recorded":11,"resolved":20,"seam_abstain":0,"attributed":18,"spurious":4,"median_delay":0}}},{"params":{"seed":2,"steps":4000,"wp":{"liar":true},"up":{},"hp":{}},"result":{"seed":2,"steps":4000,"switches":17,"uniform":{"score":3573,"hits":3673,"misses":100,"voids":119,"bets":3889,"hit_rate":0.9444587297505785,"ambiguous":140,"ambiguous_bet_rate":0.37857142857142856,"alarms":6,"regime_accuracy":0.971,"AR_final":0.011606631453083792,"narrative_rate":0.49295774647887325,"true_rate":0.5298507462686567,"recorded":71,"resolved":134,"seam_abstain":24,"attributed":6,"spurious":0,"median_delay":6},"hetero":{"score":3771,"hits":3820,"misses":49,"voids":119,"bets":3988,"hit_rate":0.9578736208625878,"ambiguous":37,"ambiguous_bet_rate":0.6756756756756757,"alarms":23,"regime_accuracy":0.9945,"AR_final":0.2833336805255475,"narrative_rate":0.5789473684210527,"true_rate":0.6285714285714286,"recorded":19,"resolved":35,"seam_abstain":0,"attributed":17,"spurious":6,"median_delay":0}}},{"params":{"seed":3,"steps":4000,"wp":{},"up":{"kappa":0.9,"AR0":0.5},"hp":{"kappa":0.9,"AR0":0.5}},"result":{"seed":3,"steps":4000,"switches":18,"uniform":{"score":3638,"hits":3755,"misses":117,"voids":84,"bets":3956,"hit_rate":0.9491911021233569,"ambiguous":93,"ambiguous_bet_rate":0.956989247311828,"alarms":10,"regime_accuracy":0.972,"AR_final":0.7374381102837461,"narrative_rate":1.0,"true_rate":0.45555555555555555,"recorded":36,"resolved":90,"seam_abstain":40,"attributed":10,"spurious":0,"median_delay":6},"hetero":{"score":3852,"hits":3884,"misses":32,"voids":84,"bets":4000,"hit_rate":0.971,"ambiguous":17,"ambiguous_bet_rate":1.0,"alarms":22,"regime_accuracy":0.99425,"AR_final":0.5831261189349252,"narrative_rate":1.0,"true_rate":0.7333333333333333,"recorded":9,"resolved":15,"seam_abstain":0,"attributed":18,"spurious":4,"median_delay":0}}}],"tribes":[{"params":{"seed":4,"steps":4000,"rule":"strike","FT":0.0},"result":{"seed":4,"steps":4000,"rule":"strike","FT":0.0,"switches":19,"first_switch":740,"accuracy":[0.97225,0.97225,0.97225,0.97225,0.97225,0.97225,0.97225,0.999],"burned":[false,false,false,false,false,false,false,true],"burn_time":[null,null,null,null,null,null,null,740],"sharp_burned":true,"sharp_burn_time":740,"slow_burned":0,"group_with":0.97225,"group_without":0.97225}},{"params":{"seed":4,"steps":4000,"rule":"cusum","FT":4.0},"result":{"seed":4,"steps":4000,"rule":"cusum","FT":4.0,"switches":19,"first_switch":740,"accuracy":[0.97225,0.97225,0.97225,0.97225,0.97225,0.97225,0.97225,0.999],"burned":[false,false,false,false,false,false,false,true],"burn_time":[null,null,null,null,null,null,null,1046],"sharp_burned":true,"sharp_burn_time":1046,"slow_burned":0,"group_with":0.97225,"group_without":0.97225}},{"params":{"seed":4,"steps":4000,"rule":"cusum","FT":8.0},"result":{"seed":4,"steps":4000,"rule":"cusum","FT":8.0,"switches":19,"first_switch":740,"accuracy":[0.97225,0.97225,0.97225,0.97225,0.97225,0.97225,0.97225,0.999],"burned":[false,false,false,false,false,false,false,false],"burn_time":[null,null,null,null,null,null,null,null],"sharp_burned":false,"sharp_burn_time":null,"slow_burned":0,"group_with":0.97225,"group_without":0.97225}}],"prng_first5":[0.6270739405881613,0.002735721180215478,0.5274470399599522,0.9810509674716741,0.9683778982143849]};
+const TWIN = {"version":"Room X twin v2 (2026-09-27; validation, conventional median, boundary receipts)","config_table":[{"config":"(+i,-i)","plus":"0","times":"1","plus_class":0,"times_class":1},{"config":"(+i,+i)","plus":"2i","times":"-1","plus_class":1,"times_class":-1},{"config":"(-i,-i)","plus":"-2i","times":"-1","plus_class":-1,"times_class":-1}],"blind_lattice":[[0,0],[1,-1],[1,1],[2,0]],"lenses":[{"ops":"++","zero":6,"distinct":5,"H_value":2.0306390622295662,"MI_sign":0.9999999999999998,"MI_parity":1.0,"sign_blind":false},{"ops":"**","zero":0,"distinct":2,"H_value":1.0,"MI_sign":0.0,"MI_parity":1.0,"sign_blind":true},{"ops":"*+","zero":8,"distinct":3,"H_value":1.5,"MI_sign":0.0,"MI_parity":1.0,"sign_blind":true},{"ops":"+*","zero":12,"distinct":3,"H_value":1.061278124459133,"MI_sign":0.0,"MI_parity":0.31127812445913294,"sign_blind":true}],"runs":[{"params":{"seed":1,"steps":4000,"wp":{},"up":{},"hp":{}},"result":{"seed":1,"steps":4000,"switches":18,"uniform":{"score":3661,"hits":3752,"misses":91,"voids":74,"bets":3915,"scored_bets":3843,"voided_bets":72,"hit_rate":0.97632058287796,"ambiguous":84,"ambiguous_bet_rate":0.4166666666666667,"alarms":9,"regime_accuracy":0.974,"AR_final":-0.10090103233861576,"narrative_rate":0.4418604651162791,"true_rate":0.4878048780487805,"recorded":43,"resolved":82,"seam_abstain":36,"attributed":9,"spurious":0,"median_delay":6},"hetero":{"score":3851,"hits":3887,"misses":36,"voids":74,"bets":3997,"scored_bets":3923,"voided_bets":74,"hit_rate":0.9908233494774408,"ambiguous":20,"ambiguous_bet_rate":0.85,"alarms":22,"regime_accuracy":0.9945,"AR_final":0.199268649250204,"narrative_rate":0.9090909090909091,"true_rate":0.8,"recorded":11,"resolved":20,"seam_abstain":0,"odds_final":6582411.0950912675,"odds_finite":true,"attributed":18,"spurious":4,"median_delay":0.0}}},{"params":{"seed":2,"steps":4000,"wp":{"liar":true},"up":{},"hp":{}},"result":{"seed":2,"steps":4000,"switches":17,"uniform":{"score":3573,"hits":3673,"misses":100,"voids":119,"bets":3889,"scored_bets":3773,"voided_bets":116,"hit_rate":0.9734958918632388,"ambiguous":140,"ambiguous_bet_rate":0.37857142857142856,"alarms":6,"regime_accuracy":0.971,"AR_final":0.011606631453083792,"narrative_rate":0.49295774647887325,"true_rate":0.5298507462686567,"recorded":71,"resolved":134,"seam_abstain":24,"attributed":6,"spurious":0,"median_delay":5.5},"hetero":{"score":3771,"hits":3820,"misses":49,"voids":119,"bets":3988,"scored_bets":3869,"voided_bets":119,"hit_rate":0.9873352287412768,"ambiguous":37,"ambiguous_bet_rate":0.6756756756756757,"alarms":23,"regime_accuracy":0.9945,"AR_final":0.2833336805255475,"narrative_rate":0.5789473684210527,"true_rate":0.6285714285714286,"recorded":19,"resolved":35,"seam_abstain":0,"odds_final":1.5191543271805998e-07,"odds_finite":true,"attributed":17,"spurious":6,"median_delay":0}}},{"params":{"seed":3,"steps":4000,"wp":{},"up":{"kappa":0.9,"AR0":0.5},"hp":{"kappa":0.9,"AR0":0.5}},"result":{"seed":3,"steps":4000,"switches":18,"uniform":{"score":3638,"hits":3755,"misses":117,"voids":84,"bets":3956,"scored_bets":3872,"voided_bets":84,"hit_rate":0.9697830578512396,"ambiguous":93,"ambiguous_bet_rate":0.956989247311828,"alarms":10,"regime_accuracy":0.972,"AR_final":0.7374381102837461,"narrative_rate":1.0,"true_rate":0.45555555555555555,"recorded":36,"resolved":90,"seam_abstain":40,"attributed":10,"spurious":0,"median_delay":6.0},"hetero":{"score":3852,"hits":3884,"misses":32,"voids":84,"bets":4000,"scored_bets":3916,"voided_bets":84,"hit_rate":0.9918283963227783,"ambiguous":17,"ambiguous_bet_rate":1.0,"alarms":22,"regime_accuracy":0.99425,"AR_final":0.5831261189349252,"narrative_rate":1.0,"true_rate":0.7333333333333333,"recorded":9,"resolved":15,"seam_abstain":0,"odds_final":6383.919853166939,"odds_finite":true,"attributed":18,"spurious":4,"median_delay":0.0}}},{"params":{"seed":7,"steps":60000,"wp":{"eps":0.02,"pSwitch":0.001},"up":{},"hp":{}},"result":{"seed":7,"steps":60000,"switches":46,"uniform":{"score":59373,"hits":59588,"misses":215,"voids":0,"bets":59803,"scored_bets":59803,"voided_bets":0,"hit_rate":0.9964048626323094,"ambiguous":36,"ambiguous_bet_rate":0.4166666666666667,"alarms":44,"regime_accuracy":0.9960833333333333,"AR_final":-0.18575294207228776,"narrative_rate":0.6875,"true_rate":0.6111111111111112,"recorded":16,"resolved":36,"seam_abstain":176,"attributed":44,"spurious":0,"median_delay":4.0},"hetero":{"score":59908,"hits":59954,"misses":46,"voids":0,"bets":60000,"scored_bets":60000,"voided_bets":0,"hit_rate":0.9992333333333333,"ambiguous":0,"ambiguous_bet_rate":null,"alarms":46,"regime_accuracy":0.9992333333333333,"AR_final":0,"narrative_rate":null,"true_rate":null,"recorded":0,"resolved":0,"seam_abstain":0,"odds_final":3.3199697639030396e+16,"odds_finite":true,"attributed":46,"spurious":0,"median_delay":0.0}}},{"params":{"seed":8,"steps":2000,"wp":{"n":2,"eps":0.5},"up":{},"hp":{}},"result":{"seed":8,"steps":2000,"switches":13,"uniform":{"score":-28,"hits":267,"misses":295,"voids":1021,"bets":1169,"scored_bets":562,"voided_bets":607,"hit_rate":0.4750889679715303,"ambiguous":1835,"ambiguous_bet_rate":0.5776566757493188,"alarms":14,"regime_accuracy":0.4819639278557114,"AR_final":-0.07399147571371494,"narrative_rate":0.49557522123893805,"true_rate":0.4807692307692308,"recorded":452,"resolved":884,"seam_abstain":56,"attributed":8,"spurious":6,"median_delay":57.5},"hetero":{"score":-30,"hits":231,"misses":261,"voids":1021,"bets":1009,"scored_bets":492,"voided_bets":517,"hit_rate":0.4695121951219512,"ambiguous":2000,"ambiguous_bet_rate":0.5045,"alarms":0,"regime_accuracy":null,"AR_final":0.027657422702262045,"narrative_rate":0.48455598455598453,"true_rate":0.48723186925434114,"recorded":518,"resolved":979,"seam_abstain":0,"odds_final":1.0,"odds_finite":true,"attributed":0,"spurious":0,"median_delay":null}}},{"params":{"seed":9,"steps":3000,"wp":{"n":5,"eps":0.3,"pSwitch":0.02},"up":{},"hp":{}},"result":{"seed":9,"steps":3000,"switches":51,"uniform":{"score":1625,"hits":2273,"misses":648,"voids":0,"bets":2921,"scored_bets":2921,"voided_bets":0,"hit_rate":0.7781581650119822,"ambiguous":901,"ambiguous_bet_rate":0.9167591564927858,"alarms":1,"regime_accuracy":0.9136666666666666,"AR_final":0.48383282623899804,"narrative_rate":0.6605504587155964,"true_rate":0.658157602663707,"recorded":436,"resolved":901,"seam_abstain":4,"attributed":1,"spurious":0,"median_delay":5},"hetero":{"score":1783,"hits":2366,"misses":583,"voids":0,"bets":2949,"scored_bets":2949,"voided_bets":0,"hit_rate":0.8023058663953883,"ambiguous":533,"ambiguous_bet_rate":0.9043151969981238,"alarms":101,"regime_accuracy":0.9473333333333334,"AR_final":0.426501824390392,"narrative_rate":0.7120622568093385,"true_rate":0.6810506566604128,"recorded":257,"resolved":533,"seam_abstain":0,"odds_final":0.0033082874381950376,"odds_finite":true,"attributed":44,"spurious":57,"median_delay":1.5}}}],"tribes":[{"params":{"seed":4,"steps":4000,"rule":"strike","FT":0.0},"result":{"seed":4,"steps":4000,"rule":"strike","FT":0.0,"nSlow":7,"switches":19,"first_switch":740,"accuracy":[0.97225,0.97225,0.97225,0.97225,0.97225,0.97225,0.97225,0.999],"burned":[false,false,false,false,false,false,false,true],"burn_time":[null,null,null,null,null,null,null,740],"sharp_burned":true,"sharp_burn_time":740,"slow_burned":0,"group_with":0.97225,"group_without":0.97225}},{"params":{"seed":4,"steps":4000,"rule":"cusum","FT":4.0},"result":{"seed":4,"steps":4000,"rule":"cusum","FT":4.0,"nSlow":7,"switches":19,"first_switch":740,"accuracy":[0.97225,0.97225,0.97225,0.97225,0.97225,0.97225,0.97225,0.999],"burned":[false,false,false,false,false,false,false,true],"burn_time":[null,null,null,null,null,null,null,1046],"sharp_burned":true,"sharp_burn_time":1046,"slow_burned":0,"group_with":0.97225,"group_without":0.97225}},{"params":{"seed":4,"steps":4000,"rule":"cusum","FT":8.0},"result":{"seed":4,"steps":4000,"rule":"cusum","FT":8.0,"nSlow":7,"switches":19,"first_switch":740,"accuracy":[0.97225,0.97225,0.97225,0.97225,0.97225,0.97225,0.97225,0.999],"burned":[false,false,false,false,false,false,false,false],"burn_time":[null,null,null,null,null,null,null,null],"sharp_burned":false,"sharp_burn_time":null,"slow_burned":0,"group_with":0.97225,"group_without":0.97225}},{"params":{"seed":5,"steps":3000,"rule":"strike","FT":0.0,"nSlow":3},"result":{"seed":5,"steps":3000,"rule":"strike","FT":0.0,"nSlow":3,"switches":18,"first_switch":607,"accuracy":[0.968,0.968,0.968,0.9986666666666667],"burned":[false,false,false,true],"burn_time":[null,null,null,608],"sharp_burned":true,"sharp_burn_time":608,"slow_burned":0,"group_with":0.968,"group_without":0.968}}],"prng_first5":[0.6270739405881613,0.002735721180215478,0.5274470399599522,0.9810509674716741,0.9683778982143849],"boundary":{"invalid_cases":[{"case":{"kind":"run","args":{"wp":{"n":0}}},"raises":true},{"case":{"kind":"run","args":{"wp":{"eps":1.5}}},"raises":true},{"case":{"kind":"run","args":{"wp":{"pSwitch":-0.1}}},"raises":true},{"case":{"kind":"run","args":{"wp":{"eps":0.0}}},"raises":true},{"case":{"kind":"run","args":{"wp":{"eps":1.0}}},"raises":true},{"case":{"kind":"run","args":{"wp":{"pSwitch":0.0}}},"raises":true},{"case":{"kind":"run","args":{"hp":{"alpha":0.0}}},"raises":true},{"case":{"kind":"run","args":{"hp":{"alpha":1.0}}},"raises":true},{"case":{"kind":"run","args":{"hp":{"tau":0.0}}},"raises":true},{"case":{"kind":"run","args":{"up":{"TI":0}}},"raises":true},{"case":{"kind":"run","args":{"up":{"tau":0}}},"raises":true},{"case":{"kind":"run","args":{"up":{"UE":0}}},"raises":true},{"case":{"kind":"run","args":{"steps":-1}},"raises":true},{"case":{"kind":"run","args":{"steps":2.5}},"raises":true},{"case":{"kind":"tribe","args":{"rule":"strik"}},"raises":true},{"case":{"kind":"tribe","args":{"nSlow":0}},"raises":true},{"case":{"kind":"tribe","args":{"rule":"cusum","FT":0}},"raises":true}],"mixing":[{"ps":0.005,"odds":1e-12,"mixed":0.005025125629140679,"inside":true},{"ps":0.005,"odds":1e-06,"mixed":0.005026125602883792,"inside":true},{"ps":0.005,"odds":0.5,"mixed":0.5037593984962406,"inside":true},{"ps":0.005,"odds":1.0,"mixed":1.0,"inside":true},{"ps":0.005,"odds":7.0,"mixed":6.766990291262135,"inside":true},{"ps":0.005,"odds":1000000.0,"mixed":198.96040787883211,"inside":true},{"ps":0.005,"odds":1000000000000.0,"mixed":198.9999999604,"inside":true},{"ps":0.2,"odds":1e-12,"mixed":0.25000000000093753,"inside":true},{"ps":0.2,"odds":1e-06,"mixed":0.2500009374997656,"inside":true},{"ps":0.2,"odds":0.5,"mixed":0.6666666666666667,"inside":true},{"ps":0.2,"odds":1.0,"mixed":1.0,"inside":true},{"ps":0.2,"odds":7.0,"mixed":2.6363636363636367,"inside":true},{"ps":0.2,"odds":1000000.0,"mixed":3.9999850000599997,"inside":true},{"ps":0.2,"odds":1000000000000.0,"mixed":3.999999999985,"inside":true}]}};
 (function () {
   "use strict";
   const R = Room, $ = id => document.getElementById(id);
@@ -467,11 +542,15 @@ const TWIN = {"version":"Room X twin v1 (2026-09-26)","config_table":[{"config":
     eq(R.blindLattice(3), TWIN.blind_lattice);
     [["+", "+"], ["*", "*"], ["*", "+"], ["+", "*"]].forEach(([a, b], i) => { const got = R.lensTree4(a, b), w = TWIN.lenses[i];
       eq(got.zero, w.zero); eq(got.distinct, w.distinct); eq(got.H_value, w.H_value, 1e-9); eq(got.MI_sign, w.MI_sign, 1e-9); eq(got.MI_parity, w.MI_parity, 1e-9); eq(got.sign_blind, w.sign_blind); });
-    const INT = ["score","hits","misses","voids","bets","ambiguous","alarms","recorded","resolved","seam_abstain","attributed","spurious"], FLT = ["hit_rate","ambiguous_bet_rate","regime_accuracy","AR_final","narrative_rate","true_rate"];
+    const INT = ["score","hits","misses","voids","bets","ambiguous","alarms","recorded","resolved","seam_abstain","attributed","spurious"], FLT = ["hit_rate","ambiguous_bet_rate","regime_accuracy","AR_final","narrative_rate","true_rate","median_delay"];
     for (const rr of TWIN.runs) { const p = rr.params, got = R.run(p.seed, p.steps, p.wp, p.up, p.hp, false), w = rr.result; eq(got.switches, w.switches);
-      for (const side of ["uniform", "hetero"]) { for (const k of INT) eq(got[side][k], w[side][k]); for (const k of FLT) { if (w[side][k] === null) eq(got[side][k], null); else eq(got[side][k], w[side][k], 1e-9); } eq(got[side].median_delay, w[side].median_delay); } }
-    for (const tt of TWIN.tribes) { const p = tt.params, got = R.tribe(p.seed, p.steps, null, p.rule, p.FT), w = tt.result;
+      for (const side of ["uniform", "hetero"]) { for (const k of INT) eq(got[side][k], w[side][k]); for (const k of FLT) { if (w[side][k] === null) eq(got[side][k], null); else eq(got[side][k], w[side][k], 1e-9); } }
+      eq(got.hetero.odds_finite, w.hetero.odds_finite); eq(got.hetero.odds_final, w.hetero.odds_final, 1e-9); }
+    for (const tt of TWIN.tribes) { const p = tt.params, got = R.tribe(p.seed, p.steps, null, p.rule, p.FT, p.nSlow === undefined ? null : p.nSlow), w = tt.result;
       eq(got.switches, w.switches); eq(got.burned, w.burned); eq(got.burn_time, w.burn_time); got.accuracy.forEach((a, j) => eq(a, w.accuracy[j], 1e-9)); eq(got.group_with, w.group_with, 1e-9); eq(got.group_without, w.group_without, 1e-9); }
+    for (const c of TWIN.boundary.invalid_cases) { let threw = false; try { const a = c.case.args; if (c.case.kind === "run") R.run(1, a.steps === undefined ? 100 : a.steps, a.wp, a.up, a.hp, false); else R.tribe(1, 100, null, a.rule === undefined ? "strike" : a.rule, a.FT === undefined ? 0 : a.FT, a.nSlow === undefined ? null : a.nSlow); } catch (e) { threw = true; } eq(threw, true); eq(c.raises, true); }
+    for (const row of TWIN.boundary.mixing) { const m = R.mixOdds(row.odds, row.ps), lo = row.ps / (1 - row.ps), hi = (1 - row.ps) / row.ps; eq(m, row.mixed, 1e-12); eq(row.inside, true); eq(m >= lo - 1e-12 && m <= hi + 1e-12, true); }
+    eq(R.median([5, 1, 3]), 3); eq(R.median([4, 1, 3, 2]), 2.5); eq(R.median([]), null);
     const el = $("selfcheck"); el.textContent = `self-check ${pass}/${pass + fail} against receipts/twin.json`; el.className = "pill " + (fail ? "bad" : "ok");
   }
 
@@ -522,7 +601,9 @@ const TWIN = {"version":"Room X twin v1 (2026-09-26)","config_table":[{"config":
     const row = (k, u, h, d) => { tb.innerHTML += `<tr><td>${k}</td><td class="v">${fmt(u, d)}</td><td class="v">${fmt(h, d)}</td></tr>`; };
     const U = res.uniform, Hh = res.hetero;
     row("score per 1,000 steps", 1000 * U.score / steps, 1000 * Hh.score / steps, 1);
-    row("hit rate", U.hit_rate, Hh.hit_rate, 4); row("regime accuracy (vs the hidden truth)", U.regime_accuracy, Hh.regime_accuracy, 4);
+    row("hit rate = hits / (hits + misses): scored bets with a non-tie outcome — abstaining raises it; the score does not forgive abstention", U.hit_rate, Hh.hit_rate, 4);
+    row("bets placed · scored · voided by a tie", `${U.bets} · ${U.scored_bets} · ${U.voided_bets}`, `${Hh.bets} · ${Hh.scored_bets} · ${Hh.voided_bets}`);
+    row("regime accuracy (vs the hidden truth)", U.regime_accuracy, Hh.regime_accuracy, 4);
     row("held (ambiguous) fraction", U.ambiguous / steps, Hh.ambiguous / steps, 4); row("switches in the world", res.switches, res.switches);
     row("alarms · attributed · spurious", `${U.alarms} · ${U.attributed} · ${U.spurious}`, `${Hh.alarms} · ${Hh.attributed} · ${Hh.spurious}`);
     row("median detection delay", U.median_delay, Hh.median_delay); row("prior AR at the end", U.AR_final, Hh.AR_final, 3);

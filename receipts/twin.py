@@ -1,5 +1,5 @@
-"""Python twin of core.js — same PRNG (mulberry32), same operation order, same arithmetic. Emits twin.json,
-the reference the page checks itself against. Pure Python 3.
+"""Python twin of core.js — same PRNG (mulberry32), same operation order, same arithmetic, same parameter
+validation. Emits twin.json, the reference the page checks itself against. Pure Python 3.
 
     python3 twin.py > twin.json
 """
@@ -34,7 +34,64 @@ def sigmoid(x: float) -> float:
     return 1 / (1 + math.exp(-x)) if x >= 0 else math.exp(x) / (1 + math.exp(x))
 
 
-# Gaussian integers
+def median(arr):
+    if not arr:
+        return None
+    a = sorted(arr)
+    m = len(a) // 2
+    return a[m] if len(a) % 2 else (a[m - 1] + a[m]) / 2
+
+
+# ----------------------------------------------------------------------------- validation (mirror of core.js)
+def must(cond, msg):
+    if not cond:
+        raise ValueError("Room: " + msg)
+
+
+def is_int(x): return isinstance(x, int) and not isinstance(x, bool)
+def is_num(x): return isinstance(x, (int, float)) and not isinstance(x, bool) and math.isfinite(x)
+
+
+def validate_world(p):
+    must(is_int(p["n"]) and p["n"] >= 1, "n must be an integer >= 1")
+    must(is_num(p["eps"]) and 0 <= p["eps"] <= 1, "eps must lie in [0, 1]")
+    must(is_num(p["pSwitch"]) and 0 <= p["pSwitch"] <= 1, "pSwitch must lie in [0, 1]")
+    if p["liar"]:
+        must(is_int(p["liarIdx"]) and 0 <= p["liarIdx"] < p["n"], "liarIdx must index a channel when the liar is on")
+    must(is_num(p["lieOn"]) and 0 <= p["lieOn"] <= 1, "lieOn must lie in [0, 1]")
+    must(is_num(p["lieLen"]) and p["lieLen"] >= 1, "lieLen must be >= 1")
+
+
+def validate_narrative(o):
+    must(is_num(o["tau"]) and o["tau"] > 0, "tau must be > 0")
+    must(is_num(o["eta"]) and 0 <= o["eta"] <= 1, "eta must lie in [0, 1]")
+    must(is_num(o["kappa"]) and 0 <= o["kappa"] <= 1, "kappa must lie in [0, 1]")
+    must(is_num(o["AR0"]), "AR0 must be finite")
+
+
+def validate_uniform(o):
+    validate_narrative(o)
+    must(is_num(o["TI"]) and o["TI"] > 0, "TI must be > 0")
+    must(is_num(o["FT"]) and o["FT"] > 0, "FT must be > 0")
+    must(is_num(o["UE"]) and 0 < o["UE"] <= 1, "UE must lie in (0, 1]")
+    must(is_num(o["SG"]), "SG must be finite")
+    must(is_num(o["margin"]) and o["margin"] >= 0, "margin must be >= 0")
+    must(is_int(o["seamLen"]) and o["seamLen"] >= 0, "seamLen must be an integer >= 0")
+    must(is_num(o["boost"]) and o["boost"] >= 1, "boost must be >= 1")
+
+
+def validate_hetero(o, wp):
+    validate_narrative(o)
+    must(is_num(o["alpha"]) and 0 < o["alpha"] < 1, "alpha must lie strictly inside (0, 1)")
+    must(0 < wp["eps"] < 1, "the heterogeneous receiver needs 0 < eps < 1: a deterministic channel has no finite likelihood ratio")
+    must(0 < wp["pSwitch"] < 1, "the heterogeneous receiver needs 0 < pSwitch < 1: its prior mixing bounds the odds only then")
+
+
+def validate_steps(steps):
+    must(is_int(steps) and steps >= 0, "steps must be an integer >= 0")
+
+
+# ----------------------------------------------------------------------------- Gaussian integers
 def g_add(x, y): return (x[0] + y[0], x[1] + y[1])
 def g_mul(x, y): return (x[0] * y[0] - x[1] * y[1], x[0] * y[1] + x[1] * y[0])
 
@@ -50,6 +107,7 @@ def g_str(z) -> str:
 
 
 def pair_info(a, b):
+    must(is_int(a) and is_int(b), "a and b must be integers")
     trace, norm = 2 * a, a * a + b * b
     return dict(a=a, b=b, trace=trace, norm=norm, gap=abs(trace - norm), dist2=norm - trace + 1, blind=trace == norm)
 
@@ -111,6 +169,7 @@ DEFAULT_HETERO = dict(alpha=0.05, AR0=0, eta=0.02, tau=0.15, kappa=0)
 
 class World:
     def __init__(self, p, rnd):
+        validate_world(p)
         self.n, self.eps, self.pSwitch = p["n"], p["eps"], p["pSwitch"]
         self.liar, self.liarIdx, self.lieOn, self.lieLen = bool(p["liar"]), p["liarIdx"], p["lieOn"], p["lieLen"]
         self.rnd = rnd; self.regime = 1; self.lying = False; self.signs = []; self.switched = False; self.t = 0
@@ -165,6 +224,7 @@ class Narrative:
 
 class Uniform:
     def __init__(self, o, rnd):
+        validate_uniform(o)
         self.o, self.rnd = o, rnd
         self.E = 0.0; self.S = 0.0; self.seam = 0; self.t = 0; self.score = 0
         self.hits = self.misses = self.voids = self.confident = self.ambBet = self.ambAbstain = self.seamAbstain = 0
@@ -205,8 +265,13 @@ class Uniform:
         self.E = (1 - ue) * self.E + ue * self.o["SG"] * e
 
 
+def mix_odds(o, ps):
+    return (o * (1 - ps) + ps) / (o * ps + (1 - ps))
+
+
 class Hetero:
     def __init__(self, o, wp, rnd):
+        validate_hetero(o, wp)
         self.o, self.rnd = o, rnd
         self.w = (1 - wp["eps"]) / wp["eps"]; self.band = (1 - o["alpha"]) / o["alpha"]; self.pSwitch = wp["pSwitch"]
         self.odds = 1.0; self.prevMap = 0; self.t = 0; self.score = 0
@@ -239,8 +304,7 @@ class Hetero:
             self.nar.settle(kind == "ambBet", would_hit)
 
     def observe(self, signs):
-        o, ps = self.odds, self.pSwitch
-        odds = (o * (1 - ps) + ps) / (o * ps + (1 - ps))
+        odds = mix_odds(self.odds, self.pSwitch)
         for s in signs:
             if s > 0: odds *= self.w
             else: odds /= self.w
@@ -252,14 +316,19 @@ class Hetero:
 
 
 def summarize(obs, is_hetero):
-    bets = obs.confident + obs.ambBet; amb = obs.ambBet + obs.ambAbstain
-    return dict(score=obs.score, hits=obs.hits, misses=obs.misses, voids=obs.voids, bets=bets,
-                hit_rate=(obs.hits / bets) if bets else None, ambiguous=amb,
-                ambiguous_bet_rate=(obs.ambBet / amb) if amb else None, alarms=len(obs.alarms),
-                regime_accuracy=(obs.regimeAgree / obs.regimeChecked) if obs.regimeChecked else None,
-                AR_final=obs.nar.AR, narrative_rate=obs.nar.narrative_rate(), true_rate=obs.nar.true_rate(),
-                recorded=obs.nar.recRight + obs.nar.recWrong, resolved=obs.nar.decRight + obs.nar.decWrong,
-                seam_abstain=0 if is_hetero else obs.seamAbstain)
+    bets = obs.confident + obs.ambBet; amb = obs.ambBet + obs.ambAbstain; scored = obs.hits + obs.misses
+    s = dict(score=obs.score, hits=obs.hits, misses=obs.misses, voids=obs.voids, bets=bets,
+             scored_bets=scored, voided_bets=bets - scored,
+             hit_rate=(obs.hits / scored) if scored else None, ambiguous=amb,
+             ambiguous_bet_rate=(obs.ambBet / amb) if amb else None, alarms=len(obs.alarms),
+             regime_accuracy=(obs.regimeAgree / obs.regimeChecked) if obs.regimeChecked else None,
+             AR_final=obs.nar.AR, narrative_rate=obs.nar.narrative_rate(), true_rate=obs.nar.true_rate(),
+             recorded=obs.nar.recRight + obs.nar.recWrong, resolved=obs.nar.decRight + obs.nar.decWrong,
+             seam_abstain=0 if is_hetero else obs.seamAbstain)
+    if is_hetero:
+        s["odds_final"] = obs.odds
+        s["odds_finite"] = math.isfinite(obs.odds) and obs.odds > 0
+    return s
 
 
 def attribution(alarms, switches):
@@ -269,11 +338,12 @@ def attribution(alarms, switches):
         if recent: attributed += 1; delays.append(a - recent[-1])
         else: spurious += 1
         prev = a
-    delays.sort()
-    return dict(attributed=attributed, spurious=spurious, median_delay=(delays[len(delays) // 2] if delays else None))
+    return dict(attributed=attributed, spurious=spurious, median_delay=median(delays))
 
 
 def run(seed, steps, wp=None, up=None, hp=None):
+    must(is_int(seed) and seed >= 0, "seed must be an integer >= 0")
+    validate_steps(steps)
     wp = {**DEFAULT_WORLD, **(wp or {})}; up = {**DEFAULT_UNIFORM, **(up or {})}; hp = {**DEFAULT_HETERO, **(hp or {})}
     rndW, rndU, rndH = mulberry32(seed), mulberry32(seed + 1000), mulberry32(seed + 2000)
     world = World(wp, rndW); U = Uniform(up, rndU); H = Hetero(hp, wp, rndH)
@@ -291,8 +361,14 @@ def run(seed, steps, wp=None, up=None, hp=None):
                 hetero={**summarize(H, True), **attribution(H.alarms, switches)})
 
 
-def tribe(seed, steps, wp=None, rule="strike", FT=0.0, n_slow=7):
-    wp = {**DEFAULT_WORLD, **(wp or {})}
+def tribe(seed, steps, wp=None, rule="strike", FT=0.0, n_slow=None):
+    must(is_int(seed) and seed >= 0, "seed must be an integer >= 0")
+    validate_steps(steps)
+    wp = {**DEFAULT_WORLD, **(wp or {})}; validate_world(wp)
+    must(rule in ("strike", "cusum"), "rule must be 'strike' or 'cusum'")
+    if rule == "cusum": must(is_num(FT) and FT > 0, "FT must be > 0 for the cusum rule")
+    n_slow = 7 if n_slow is None else n_slow
+    must(is_int(n_slow) and n_slow >= 1, "nSlow must be an integer >= 1 (no silent default for 0)")
     world = World(wp, mulberry32(seed))
     m = n_slow + 1; E = [0.0] * n_slow
     sharp = Hetero(DEFAULT_HETERO, wp, mulberry32(seed + 3000))
@@ -326,7 +402,7 @@ def tribe(seed, steps, wp=None, rule="strike", FT=0.0, n_slow=7):
             else:
                 S[j] = max(0.0, S[j] + (1.0 if contradicts else 0.0) - 0.25)
                 if S[j] >= FT: burned[j] = True; burn_time[j] = t + 1
-    return dict(seed=seed, steps=steps, rule=rule, FT=FT, switches=len(switches),
+    return dict(seed=seed, steps=steps, rule=rule, FT=FT, nSlow=n_slow, switches=len(switches),
                 first_switch=(switches[0] if switches else None),
                 accuracy=[(right[j] / checked[j]) if checked[j] else None for j in range(m)],
                 burned=burned, burn_time=burn_time, sharp_burned=burned[n_slow], sharp_burn_time=burn_time[n_slow],
@@ -335,23 +411,64 @@ def tribe(seed, steps, wp=None, rule="strike", FT=0.0, n_slow=7):
                 group_without=(grp_slow / grp_checked) if grp_checked else None)
 
 
+# ----------------------------------------------------------------------------- self-check cases
 SELFCHECK_RUNS = [
     dict(seed=1, steps=4000, wp={}, up={}, hp={}),
     dict(seed=2, steps=4000, wp={"liar": True}, up={}, hp={}),
     dict(seed=3, steps=4000, wp={}, up={"kappa": 0.9, "AR0": 0.5}, hp={"kappa": 0.9, "AR0": 0.5}),
+    dict(seed=7, steps=60000, wp={"eps": 0.02, "pSwitch": 0.001}, up={}, hp={}),   # long run, small noise: odds stay finite
+    dict(seed=8, steps=2000, wp={"n": 2, "eps": 0.5}, up={}, hp={}),                # tie-heavy world: voids and denominators
+    dict(seed=9, steps=3000, wp={"n": 5, "eps": 0.3, "pSwitch": 0.02}, up={}, hp={}),  # odd n, faster switching
 ]
 SELFCHECK_TRIBES = [dict(seed=4, steps=4000, rule="strike", FT=0.0), dict(seed=4, steps=4000, rule="cusum", FT=4.0),
-                    dict(seed=4, steps=4000, rule="cusum", FT=8.0)]
+                    dict(seed=4, steps=4000, rule="cusum", FT=8.0), dict(seed=5, steps=3000, rule="strike", FT=0.0, nSlow=3)]
+
+# parameter sets that MUST be rejected (the JavaScript core must throw for the same ones)
+INVALID_CASES = [
+    dict(kind="run", args=dict(wp={"n": 0})), dict(kind="run", args=dict(wp={"eps": 1.5})), dict(kind="run", args=dict(wp={"pSwitch": -0.1})),
+    dict(kind="run", args=dict(wp={"eps": 0.0})), dict(kind="run", args=dict(wp={"eps": 1.0})), dict(kind="run", args=dict(wp={"pSwitch": 0.0})),
+    dict(kind="run", args=dict(hp={"alpha": 0.0})), dict(kind="run", args=dict(hp={"alpha": 1.0})), dict(kind="run", args=dict(hp={"tau": 0.0})),
+    dict(kind="run", args=dict(up={"TI": 0})), dict(kind="run", args=dict(up={"tau": 0})), dict(kind="run", args=dict(up={"UE": 0})),
+    dict(kind="run", args=dict(steps=-1)), dict(kind="run", args=dict(steps=2.5)),
+    dict(kind="tribe", args=dict(rule="strik")), dict(kind="tribe", args=dict(nSlow=0)), dict(kind="tribe", args=dict(rule="cusum", FT=0)),
+]
+
+
+def invalid_case_raises(case) -> bool:
+    try:
+        if case["kind"] == "run":
+            a = case["args"]
+            run(1, a.get("steps", 100), a.get("wp"), a.get("up"), a.get("hp"))
+        else:
+            a = case["args"]
+            tribe(1, 100, None, a.get("rule", "strike"), a.get("FT", 0.0), a.get("nSlow"))
+        return False
+    except ValueError:
+        return True
+    except TypeError:
+        return True
+
+
+def mixing_bound_receipt():
+    rows = []
+    for ps in (0.005, 0.2):
+        lo, hi = ps / (1 - ps), (1 - ps) / ps
+        for o in (1e-12, 1e-6, 0.5, 1.0, 7.0, 1e6, 1e12):
+            m = mix_odds(o, ps)
+            rows.append(dict(ps=ps, odds=o, mixed=m, inside=(lo - 1e-12 <= m <= hi + 1e-12)))
+    return rows
 
 
 def main():
     out = dict(
-        version="Room X twin v1 (2026-09-26)",
+        version="Room X twin v2 (2026-09-27; validation, conventional median, boundary receipts)",
         config_table=config_table(), blind_lattice=blind_lattice(3),
         lenses=[lens_tree4(a, b) for a, b in (("+", "+"), ("*", "*"), ("*", "+"), ("+", "*"))],
         runs=[dict(params=r, result=run(r["seed"], r["steps"], r["wp"], r["up"], r["hp"])) for r in SELFCHECK_RUNS],
-        tribes=[dict(params=tp, result=tribe(tp["seed"], tp["steps"], None, tp["rule"], tp["FT"])) for tp in SELFCHECK_TRIBES],
+        tribes=[dict(params=tp, result=tribe(tp["seed"], tp["steps"], None, tp["rule"], tp["FT"], tp.get("nSlow"))) for tp in SELFCHECK_TRIBES],
         prng_first5=(lambda g: [g() for _ in range(5)])(mulberry32(1)),
+        boundary=dict(invalid_cases=[dict(case=c, raises=invalid_case_raises(c)) for c in INVALID_CASES],
+                      mixing=mixing_bound_receipt()),
     )
     json.dump(out, sys.stdout, indent=1)
 

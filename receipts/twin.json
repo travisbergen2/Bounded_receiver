@@ -1,5 +1,5 @@
 {
- "version": "Room X twin v1 (2026-09-26)",
+ "version": "Room X twin v2 (2026-09-27; validation, conventional median, boundary receipts)",
  "config_table": [
   {
    "config": "(+i,-i)",
@@ -98,7 +98,9 @@
      "misses": 91,
      "voids": 74,
      "bets": 3915,
-     "hit_rate": 0.9583652618135376,
+     "scored_bets": 3843,
+     "voided_bets": 72,
+     "hit_rate": 0.97632058287796,
      "ambiguous": 84,
      "ambiguous_bet_rate": 0.4166666666666667,
      "alarms": 9,
@@ -119,7 +121,9 @@
      "misses": 36,
      "voids": 74,
      "bets": 3997,
-     "hit_rate": 0.9724793595196397,
+     "scored_bets": 3923,
+     "voided_bets": 74,
+     "hit_rate": 0.9908233494774408,
      "ambiguous": 20,
      "ambiguous_bet_rate": 0.85,
      "alarms": 22,
@@ -130,9 +134,11 @@
      "recorded": 11,
      "resolved": 20,
      "seam_abstain": 0,
+     "odds_final": 6582411.0950912675,
+     "odds_finite": true,
      "attributed": 18,
      "spurious": 4,
-     "median_delay": 0
+     "median_delay": 0.0
     }
    }
   },
@@ -156,7 +162,9 @@
      "misses": 100,
      "voids": 119,
      "bets": 3889,
-     "hit_rate": 0.9444587297505785,
+     "scored_bets": 3773,
+     "voided_bets": 116,
+     "hit_rate": 0.9734958918632388,
      "ambiguous": 140,
      "ambiguous_bet_rate": 0.37857142857142856,
      "alarms": 6,
@@ -169,7 +177,7 @@
      "seam_abstain": 24,
      "attributed": 6,
      "spurious": 0,
-     "median_delay": 6
+     "median_delay": 5.5
     },
     "hetero": {
      "score": 3771,
@@ -177,7 +185,9 @@
      "misses": 49,
      "voids": 119,
      "bets": 3988,
-     "hit_rate": 0.9578736208625878,
+     "scored_bets": 3869,
+     "voided_bets": 119,
+     "hit_rate": 0.9873352287412768,
      "ambiguous": 37,
      "ambiguous_bet_rate": 0.6756756756756757,
      "alarms": 23,
@@ -188,6 +198,8 @@
      "recorded": 19,
      "resolved": 35,
      "seam_abstain": 0,
+     "odds_final": 1.5191543271805998e-07,
+     "odds_finite": true,
      "attributed": 17,
      "spurious": 6,
      "median_delay": 0
@@ -218,7 +230,9 @@
      "misses": 117,
      "voids": 84,
      "bets": 3956,
-     "hit_rate": 0.9491911021233569,
+     "scored_bets": 3872,
+     "voided_bets": 84,
+     "hit_rate": 0.9697830578512396,
      "ambiguous": 93,
      "ambiguous_bet_rate": 0.956989247311828,
      "alarms": 10,
@@ -231,7 +245,7 @@
      "seam_abstain": 40,
      "attributed": 10,
      "spurious": 0,
-     "median_delay": 6
+     "median_delay": 6.0
     },
     "hetero": {
      "score": 3852,
@@ -239,7 +253,9 @@
      "misses": 32,
      "voids": 84,
      "bets": 4000,
-     "hit_rate": 0.971,
+     "scored_bets": 3916,
+     "voided_bets": 84,
+     "hit_rate": 0.9918283963227783,
      "ambiguous": 17,
      "ambiguous_bet_rate": 1.0,
      "alarms": 22,
@@ -250,9 +266,207 @@
      "recorded": 9,
      "resolved": 15,
      "seam_abstain": 0,
+     "odds_final": 6383.919853166939,
+     "odds_finite": true,
      "attributed": 18,
      "spurious": 4,
-     "median_delay": 0
+     "median_delay": 0.0
+    }
+   }
+  },
+  {
+   "params": {
+    "seed": 7,
+    "steps": 60000,
+    "wp": {
+     "eps": 0.02,
+     "pSwitch": 0.001
+    },
+    "up": {},
+    "hp": {}
+   },
+   "result": {
+    "seed": 7,
+    "steps": 60000,
+    "switches": 46,
+    "uniform": {
+     "score": 59373,
+     "hits": 59588,
+     "misses": 215,
+     "voids": 0,
+     "bets": 59803,
+     "scored_bets": 59803,
+     "voided_bets": 0,
+     "hit_rate": 0.9964048626323094,
+     "ambiguous": 36,
+     "ambiguous_bet_rate": 0.4166666666666667,
+     "alarms": 44,
+     "regime_accuracy": 0.9960833333333333,
+     "AR_final": -0.18575294207228776,
+     "narrative_rate": 0.6875,
+     "true_rate": 0.6111111111111112,
+     "recorded": 16,
+     "resolved": 36,
+     "seam_abstain": 176,
+     "attributed": 44,
+     "spurious": 0,
+     "median_delay": 4.0
+    },
+    "hetero": {
+     "score": 59908,
+     "hits": 59954,
+     "misses": 46,
+     "voids": 0,
+     "bets": 60000,
+     "scored_bets": 60000,
+     "voided_bets": 0,
+     "hit_rate": 0.9992333333333333,
+     "ambiguous": 0,
+     "ambiguous_bet_rate": null,
+     "alarms": 46,
+     "regime_accuracy": 0.9992333333333333,
+     "AR_final": 0,
+     "narrative_rate": null,
+     "true_rate": null,
+     "recorded": 0,
+     "resolved": 0,
+     "seam_abstain": 0,
+     "odds_final": 3.3199697639030396e+16,
+     "odds_finite": true,
+     "attributed": 46,
+     "spurious": 0,
+     "median_delay": 0.0
+    }
+   }
+  },
+  {
+   "params": {
+    "seed": 8,
+    "steps": 2000,
+    "wp": {
+     "n": 2,
+     "eps": 0.5
+    },
+    "up": {},
+    "hp": {}
+   },
+   "result": {
+    "seed": 8,
+    "steps": 2000,
+    "switches": 13,
+    "uniform": {
+     "score": -28,
+     "hits": 267,
+     "misses": 295,
+     "voids": 1021,
+     "bets": 1169,
+     "scored_bets": 562,
+     "voided_bets": 607,
+     "hit_rate": 0.4750889679715303,
+     "ambiguous": 1835,
+     "ambiguous_bet_rate": 0.5776566757493188,
+     "alarms": 14,
+     "regime_accuracy": 0.4819639278557114,
+     "AR_final": -0.07399147571371494,
+     "narrative_rate": 0.49557522123893805,
+     "true_rate": 0.4807692307692308,
+     "recorded": 452,
+     "resolved": 884,
+     "seam_abstain": 56,
+     "attributed": 8,
+     "spurious": 6,
+     "median_delay": 57.5
+    },
+    "hetero": {
+     "score": -30,
+     "hits": 231,
+     "misses": 261,
+     "voids": 1021,
+     "bets": 1009,
+     "scored_bets": 492,
+     "voided_bets": 517,
+     "hit_rate": 0.4695121951219512,
+     "ambiguous": 2000,
+     "ambiguous_bet_rate": 0.5045,
+     "alarms": 0,
+     "regime_accuracy": null,
+     "AR_final": 0.027657422702262045,
+     "narrative_rate": 0.48455598455598453,
+     "true_rate": 0.48723186925434114,
+     "recorded": 518,
+     "resolved": 979,
+     "seam_abstain": 0,
+     "odds_final": 1.0,
+     "odds_finite": true,
+     "attributed": 0,
+     "spurious": 0,
+     "median_delay": null
+    }
+   }
+  },
+  {
+   "params": {
+    "seed": 9,
+    "steps": 3000,
+    "wp": {
+     "n": 5,
+     "eps": 0.3,
+     "pSwitch": 0.02
+    },
+    "up": {},
+    "hp": {}
+   },
+   "result": {
+    "seed": 9,
+    "steps": 3000,
+    "switches": 51,
+    "uniform": {
+     "score": 1625,
+     "hits": 2273,
+     "misses": 648,
+     "voids": 0,
+     "bets": 2921,
+     "scored_bets": 2921,
+     "voided_bets": 0,
+     "hit_rate": 0.7781581650119822,
+     "ambiguous": 901,
+     "ambiguous_bet_rate": 0.9167591564927858,
+     "alarms": 1,
+     "regime_accuracy": 0.9136666666666666,
+     "AR_final": 0.48383282623899804,
+     "narrative_rate": 0.6605504587155964,
+     "true_rate": 0.658157602663707,
+     "recorded": 436,
+     "resolved": 901,
+     "seam_abstain": 4,
+     "attributed": 1,
+     "spurious": 0,
+     "median_delay": 5
+    },
+    "hetero": {
+     "score": 1783,
+     "hits": 2366,
+     "misses": 583,
+     "voids": 0,
+     "bets": 2949,
+     "scored_bets": 2949,
+     "voided_bets": 0,
+     "hit_rate": 0.8023058663953883,
+     "ambiguous": 533,
+     "ambiguous_bet_rate": 0.9043151969981238,
+     "alarms": 101,
+     "regime_accuracy": 0.9473333333333334,
+     "AR_final": 0.426501824390392,
+     "narrative_rate": 0.7120622568093385,
+     "true_rate": 0.6810506566604128,
+     "recorded": 257,
+     "resolved": 533,
+     "seam_abstain": 0,
+     "odds_final": 0.0033082874381950376,
+     "odds_finite": true,
+     "attributed": 44,
+     "spurious": 57,
+     "median_delay": 1.5
     }
    }
   }
@@ -270,6 +484,7 @@
     "steps": 4000,
     "rule": "strike",
     "FT": 0.0,
+    "nSlow": 7,
     "switches": 19,
     "first_switch": 740,
     "accuracy": [
@@ -321,6 +536,7 @@
     "steps": 4000,
     "rule": "cusum",
     "FT": 4.0,
+    "nSlow": 7,
     "switches": 19,
     "first_switch": 740,
     "accuracy": [
@@ -372,6 +588,7 @@
     "steps": 4000,
     "rule": "cusum",
     "FT": 8.0,
+    "nSlow": 7,
     "switches": 19,
     "first_switch": 740,
     "accuracy": [
@@ -410,6 +627,47 @@
     "group_with": 0.97225,
     "group_without": 0.97225
    }
+  },
+  {
+   "params": {
+    "seed": 5,
+    "steps": 3000,
+    "rule": "strike",
+    "FT": 0.0,
+    "nSlow": 3
+   },
+   "result": {
+    "seed": 5,
+    "steps": 3000,
+    "rule": "strike",
+    "FT": 0.0,
+    "nSlow": 3,
+    "switches": 18,
+    "first_switch": 607,
+    "accuracy": [
+     0.968,
+     0.968,
+     0.968,
+     0.9986666666666667
+    ],
+    "burned": [
+     false,
+     false,
+     false,
+     true
+    ],
+    "burn_time": [
+     null,
+     null,
+     null,
+     608
+    ],
+    "sharp_burned": true,
+    "sharp_burn_time": 608,
+    "slow_burned": 0,
+    "group_with": 0.968,
+    "group_without": 0.968
+   }
   }
  ],
  "prng_first5": [
@@ -418,5 +676,273 @@
   0.5274470399599522,
   0.9810509674716741,
   0.9683778982143849
- ]
+ ],
+ "boundary": {
+  "invalid_cases": [
+   {
+    "case": {
+     "kind": "run",
+     "args": {
+      "wp": {
+       "n": 0
+      }
+     }
+    },
+    "raises": true
+   },
+   {
+    "case": {
+     "kind": "run",
+     "args": {
+      "wp": {
+       "eps": 1.5
+      }
+     }
+    },
+    "raises": true
+   },
+   {
+    "case": {
+     "kind": "run",
+     "args": {
+      "wp": {
+       "pSwitch": -0.1
+      }
+     }
+    },
+    "raises": true
+   },
+   {
+    "case": {
+     "kind": "run",
+     "args": {
+      "wp": {
+       "eps": 0.0
+      }
+     }
+    },
+    "raises": true
+   },
+   {
+    "case": {
+     "kind": "run",
+     "args": {
+      "wp": {
+       "eps": 1.0
+      }
+     }
+    },
+    "raises": true
+   },
+   {
+    "case": {
+     "kind": "run",
+     "args": {
+      "wp": {
+       "pSwitch": 0.0
+      }
+     }
+    },
+    "raises": true
+   },
+   {
+    "case": {
+     "kind": "run",
+     "args": {
+      "hp": {
+       "alpha": 0.0
+      }
+     }
+    },
+    "raises": true
+   },
+   {
+    "case": {
+     "kind": "run",
+     "args": {
+      "hp": {
+       "alpha": 1.0
+      }
+     }
+    },
+    "raises": true
+   },
+   {
+    "case": {
+     "kind": "run",
+     "args": {
+      "hp": {
+       "tau": 0.0
+      }
+     }
+    },
+    "raises": true
+   },
+   {
+    "case": {
+     "kind": "run",
+     "args": {
+      "up": {
+       "TI": 0
+      }
+     }
+    },
+    "raises": true
+   },
+   {
+    "case": {
+     "kind": "run",
+     "args": {
+      "up": {
+       "tau": 0
+      }
+     }
+    },
+    "raises": true
+   },
+   {
+    "case": {
+     "kind": "run",
+     "args": {
+      "up": {
+       "UE": 0
+      }
+     }
+    },
+    "raises": true
+   },
+   {
+    "case": {
+     "kind": "run",
+     "args": {
+      "steps": -1
+     }
+    },
+    "raises": true
+   },
+   {
+    "case": {
+     "kind": "run",
+     "args": {
+      "steps": 2.5
+     }
+    },
+    "raises": true
+   },
+   {
+    "case": {
+     "kind": "tribe",
+     "args": {
+      "rule": "strik"
+     }
+    },
+    "raises": true
+   },
+   {
+    "case": {
+     "kind": "tribe",
+     "args": {
+      "nSlow": 0
+     }
+    },
+    "raises": true
+   },
+   {
+    "case": {
+     "kind": "tribe",
+     "args": {
+      "rule": "cusum",
+      "FT": 0
+     }
+    },
+    "raises": true
+   }
+  ],
+  "mixing": [
+   {
+    "ps": 0.005,
+    "odds": 1e-12,
+    "mixed": 0.005025125629140679,
+    "inside": true
+   },
+   {
+    "ps": 0.005,
+    "odds": 1e-06,
+    "mixed": 0.005026125602883792,
+    "inside": true
+   },
+   {
+    "ps": 0.005,
+    "odds": 0.5,
+    "mixed": 0.5037593984962406,
+    "inside": true
+   },
+   {
+    "ps": 0.005,
+    "odds": 1.0,
+    "mixed": 1.0,
+    "inside": true
+   },
+   {
+    "ps": 0.005,
+    "odds": 7.0,
+    "mixed": 6.766990291262135,
+    "inside": true
+   },
+   {
+    "ps": 0.005,
+    "odds": 1000000.0,
+    "mixed": 198.96040787883211,
+    "inside": true
+   },
+   {
+    "ps": 0.005,
+    "odds": 1000000000000.0,
+    "mixed": 198.9999999604,
+    "inside": true
+   },
+   {
+    "ps": 0.2,
+    "odds": 1e-12,
+    "mixed": 0.25000000000093753,
+    "inside": true
+   },
+   {
+    "ps": 0.2,
+    "odds": 1e-06,
+    "mixed": 0.2500009374997656,
+    "inside": true
+   },
+   {
+    "ps": 0.2,
+    "odds": 0.5,
+    "mixed": 0.6666666666666667,
+    "inside": true
+   },
+   {
+    "ps": 0.2,
+    "odds": 1.0,
+    "mixed": 1.0,
+    "inside": true
+   },
+   {
+    "ps": 0.2,
+    "odds": 7.0,
+    "mixed": 2.6363636363636367,
+    "inside": true
+   },
+   {
+    "ps": 0.2,
+    "odds": 1000000.0,
+    "mixed": 3.9999850000599997,
+    "inside": true
+   },
+   {
+    "ps": 0.2,
+    "odds": 1000000000000.0,
+    "mixed": 3.999999999985,
+    "inside": true
+   }
+  ]
+ }
 }
